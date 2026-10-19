@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 2 - Form Completo</title>
+    <link rel="stylesheet" href="css/esercizio2.css">
+</head>
+<body>
+
+    <form action="backend.php" method="post">
+        <h1>Modulo di Registrazione - Esercizio 2</h1>
+
+        <!-- COGNOME (casella di testo editabile lunga 30 caratteri: type e maxlength) -->
+        <div class="form-group">
+            <label for="cognome">Cognome:</label>
+            <input type="text" id="cognome" name="cognome" size="30" maxlength="30" placeholder="Inserisca il cognome" title="Inserisca il Suo cognome (max 30 caratteri)" required>
+        </div>
+
+        <!-- NOME (casella di testo editabile lunga 30 caratteri: type e maxlength) -->
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" size="30" maxlength="30" placeholder="Inserisca il nome" title="Inserisca il Suo nome (max 30 caratteri)" required>
+        </div>
+
+        <!-- EMAIL (casella di testo editabile lunga 30 caratteri: type e maxlength) -->
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" size="30" maxlength="30" placeholder="esempio@dominio.it" title="Inserisca il Suo indirizzo e-mail (max 30 caratteri)" required>
+        </div>
+
+        <!-- PASSWORD (casella di testo con l’inserimento del seguente pattern obbligatorio: almeno un numero e almeno uno dei caratteri speciali !?@: type e maxlength) -->
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[!?@]).+" maxlength="30" title="La password deve contenere almeno un numero e almeno uno dei caratteri speciali !?@" placeholder="Almeno 1 numero e 1 speciale (!?@)" required>
+        </div>
+
+        <!-- DATA E ORA DI NASCITA: type -->
+        <div class="form-group">
+            <label for="data-nascita">Data e Ora di Nascita:</label>
+            <input type="datetime-local" id="data-nascita" name="data_nascita" title="Selezioni la data e l'ora di nascita" required>
+        </div>
+
+        <!-- ETÀ (casella di tipo numerico, con un range di valori possibili 18-70 anni: type, min e max) -->
+        <div class="form-group">
+            <label for="eta">Età (18-70 anni):</label>
+            <input type="number" id="eta" name="eta" min="18" max="70" value="18" title="Selezioni un'età compresa tra 18 e 70 anni" required>
+        </div>
+
+        <!-- SESSO (selezionabile attraverso bottoni radio: type) -->
+        <div class="form-group radio-group">
+            <label>Sesso:</label>
+            <div class="radio-options">
+                <label for="sesso-m"><input type="radio" id="sesso-m" name="sesso" value="M" required> Maschio</label>
+                <label for="sesso-f"><input type="radio" id="sesso-f" name="sesso" value="F"> Femmina</label>
+                <label for="sesso-o"><input type="radio" id="sesso-o" name="sesso" value="Altro"> Altro</label>
+            </div>
+        </div>
+
+        <!-- REGIONE DI RESIDENZA (da scegliere da un menu che riporta le 20 regioni italiane: option) -->
+        <div class="form-group">
+            <label for="regione">Regione di Residenza:</label>
+            <select id="regione" name="regione" title="Selezioni la Sua regione di residenza" required>
+                <option value="" disabled selected>-- Selezioni una Regione --</option>
+                <option value="Abruzz">Abruzzo</option>
+                <option value="Basilicata">Basilicata</option>
+                <option value="Calabria">Calabria</option>
+                <option value="Campania">Campania</option>
+                <option value="Emilia-Romagna">Emilia-Romagna</option>
+                <option value="Friuli-Venezia Giulia">Friuli-Venezia Giulia</option>
+                <option value="Lazio">Lazio</option>
+                <option value="Liguria">Liguria</option>
+                <option value="Lombardia">Lombardia</option>
+                <option value="Marche">Marche</option>
+                <option value="Molise">Molise</option>
+                <option value="Piemonte">Piemonte</option>
+                <option value="Puglia">Puglia</option>
+                <option value="Sardegna">Sardegna</option>
+                <option value="Sicilia">Sicilia</option>
+                <option value="Toscana">Toscana</option>
+                <option value="Trentino-Alto Adige">Trentino-Alto Adige</option>
+                <option value="Umbria">Umbria</option>
+                <option value="Valle d'Aosta">Valle d'Aosta</option>
+                <option value="Veneto">Veneto</option>
+            </select>
+        </div>
+
+        <!-- RICHIESTA (area di testo editabile di 10 righe per 50 colonne, con stiledifferente dagli altri campi: textarea, rows, cols) -->
+        <div class="form-group">
+            <label for="richiesta">Richiesta:</label>
+            <textarea id="richiesta" name="richiesta" rows="10" cols="50" class="custom-textarea" placeholder="Inserisca qui la Sua richiesta dettagliata..." title="Area di testo per la Sua richiesta"></textarea>
+        </div>
+
+        <!-- PULSANTI INVIO E RESET (con l’inserimento di un’icona: caratteri unicode / type -->
+        <div class="form-actions">
+            <button type="submit" class="btn-submit">&#9658;&ensp;Invia Modulo</button>
+            <button type="reset" class="btn-reset">&#10006;&ensp;Pulisci Campi</button>
+        </div>
+    </form>
+
+</body>
+</html>

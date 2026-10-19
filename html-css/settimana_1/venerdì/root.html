@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-classe :root e Variabili CSS</title>
+    <style>
+        /* ==========================================================================
+            DEFINIZIONE DELLE VARIABILI GLOBALI TRAMITE :root
+           ========================================================================== */
+        :root {
+            --main-color: darkcyan;     /* Colore di sfondo principale[cite: 14] */
+            --heading-color: yellow;    /* Colore del testo per gli heading[cite: 14] */
+            --p-color: white;           /* Colore del testo per il contenuto[cite: 14] */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px;
+            /* Utilizzo della variabile per lo sfondo del corpo[cite: 14] */
+            background-color: var(--main-color);
+            /* Utilizzo della variabile per il colore del testo dei paragrafi */
+            color: var(--p-color);
+        }
+
+        /* Applicazione della variabile di colore a tutte le intestazioni[cite: 14] */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            border-bottom: 2px solid var(--heading-color);
+            padding-bottom: 10px;
+        }
+
+        .box {
+            background: rgba(0, 0, 0, 0.15);
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>INTESTAZIONE H1</h1>
+
+    <p>
+        È universalmente riconosciuto che un lettore che osserva il layout di una pagina viene distratto dal contenuto testuale se questo è leggibile. Lo scopo dell'utilizzo del Lorem Ipsum è che offre una normale distribuzione delle lettere (al contrario di quanto avviene se si utilizzano brevi frasi ripetute, ad esempio "testo qui"), apparendo come un normale blocco di testo leggibile.
+    </p>
+
+    <div class="box">
+        <p>Questo div erediterà correttamente i parametri di colore definiti centralmente nel blocco :root.</p>
+    </div>
+
+</body>
+</html>

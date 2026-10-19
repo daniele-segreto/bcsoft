@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guida a nth-of-type e nth-last-of-type</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .box {
+            background: #f1f2f6;
+            border: 1px solid #dcdde1;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+
+        /* Regola generale di base per tutti i paragrafi */
+        p {
+            color: #555;
+        }
+
+        /* Stile applicato al secondo paragrafo di tipo paragrafo (dall'inizio) */
+        p:nth-of-type(2) {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* Stile applicato al quinto paragrafo partendo dalla fine di tipo paragrafo.
+            In un elenco di 6 elementi, il 5° dal fondo è proprio il 2° dall'inizio.
+            Trattandosi di una regola successiva con pari specificità, sovrascrive la precedente (effetto cascata) */
+        p:nth-last-of-type(5) {
+            color: orange;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Esempio di :nth-of-type(2) e :nth-last-of-type(5)</h1>
+
+    <div class="box">
+        <!-- 1° paragrafo (6° dal fondo): colore standard -->
+        <p>Questo è il primo paragrafo</p>
+
+        <!-- 2° paragrafo dall'inizio (5° dal fondo): coincide con entrambe le regole.
+            Vince p:nth-last-of-type(5) perché definita dopo nel CSS, diventando ARANCIONE -->
+        <p>Questo è il secondo paragrafo (Selezionato: diventa Arancione)</p>
+
+        <!-- 3° paragrafo: colore standard -->
+        <p>Questo è il terzo paragrafo</p>
+
+        <!-- 4° paragrafo: colore standard -->
+        <p>Questo è il quarto paragrafo</p>
+
+        <!-- 5° paragrafo: colore standard -->
+        <p>Questo è il quinto paragrafo</p>
+
+        <!-- 6° paragrafo (1° dal fondo / ultimo del suo tipo): colore standard -->
+        <p>Questo è il sesto paragrafo</p>
+    </div>
+
+</body>
+</html>

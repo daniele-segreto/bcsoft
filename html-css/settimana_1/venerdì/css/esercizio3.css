@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+/* Impostazioni generali del documento */
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333333;
+    background-color: #f8f9fa;
+}
+
+/* Header fisso in alto con sovrapposizione controllata */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #1a252f;
+    color: #ffffff;
+    padding: 20px 20px;
+    text-align: center;
+    box-sizing: border-box;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0 0 6px 0;
+    font-size: 24px;
+    color: #e74c3c;
+}
+
+header p {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    color: #ecf0f1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #e74c3c;
+}
+
+/* Compensazione dello spazio superiore per l'header fisso */
+main {
+    max-width: 900px;
+    margin: 180px auto 30px auto;
+    padding: 0 20px;
+}
+
+section {
+    background: #ffffff;
+    padding: 25px 30px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    /* ---------------------------------------------------------------------
+    SCROLL-MARGIN-TOP:
+    Definisce un margine di sicurezza invisibile in cima alla sezione.
+    Quando l'utente clicca su un link del menu (es. #programma), il browser
+    scorre la pagina fermandosi 170px prima del titolo, evitando così che
+    il contenuto della sezione venga coperto dall'header fisso.
+    --------------------------------------------------------------------- */
+    scroll-margin-top: 170px;
+}
+
+h3 {
+    color: #2c3e50;
+    border-left: 4px solid #e74c3c;
+    padding-left: 10px;
+    margin-top: 0;
+}
+
+/* Citazioni e elenchi */
+blockquote, q {
+    font-style: italic;
+    color: #555;
+}
+
+/* -------------------------------------------------------------------------
+Q QUOTES:
+Definisce in modo esplicito la tipologia di virgolette tipografiche da
+applicare automaticamente attorno al testo racchiuso nel tag <q>.
+Sostituisce i virgoletti predefiniti dei vari browser con le virgolette
+curve inglesi alte (“ per l'apertura e ” per la chiusura).
+------------------------------------------------------------------------- */
+q {
+    quotes: "“" "”";
+}
+
+ol {
+    padding-left: 20px;
+}
+
+ol li {
+    margin-bottom: 8px;
+}
+
+/* Tabella programmatica */
+.programma-tabella {
+    width: 100%;
+    border-collapse: collapse; /* Elimina gli spazi doppi tra i bordi delle celle */
+    margin-top: 15px;
+}
+
+.programma-tabella caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+    caption-side: top;
+    text-align: left;
+    color: #7f8c8d;
+}
+
+.programma-tabella th, 
+.programma-tabella td {
+    border: 1px solid #dddddd;
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.programma-tabella thead {
+    background-color: #e74c3c;
+    color: #ffffff;
+}
+
+/* Alternanza di colore sulle righe per migliorare la leggibilità (effetto zebra, leggero, 2 bianchi quasi uguali) */
+.programma-tabella tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.programma-tabella tfoot {
+    background-color: #ecf0f1;
+    font-weight: bold;
+}
+
+/* Box Multimediali */
+.media-box {
+    margin-top: 20px;
+}
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+video {
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Collegamenti ipertestuali */
+a {
+    color: #e74c3c;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #c0392b;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a252f;
+    color: #bdc3c7;
+    font-size: 13px;
+    margin-top: 40px;
+}

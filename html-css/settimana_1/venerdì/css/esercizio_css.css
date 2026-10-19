@@ -1,0 +1,96 @@
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* ==========================================
+    PRIMA SEZIONE: INTERAZIONE E STRUTTURA FIGLIA
+   ========================================== */
+
+/* :hover - Si attiva al passaggio del mouse */
+a:hover {
+    color: white;
+    background-color: black;
+}
+
+/* :active - Si attiva nel momento esatto del click */
+button:active {
+    background-color: yellow;
+}
+
+/* :focus - Si attiva quando l'input riceve il focus */
+input:focus {
+    outline: 3px solid red;
+}
+
+/* :first-child - Seleziona il primo elemento figlio */
+ul li:first-child {
+    font-weight: bold;
+}
+
+/* :nth-child() - Seleziona gli elementi in base alla posizione (es. pari) */
+ul li:nth-child(even) {
+    background-color: rgb(134, 245, 245);
+}
+
+/* :last-child - Seleziona l'ultimo elemento figlio */
+ul li:last-child {
+font-style: italic;
+}
+
+/* :only-child - Seleziona un elemento se è l'unico figlio del suo genitore */
+div p:only-child {
+    color: orangered;
+    font-weight: bold;
+}
+
+/* ==========================================
+    SECONDA SEZIONE: PSEUDO-CLASSI DI TIPO, STATO E NEGAZIONE
+   ========================================== */
+
+/* :first-of-type - Seleziona il primo elemento di quel tipo all'interno del padre */
+.contenitore-tipo p:first-of-type {
+    color: green;
+    font-weight: bold;
+}
+
+/* :last-of-type - Seleziona l'ultimo elemento di quel tipo all'interno del padre */
+.contenitore-tipo p:last-of-type {
+    color: purple;
+}
+
+/* :nth-of-type() - Seleziona il secondo span di quel tipo */
+.lista-tipo span:nth-of-type(2) {
+    background-color: lightgreen;
+}
+
+/* :empty - Seleziona gli elementi che non hanno figli o testo al loro interno */
+p:empty {
+    width: 100%;
+    height: 20px;
+    background-color: orange;
+}
+
+/* :not() - Seleziona tutti i paragrafi che NON hanno la classe .evidenziato */
+p:not(.evidenziato) {
+    border-left: 3px solid red;
+    padding-left: 5px;
+}
+
+/* :target - Si attiva sull'elemento il cui ID corrisponde al frammento dell'URL attuale (#sezione-target) */
+#sezione-target:target {
+    background-color: rgb(134, 245, 245);;
+    border: 2px solid orange;
+}
+
+/* :nth-last-of-type() - Seleziona l'elemento in base alla sua posizione contando dalla fine tra quelli dello stesso tipo */
+.lista-penultimo p:nth-last-of-type(2) {
+    background-color: yellow;
+}
+
+/* :only-of-type - Seleziona un elemento se è l'unico di quel tipo (tag p) all'interno del genitore */
+.contenitore-unico-tipo p:only-of-type {
+    color: blue;
+    font-weight: bold;
+}

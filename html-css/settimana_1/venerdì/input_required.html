@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-classe required</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .box {
+            background: #f1f2f6;
+            border: 1px solid #dcdde1;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            max-width: 400px;
+        }
+
+        /* Stile di base per tutti i campi di input */
+        input {
+            width: 100%;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+        }
+
+        /* Seleziona solo i campi di input che hanno l'attributo HTML required */
+        input:required {
+            background-color: greenyellow;
+        }
+
+        /* Stile di supporto per il pulsante di invio */
+        button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 1px solid #333;
+            background-color: #e0e0e0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Esempio della Pseudo-classe :required</h1>
+
+    <div class="box">
+        <form>
+            <!-- Campo facoltativo: non ha required, quindi mantiene lo sfondo standard -->
+            <input type="text" placeholder="Nome">
+
+            <!-- Campo facoltativo: non ha required, quindi mantiene lo sfondo standard -->
+            <input type="text" placeholder="Cognome">
+
+            <!-- Campo obbligatorio: possiede l'attributo required, quindi diventa GREENYELLOW -->
+            <input type="email" placeholder="Email" required>
+
+            <button type="submit">Invia</button>
+        </form>
+    </div>
+
+</body>
+</html>

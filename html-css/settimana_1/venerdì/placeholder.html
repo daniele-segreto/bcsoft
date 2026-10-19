@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-elementi Placeholder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .box {
+            background: #f1f2f6;
+            border: 1px solid #dcdde1;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            max-width: 400px;
+        }
+
+        /* Stile applicato globalmente a qualsiasi testo segnaposto (placeholder) nei form */
+        ::placeholder {
+            color: black;       /* Imposta il colore nero per il testo guida */
+            font-weight: bold;  /* Rende il testo segnaposto in grassetto */
+        }
+
+        /* Stile strutturale per i campi di input testuali */
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;          /* Spaziatura interna per comodità di digitazione */
+            border: 3px solid red;  /* Bordo rosso marcato di 3 pixel */
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Esempio dello Pseudo-elemento ::placeholder</h1>
+
+    <div class="box">
+        <form>
+            <!-- Campo di testo provvisto dell'attributo placeholder -->
+            <input type="text" placeholder="Inserisci il tuo nome">
+        </form>
+    </div>
+
+</body>
+</html>

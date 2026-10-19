@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 1 - Mondo Letterario e Umberto Eco</title>
+    <!-- Collegamento al foglio di stile CSS esterno -->
+    <link rel="stylesheet" href="css/esercizio1.css">
+</head>
+<body>
+
+    <!-- HEADER E TITOLO PRINCIPALE -->
+    <header>
+        <h1>Il Mondo Letterario di Umberto Eco</h1>
+        <p>Un viaggio tra le opere narrative, il cinema e le risorse multimediali dedicate all'autore.</p>
+    </header>
+
+    <!-- CONTENUTO PRINCIPALE -->
+    <main>
+
+        <!-- SEZIONE 1: TABELLA OPERE NARRATIVE -->
+        <section>
+            <h2>Opere Narrative di Umberto Eco</h2>
+            <p>Di seguito è riportata la cronologia completa delle opere narrative (romanzi) dell'autore:</p>
+
+            <table class="tabella-opere"> <!-- === TAB: RICHIESTA! === -->
+                <caption>Opere Narrative di Umberto Eco (Cronologia Romanzi)</caption> <!-- === CAPTION: RICHIESTA! === -->
+                <thead>
+                    <tr>
+                        <th>Nome dell'Opera</th> <!-- === NOME: RICHIESTO! === -->
+                        <th>Data di Pubblicazione</th> <!-- === DATA PUBLICAZIONE: RICHIESTO! === -->
+                        <th>Casa Editrice</th> <!-- === CASA EDITRICE: RICHIESTO! === -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Il nome della rosa</td>
+                        <td>1980</td>
+                        <td>Bompiani</td>
+                    </tr>
+                    <tr>
+                        <td>Il pendolo di Foucault</td>
+                        <td>1988</td>
+                        <td>Bompiani</td>
+                    </tr>
+                    <tr>
+                        <td>L'isola del giorno prima</td>
+                        <td>1994</td>
+                        <td>Bompiani</td>
+                    </tr>
+                    <tr>
+                        <td>Baudolino</td>
+                        <td>2000</td>
+                        <td>Bompiani</td>
+                    </tr>
+                    <tr>
+                        <td>La misteriosa fiamma della regina Loana</td>
+                        <td>2004</td>
+                        <td>Bompiani</td>
+                    </tr>
+                    <tr>
+                        <td>Il cimitero di Praga</td>
+                        <td>2010</td>
+                        <td>Bompiani</td>
+                    </tr>
+                    <tr>
+                        <td>Numero zero</td>
+                        <td>2015</td>
+                        <td>Bompiani</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SEZIONE 2: CONTENUTI MULTIMEDIALI -->
+        <section id="multimedia">
+            <h2>Contenuti Multimediali: "Il nome della rosa"</h2>
+
+            <!-- Video Audiolibro (con autoplay e mute attivi) -->
+            <div class="media-card">
+                <h3>Prologo dell'Audiolibro</h3>
+                <p>Audio-video del Prologo de "Il nome della rosa":</p>
+                <!-- Nota: autoplay e muted garantiscono l'esecuzione automatica nei browser moderni -->
+                <video controls autoplay muted width="100%" poster="https://1.bp.blogspot.com/-kyOBHc5KerQ/X58FCl-jHxI/AAAAAAAAZrs/-0_jMNf8Go8iM3ScaOfd28xgzcLwXr8xwCLcBGAsYHQ/s438/1.gif">
+                    <source src="video/.mp4" type="video/mp4">
+                    Il browser in uso non supporta la riproduzione diretta di questo video.
+                </video> <!-- === VIDEO / AUTOPLAY / MUTED: RICHIESTI! === -->
+            </div>
+
+            <!-- GIF dal Film -->
+            <div class="media-card">
+                <h3>GIF dal Film "Il nome della rosa"</h3>
+                <div class="img-container">
+                    <img src="https://1.bp.blogspot.com/-kyOBHc5KerQ/X58FCl-jHxI/AAAAAAAAZrs/-0_jMNf8Go8iM3ScaOfd28xgzcLwXr8xwCLcBGAsYHQ/s438/1.gif" alt="GIF animata tratta dal film Il nome della rosa" class="gif-film"> <!-- === GIF: RICHIESTA! === -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SEZIONE 3: IFRAME WIKIPEDIA -->
+        <section id="wikipedia">
+            <h2>Approfondimento Wikipedia: "Il nome della rosa"</h2>
+            <p>Consultazione diretta della voce enciclopedica integrata nella pagina:</p>
+            
+            <div class="iframe-container">
+                <iframe src="https://it.wikipedia.org/wiki/Il_nome_della_rosa" title="Pagina Wikipedia su Il nome della rosa" width="100%" height="500" loading="lazy">
+                    Il browser non supporta la visualizzazione degli iframe.
+                </iframe> <!-- === IFRAME: RICHIESTO! === -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Esercitazione HTML/CSS — Mondo Letterario Umberto Eco.</p>
+    </footer>

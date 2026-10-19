@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guida Completa ai Selettori Combinatori CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .box {
+            background: #f1f2f6;
+            border: 1px solid #dcdde1;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+
+        /* 1. SELETTORE DI DISCENDENTI (Spazio) */
+        /* Seleziona tutti i paragrafi dentro .box-discendenti, a qualsiasi livello */
+        /* Prende tutti i p al suo interno, anche i nipoti */
+        .box-discendenti p {
+            color: #2980b9;
+            font-weight: bold;
+        }
+
+        /* 2. SELETTORE DI FIGLI (>) */
+        /* Seleziona solo i paragrafi che sono figli DIRETTI di .box-figli */
+        /* Prende tutti i p al suo interno, ma solo figli diretti */
+        .box-figli > p {
+            color: #27ae60;
+            font-style: italic;
+        }
+
+        /* 3. SELETTORE DI FRATELLI ADIACENTI (+) */
+        /* Seleziona il paragrafo che si trova SUBITO dopo un h3 */
+        /* PRENDE UN SOLO p successivo */
+        h3 + p {
+            color: #c0392b;
+            text-transform: uppercase;
+        }
+
+        /* 4. SELETTORE GENERALE DI FRATELLI (~) */
+        /* Seleziona TUTTI i paragrafi che seguono un h4 sullo stesso livello */
+        /* prende tutti i p successivi */
+        h4 ~ p {
+            color: #8e44ad;
+            background-color: #f5eef8;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Esempi di Selettori Combinatori CSS</h1>
+
+    <!-- 1. DISCENDENTI -->
+    <div class="box box-discendenti">
+        <h2>1. Selettore di Discendenti (Spazio)</h2>
+        <p>Questo paragrafo è figlio diretto e diventa blu.</p>
+        <div>
+            <p>Questo paragrafo è un nipote (dentro un div interno), ma diventa blu lo stesso perché è un discendente!</p>
+        </div>
+    </div>
+
+    <!-- 2. FIGLI -->
+    <div class="box box-figli">
+        <h2>2. Selettore di Figli (>)</h2>
+        <p>Questo paragrafo è figlio diretto e diventa verde corsivo.</p>
+        <div>
+            <p>Questo paragrafo è dentro un div interno: NON è un figlio diretto, quindi ignora lo stile verde.</p>
+        </div>
+    </div>
+
+    <!-- 3. FRATELLI ADIACENTI -->
+    <div class="box">
+        <h2>3. Selettore di Fratelli Adiacenti (+)</h2>
+        <h3>Questo è un H3</h3>
+        <p>Questo paragrafo viene SUBITO dopo l'H3: diventa rosso e maiuscolo.</p>
+        <p>Questo secondo paragrafo viene dopo, ma non è adiacente all'H3, quindi resta normale.</p>
+    </div>
+
+    <!-- 4. FRATELLI GENERALI -->
+    <div class="box">
+        <h2>4. Selettore Generale di Fratelli (~)</h2>
+        <h4>Questo è un H4</h4>
+        <p>Primo paragrafo successivo: viene evidenziato in viola.</p>
+        <div>Un blocco intermedio di divisione.</div>
+        <p>Secondo paragrafo successivo: viene evidenziato in viola anche lui.</p>
+    </div>
+
+</body>
+</html>

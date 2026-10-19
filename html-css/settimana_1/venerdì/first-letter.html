@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-elementi first-letter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .box {
+            background: #f1f2f6;
+            border: 1px solid #dcdde1;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+
+        /* Regola applicata esclusivamente alla prima lettera di qualsiasi paragrafo */
+        p::first-letter {
+            font-size: 60px;     /* Aumenta drasticamente le dimensioni del carattere iniziale */
+            font-weight: bold;   /* Rende il carattere in grassetto */
+            color: red;          /* Assegna il colore rosso */
+            font-family: Algerian; /* Imposta un font decorativo tipografico */
+            float: left;         /* Opzionalmente utile per allineare verticalmente il capolettera */
+            margin-right: 8px;   /* Spaziatura dal resto del testo */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Esempio dello Pseudo-elemento ::first-letter</h1>
+
+    <div class="box">
+        <!-- Paragrafo in cui la lettera 'P' iniziale viene stilizzata automaticamente -->
+        <p>Paragrafo con prima lettera stilizzata.</p>
+    </div>
+
+</body>
+</html>

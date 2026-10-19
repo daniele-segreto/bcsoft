@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio Selettori di Attributo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* 1. Selettore per l'attributo personalizzato sul paragrafo */
+        p[sottolineato] {
+            text-decoration: underline;
+            color: #2980b9;
+            font-weight: bold;
+            background-color: yellow;
+        }
+
+        /* 2. Selettore di attributo per i campi di input obbligatori */
+        input[required] {
+            border: 2px solid blue;
+            color: red;
+            padding: 8px;
+            margin: 5px 0 15px 0;
+            display: block;
+            width: 300px;
+            border-radius: 4px;
+        }
+
+        /* Stile di base per il pulsante */
+        input[type="submit"] {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: auto;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #34495e;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Esempio paragrafo con attributo -->
+    <p sottolineato>Questo paragrafo è evidenziato perché ha l'attributo sottolineato.</p>
+    <p>Questo paragrafo non è evidenziato perché non ha alcun attributo specificato.</p>
+
+    <hr style="margin: 30px 0;">
+
+    <!-- Modulo con campi Nome, Email e Invio -->
+    <h2>Modulo di Contatto</h2>
+    <form>
+        <label for="nome">Nome (Obbligatorio):</label>
+        <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome" required>
+
+        <label for="email">Email (Obbligatorio):</label>
+        <input type="email" id="email" name="email" placeholder="Inserisci la tua email">
+        <br>
+        <input type="submit" value="Invia">
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guida alla Pseudo-classe :only-of-type</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .box {
+            background: #f1f2f6;
+            border: 1px solid #dcdde1;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+
+        /* Regola generale di base per tutti i paragrafi */
+        p {
+            color: black;
+        }
+
+        /* Stile che si applicherà solo per il paragrafo di tipo paragrafo che è l'unico figlio del suo genitore */
+        div p:only-of-type {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Esempio della Pseudo-classe :only-of-type</h1>
+
+    <!-- Primo blocco: il tag <p> è l'unico paragrafo nel suo div (anche se è presente un h3) -->
+    <div class="box">
+        <h3>Intestazione di prova</h3>
+        <p>Questo paragrafo è l'unico elemento di tipo p nel suo div: rispetta la regola e diventa ROSSO e in GRASSETTO.</p>
+    </div>
+
+    <!-- Secondo blocco: sono presenti due paragrafi, quindi nessuno dei due è l'unico del suo tipo -->
+    <div class="box">
+        <h3>Altro contenitore</h3>
+        <p>Questo è il primo paragrafo (mantiene il nero standard perché c'è un altro paragrafo).</p>
+        <p>Questo è il secondo paragrafo (mantiene il nero standard).</p>
+    </div>
+
+</body>
+</html>

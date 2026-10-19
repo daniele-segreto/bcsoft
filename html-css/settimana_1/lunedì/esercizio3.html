@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Esercizio su Tabelle HTML con Caption</title>
+</head>
+<body>
+
+    <table border="1">
+        <!-- Titolo della tabella inserito nella caption -->
+        <caption>Pianificazione Moduli Formativi</caption>
+
+        <!-- Sezione di Intestazione -->
+        <thead>
+            <tr>
+                <th>Area Formativa</th>
+                <th>Modulo / Corso</th>
+                <th>Ore stimate</th>
+            </tr>
+        </thead>
+
+        <!-- Sezione del Corpo (3 righe e 3 colonne di dati) -->
+        <tbody>
+            <tr>
+                <td rowspan="2">Frontend Development</td>
+                <td>HTML & CSS Base</td>
+                <td>30 ore</td>
+            </tr>
+            <tr>
+                <td>JavaScript Avanzato e DOM</td>
+                <td>40 ore</td>
+            </tr>
+            <tr>
+                <td>Backend & Database</td>
+                <td>PHP e MySQL / Laravel</td>
+                <td>50 ore</td>
+            </tr>
+        </tbody>
+
+        <!-- Sezione del Piè di tabella -->
+        <tfoot>
+            <tr>
+                <td colspan="2">Totale Complessivo Formazione</td>
+                <td>120 ore</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>

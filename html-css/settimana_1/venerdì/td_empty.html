@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio della Pseudo-classe :empty</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .box {
+            background: #f1f2f6;
+            border: 1px solid #dcdde1;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            max-width: 600px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+        }
+
+        th, td {
+            padding: 20px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        /* Seleziona unicamente le celle di tabella (td) che sono completamente vuote 
+           e assegna loro uno sfondo grigio chiaro per evidenziarle */
+        td:empty {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Esempio della Pseudo-classe :empty</h1>
+
+    <div class="box">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nome e Cognome</th>
+                    <th>Segno zodiacale</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fabio Amato</td>
+                    <td>Gemelli</td>
+                </tr>
+                <tr>
+                    <td>Rosa Ricci</td>
+                    <!-- Cella vuota: attiva la regola td:empty e si colora di grigio chiaro -->
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Pac Man</td>
+                    <td>Scorpione</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

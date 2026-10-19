@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio sui Form - Parte 1</title>
+</head>
+<body>
+    
+    <h1>Esercizio sui Form - Parte 1</h1>
+    
+    <!-- FORM (action, metod, target) -->
+    <form action="ricevi-dati.php" method="POST" target="_blank">
+        
+        <!-- FIELDSET & LEGEND -->
+        <fieldset>
+            <legend>Informazioni Personali</legend>
+            
+            <!-- NOME: LABEL E INPUT TYPE -->
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome">
+            </div>
+            
+            <br>
+            
+            <!-- COGNOME: LABEL E INPUT TYPE -->
+            <div>
+                <label for="cognome">Cognome:</label>
+                <input type="text" id="cognome" name="cognome" placeholder="Inserisci il tuo cognome">
+            </div>
+            
+        </fieldset>
+        
+        <br>
+        
+        <!-- PULSANTE: INVIA MODULO (input type submit) -->
+        <div>
+            <input type="submit" value="Invia Modulo">
+        </div>
+        
+    </form>
+    
+</body>
+</html>

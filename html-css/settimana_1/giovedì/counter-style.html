@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Esempio Counter-Style</title>
+    <style>
+        /* Definizione dello stile di lista personalizzato -> con system: fixed */
+        /* Lo ciclo fino a quando è stato definito (da me): 
+        (A) - (E) - (I)- (O) - (U) - poi diventa (6) - (7) - (8) */
+        /* @counter-style listapersonalizzata {
+            system: fixed;
+            symbols: 'A' 'E' 'I' 'O' 'U';
+            suffix: ') ';
+            prefix: '(';
+        } */
+        
+        /* Definizione di uno stile di lista personalizzato -> con system: cyclic */
+        /* Lo ciclo all'infinito: 
+        (A) - (E) - (I) - (O) - (U) - (A) - (E) - (I) - (...) */
+        @counter-style listapersonalizzata {
+            system: cyclic;
+            symbols: 'A' 'E' 'I' 'O' 'U';
+            suffix: ') ';
+            prefix: '(';
+        }
+        
+        /* Applicazione dello stile al tag ol */
+        ol {
+            list-style: listapersonalizzata;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Esempio di elenco ordinato -->
+    <ol>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>Elemento 5</li>
+        <li>Elemento 6 (Ricomincia da A/o 6)</li>
+        <li>Elemento 7</li>
+        <li>Elemento 8</li>
+    </ol>
+    
+</body>
+</html>

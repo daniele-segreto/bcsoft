@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guida alla Pseudo-classe di Negazione :not()</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .box {
+            background: #f1f2f6;
+            border: 1px solid #dcdde1;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+
+        /* Regola generale di base per tutti i paragrafi */
+        p {
+            color: black;
+        }
+
+        /* Stile per i paragrafi escluso quello con classe "paragrafospeciale" */
+        /* Seleziona qualsiasi <p> che non possiede la classe specificata nelle parentesi */
+        p:not(.paragrafospeciale) {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Esempio della Pseudo-classe :not()</h1>
+
+    <div class="box">
+        <!-- Paragrafo 1: non ha la classe esclusa, quindi diventa ROSSO e in GRASSETTO -->
+        <p>Paragrafo di testo numero 1</p>
+
+        <!-- Paragrafo 2: possiede la classe .paragrafospeciale, quindi viene ESCLUSO e resta NERO -->
+        <p class="paragrafospeciale">Paragrafo di testo numero 2 (Speciale: escluso dalla regola)</p>
+
+        <!-- Paragrafo 3: non ha la classe esclusa, quindi diventa ROSSO e in GRASSETTO -->
+        <p>Paragrafo di testo numero 3</p>
+    </div>
+
+</body>
+</html>

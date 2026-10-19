@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio CSS</title>
+    <link rel="stylesheet" href="css/esercizio_css.css">
+</head>
+<body>
+    <!--
+    almeno cinque tra i seguenti selettori di pseudo-classe (hover, active, focus, first-child, last-child, nth-child, nth-last-child, only-child)
+    -->
+    <h2>hover, active, focus, first-child, last-child, nth-child, nth-last-child, only-child</h2>
+    
+    <!-- :hover -->
+    <h3>HOVER</h3>
+    <p><a href="#">Passa il mouse qui (:hover)</a></p>
+    
+    <!-- :active -->
+    <h3>ACTIVE</h3>
+    <p><button type="button">Cliccha questo pulsante (:active)</button></p>
+    
+    <!-- :focus -->
+    <h3>FOCUS</h3>
+    <p><input type="text" placeholder="Clicchi per scrivere (:focus)"></p>
+    
+    <!-- Test per :first-child, :nth-child e :last-child -->
+    <h3>FIRST-CHILD, NTH-CHILD E LAST-CHILD</h3>
+    <ul>
+        <li>Primo elemento della lista (:first-child)</li>
+        <li>Secondo elemento (posizione pari, selezionato da :nth-child)</li>
+        <li>Terzo elemento</li>
+        <li>Quarto elemento (posizione pari, selezionato da :nth-child)</li>
+        <li>Ultimo elemento della lista (:last-child)</li>
+    </ul>
+    
+    <!-- :only-child -->
+    <h3>ONLY-CHILD</h3>
+    <div>
+        <p>Questo è l'unico paragrafo dentro questo div (:only-child)</p>
+    </div>
+    
+    <hr>
+    
+    <!-- 
+    almeno cinque tra i seguenti selettori di pseudo-classe (nth-of-type, nth-last-of-type, first-of-type, last-of-type, only-of-type, empty, not, target) 
+    -->
+    <h2>nth-of-type, nth-last-of-type, first-of-type, last-of-type, only-of-type, empty, not, target</h2>
+    
+    <!-- :first-of-type e :last-of-type -->
+    <h3>FIRST-OF-TYPE E LAST-OF-TYPE</h3>
+    <div class="contenitore-tipo">
+        <p>Primo paragrafo nel contenitore (:first-of-type)</p>
+        <p>Secondo paragrafo nel contenitore</p>
+        <p>Ultimo paragrafo nel contenitore (:last-of-type)</p>
+    </div>
+    
+    <!-- :nth-of-type() -->
+    <h3>NTH-OF-TYPE</h3>
+    <div class="lista-tipo">
+        <span>Primo span</span><br>
+        <span>Secondo span (:nth-of-type(2))</span><br>
+        <span>Terzo span</span>
+    </div>
+    
+    <!-- :empty -->
+    <h3>EMPTY</h3>
+    <p class="box-vuoto"></p> <!-- Paragrafo vuoto per il test :empty -->
+    
+    <!-- :not() -->
+    <h3>NOT</h3>
+    <p class="evidenziato">Paragrafo con classe .evidenziato</p>
+    <p class="normale">Paragrafo normale senza classe .evidenziato (selezionato da :not)</p>
+    
+    <!-- :target -->
+    <h3>TARGET</h3>
+    <p><a href="#sezione-target">Clicca e guarda la sezione target (:target) ---> Al click avrà un bordo arancione e uno sfondo azzurrino</a></p>
+    <div id="sezione-target">
+        <h3>Questa è la sezione attivata col selettore :target!</h3>
+    </div>
+    
+    <!-- :nth-last-of-type() -->
+    <h3>NTH-LAST-OF-TYPE</h3>
+    <div class="lista-penultimo">
+        <p>Primo paragrafo</p>
+        <p>Secondo paragrafo (:nth-last-of-type(2) - penultimo paragrafo)</p>
+        <p>Terzo paragrafo</p>
+        <p>Quarto paragrafo (ultimo)</p>
+    </div>
+    
+    <!-- :only-of-type -->
+    <h3>ONLY-OF-TYPE</h3>
+    <div class="contenitore-unico-tipo">
+        <h4>Questo è un titolo h4</h4>
+        <p>Questo è l'unico paragrafo dentro questo div (:only-of-type)</p>
+    </div>
+    
+    <hr>
+    
+    <!-- almeno cinque tra i seguenti selettori di pseudo-classe (checked,disabled, required, optional, valid, invalid, root) -->
+    <!-- // code... -->
+    
+    <hr>
+    
+    <!-- almeno quattro selettori di pseudo-elementi (after, before, first letter, first line, selection, placeholder) -->
+    <!-- // code... -->
+</body>
+</html>

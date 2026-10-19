@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guida alla Pseudo-classe :first-child</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .box {
+            background: #f1f2f6;
+            border: 1px solid #dcdde1;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+
+        /* Regola generale: tutti i paragrafi diventano rossi */
+        p {
+            color: red;
+        }
+
+        /* Stile che andrà a personalizzare solo il primo paragrafo figlio di un div */
+        /* Seleziona i paragrafi che sono il primo figlio (in assoluto) del loro rispettivo contenitore dentro un div */
+        div p:first-child {
+            color: blue;
+            font-weight: bold;
+        }
+        
+        /* Seleziona i paragrafi che sono l'ultimo figlio (in assoluto) del loro rispettivo contenitore dentro un div */
+        div h3:last-child {
+            color: rgb(0, 255, 26);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Esempio della Pseudo-classe :first-child</h1>
+
+    <div class="box">
+        <h2>Contenitore di Test</h2>
+        
+        <!-- Questo è il PRIMO figlio del div: verrà colorato di BLU e in GRASSETTO -->
+        <p>Questo è il primo paragrafo dentro il div (è il primo figlio, quindi blu e grassetto).</p>
+        
+        <!-- Questo NON è il primo figlio (precede il paragrafo sopra): resterà ROSSO -->
+        <p>Questo è un secondo paragrafo successivo (non è il primo figlio, quindi resta rosso).</p>
+        
+        <div>
+            <!-- Quando il primo figlio è un altro, anzichè p, la regola si sposta sull'altro, non più sul p, anche con un >br> -->
+            <!-- <a href="#">Adesso il primo figlio è lui</a> -->
+            <!-- Questo è il primo figlio del div interno, discendente del div principale: BLU e GRASSETTO -->
+            <p>Questo paragrafo si trova in un div interno, ma essendo il primo figlio del suo contenitore, rispetta la regola.</p>
+
+            <p>Secondo figlio: non è blu.</p>
+
+            <h3>Penultimo figlio: non è in verde</h3>
+            <h3>Ultimo figlio: è in verde</h3>
+        </div>
+    </div>
+
+</body>
+</html>

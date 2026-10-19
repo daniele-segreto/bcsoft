@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio Avanzato: Checkbox Personalizzato</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #fdfdfd;
+            color: #333;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .box {
+            background: #f1f2f6;
+            border: 1px solid #dcdde1;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+        
+        /* 1. Nasconde il checkbox predefinito del browser */
+        input[type="checkbox"] {
+            display: none;
+        }
+        
+        /* 2. Crea un finto checkbox grafico tramite lo pseudo-elemento ::before sulla label */
+        label.checkbox::before {
+            content: "";
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background-color: grey;
+            margin-right: 10px;
+            vertical-align: middle;
+            border-radius: 3px;
+            transition: all 0.2s ease;
+            /* Altri valori di vertical-align utili: top, bottom, baseline */
+        }
+        
+        /* 3. Stile applicato quando il checkbox è spuntato (:checked) */
+        /* Intercetta la label adiacente e ne modifica lo pseudo-elemento ::before */
+        input[type="checkbox"]:checked + label.checkbox::before {
+            background-color: blue;
+            width: 25px;
+            height: 25px;
+        }
+        
+        /* Stile di comodo per la label testuale */
+        label.checkbox {
+            cursor: pointer;
+            font-size: 16px;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Personalizzazione Avanzata del Checkbox</h1>
+    
+    <div class="box">
+        <form>
+            <!-- L'input checkbox è nascosto, mentre la label gestisce l'intera interazione visiva -->
+            <input type="checkbox" id="mioCheckbox">
+            <label for="mioCheckbox" class="checkbox">Clicca qui per attivare il controllo personalizzato</label>
+        </form>
+    </div>
+    
+</body>
+</html>

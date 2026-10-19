@@ -1,0 +1,47 @@
+body {
+    background-color: rgb(186, 245, 226);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h1 {
+    color: brown;
+    text-transform: uppercase;
+}
+
+/* Selettore di discendenti */
+/* Seleziona tutti i paragrafi dentro .box-discendenti, a qualsiasi livello */
+.box-discendenti p {
+    color: #2980b9;
+    font-weight: bold;
+}
+/* SELETTORE DI FIGLI (>) */
+/* Seleziona solo i paragrafi che sono figli DIRETTI di .box-figli */
+.box-figli > p {
+    color: #54007b;
+    font-style: italic;
+    font-weight: bold;
+}
+/* SELETTORE DI FRATELLI ADIACENTI (+) */
+/* Seleziona il paragrafo che si trova SUBITO dopo un h4 */
+h4 + p {
+    color: #c0392b;
+    text-transform: uppercase;
+}
+
+/* SELETTORE GENERALE DI FRATELLI (~) */
+/* Seleziona TUTTI i paragrafi che seguono un h5 sullo stesso livello */
+h5 ~ p {
+    color: #8e44ad;
+    background-color: #f5eef8;
+    padding: 5px;
+}
+
+/* Selettore attributo */
+p[sottolineato] {
+    text-decoration: underline;
+    color: #2980b9;
+    font-weight: bold;
+}
+/* Selettore id */
+#bg-red {
+    background-color: red;
+}

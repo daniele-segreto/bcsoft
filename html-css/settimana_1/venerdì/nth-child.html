@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guida alla Pseudo-classe nth-child</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .box {
+            background: #f1f2f6;
+            border: 1px solid #dcdde1;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+
+        /* Regola generale: tutti i paragrafi partono con il colore nero */
+        p {
+            color: black;
+        }
+
+        /* Stile per il secondo paragrafo figlio di un elemento */
+        /* Seleziona specificamente il paragrafo che occupa la seconda posizione nel suo genitore */
+        div p:nth-child(2) {
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Esempio della Pseudo-classe :nth-child(2)</h1>
+
+    <div class="box">
+        <!-- Primo paragrafo: occupa la posizione 1, quindi mantiene il colore nero standard -->
+        <p>Questo è il primo paragrafo</p>
+
+        <!-- Secondo paragrafo: occupa esattamente la posizione 2, quindi diventa BLU e in GRASSETTO -->
+        <p>Questo è il secondo paragrafo</p>
+
+        <!-- Terzo paragrafo: occupa la posizione 3, quindi mantiene il colore nero standard -->
+        <p>Questo è il terzo paragrafo</p>
+
+        <!-- Quarto paragrafo: occupa la posizione 4, quindi mantiene il colore nero standard -->
+        <p>Questo è il quarto paragrafo</p>
+    </div>
+
+</body>
+</html>

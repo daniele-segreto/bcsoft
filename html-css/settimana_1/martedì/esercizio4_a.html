@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio su Ipertesti ed Elementi Multimediali</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <h1>Esercizio su Ipertesti ed Elementi Multimediali</h1>
+    
+    <!-- COLLEGAMENTI-->
+    <h2>1. Collegamenti Ipertestuali</h2>
+    
+    <ul>
+        <!-- PAGINA ESTERNA -->
+        <li>
+            <a href="https://www.w3.org" target="_blank" title="Sito ufficiale W3C">Visita il sito esterno W3C</a>
+        </li>
+        <!-- PAGINA INTERNA -->
+        <li>
+            <a href="esercizio4_b.html" title="Vai alla pagina interna">Vai alla pagina interna</a>
+        </li>
+        <!-- ANCORAGGIO -->
+        <li>
+            <a href="#oasis" title="Sezione multimediale">Vai al video degli Oasis</a>
+        </li>
+    </ul>
+    
+    <hr>
+    
+    <h2>2. Elementi Multimediali</h2>
+    
+    <!-- IMMAGINE -->
+    <div>
+        <h3>Immagine Statica</h3>
+        <img src="img/charmender.jpg" width=20% alt="Charmender">
+    </div>
+    
+    <hr>
+    
+    <!-- AUDIO -->
+    <div id="oasis">
+        <h3>Traccia Audio</h3>
+        <audio controls alt="Canzone degli Oasis">
+            <source src="audio/oasis.m4a" type="audio/mpeg">
+            Il Suo browser non supporta l'elemento audio.
+        </audio>
+    </div>
+    
+    <hr>
+    
+    <!-- VIDEO -->
+    <div>
+        <h3>Elemento Video</h3>
+        <video controls width="480" height="270" alt="Canzone degli Oasis">
+            <source src="video/oasis.mp4" type="video/mp4">
+            Il Suo browser non supporta l'elemento video.
+        </video>
+    </div>
+    
+    <hr>
+    
+    <!-- YOUTUBE -->
+    <!-- <iframe width="560" height="315" src="http://www.youtube.com/watch?v=5T6U5Fqq7w4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+    
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/5T6U5Fqq7w4?si=GkuCiL5bJO0aCXLW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    
+    <hr>
+    
+    <!-- LINK CON SCORCIATOIA -->
+    <a href="https://www.youtube.com/embed/5T6U5Fqq7w4?si=GkuCiL5bJO0aCXLW" target="_blank" title="Trova altri video su YouTube" accesskey="w">Premi "Alt + shiht + w" per guardare il video</a>
+    
+    <hr>
+    
+    <!-- I-FRAME (pagina esterna visualizzata a partire dalla sezione #Sintassi) -->
+    <iframe 
+    src="https://it.wikipedia.org/wiki/HTML#Sintassi" 
+    width="600" 
+    height="400" 
+    title="Approfondimento HTML su Wikipedia">
+</iframe>
+
+<!-- TEXTAREA A RIGHE (quadernino) -->
+<div class="messaggi-container">
+    <h3>MESSAGGIO</h3>
+    <div class="input-rows-wrapper">
+        <textarea class="messaggio-input" placeholder="Scrivi qui..."></textarea>
+        <textarea class="messaggio-input" placeholder="Scrivi qui..."></textarea>
+        <textarea class="messaggio-input" placeholder="Scrivi qui..."></textarea>
+        <textarea class="messaggio-input" placeholder="Scrivi qui..."></textarea>
+        <textarea class="messaggio-input" placeholder="Scrivi qui..."></textarea>
+    </div>
+</div>
+
+<style>
+    .messaggi-container {
+        font-family: sans-serif;
+        width: 320px;
+        padding: 15px;
+        background-color: #fff;
+    }
+    
+    .messaggi-container h3 {
+        font-size: 14px;
+        letter-spacing: 1px;
+        color: #111;
+        margin-bottom: 15px;
+    }
+    
+    .input-rows-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Stile per trasformare la textarea in una riga simile a un input pulito */
+    .messaggio-input {
+        font-family: inherit;
+        font-style: italic;
+        font-size: 14px;
+        color: #333;
+        border: none;
+        border-bottom: 1px solid #ccc; /* La linea orizzontale caratteristica */
+        outline: none;
+        background: transparent;
+        resize: none; /* Impedisce il ridimensionamento manuale che rompierebbe il layout */
+        height: 28px;
+        line-height: 20px;
+        padding: 4px 0;
+        margin-bottom: 4px;
+        overflow: hidden; /* Evita barre di scorrimento indesiderate */
+    }
+    
+    .messaggio-input::placeholder {
+        color: #aaa;
+        font-style: normal;
+    }
+    
+    /* Effetto di focus opzionale per evidenziare la riga attiva */
+    .messaggio-input:focus {
+        border-bottom: 1px solid #111;
+    }
+</style>
+</body>
+</html>

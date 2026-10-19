@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+    color: #333;
+}
+fieldset {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+legend {
+    font-weight: bold;
+    color: #0056b3;
+}
+.form-group {
+    margin-bottom: 12px;
+}
+label {
+    display: inline-block; /* Elemento in linea, per impostare le dimensioni */
+    width: 180px;          /* Larghezza fissa per allineare i campi */
+    font-weight: bold;
+}
+input[type="text"], select, textarea {
+    padding: 6px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+textarea, select {
+    vertical-align: top; /* Allineamento: bordo superiore del box col testo */
+}

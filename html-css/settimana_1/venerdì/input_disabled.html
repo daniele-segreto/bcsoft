@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio della Pseudo-classe :disabled</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .box {
+            background: #f1f2f6;
+            border: 1px solid #dcdde1;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            max-width: 400px;
+        }
+
+        /* Stile di base per i campi di input */
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Seleziona unicamente i campi di input disabilitati e ne personalizza i colori */
+        input:disabled {
+            color: white;
+            background-color: red;
+            cursor: not-allowed; /* Modifica il cursore del mouse per indicare l'in interattività */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Esempio della Pseudo-classe :disabled</h1>
+
+    <div class="box">
+        <form>
+            <!-- Campo attivo standard -->
+            <input type="text" placeholder="Nome"><br><br>
+
+            <!-- Campo attivo standard -->
+            <input type="text" placeholder="Cognome"><br><br>
+
+            <!-- Campo disabilitato: possiede l'attributo disabled, quindi si colora di ROSSO con testo BIANCO -->
+            <input type="text" value="***Codice fiscale***" disabled><br><br>
+
+            <!-- Campo attivo standard -->
+            <input type="text" placeholder="Indirizzo"><br><br>
+
+            <!-- Pulsante di invio -->
+            <input type="submit" value="Invia">
+        </form>
+    </div>
+
+</body>
+</html>

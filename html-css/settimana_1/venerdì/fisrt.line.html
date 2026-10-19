@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-elemento ::first-line</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #fdfdfd;
+            color: #333;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        /* Regola applicata esclusivamente alla prima riga di qualsiasi paragrafo */
+        p::first-line {
+            color: blue;
+            font-weight: bold;
+        }
+        
+        /* Stile del contenitore box centrato con sfondo azzurro */
+        .box {
+            width: 50%;
+            background-color: lightblue;
+            padding: 15px;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Esempio dello Pseudo-elemento ::first-line</h1>
+    
+    <div class="box">
+        <!-- Primo caso: interruzione forzata con <br>. 
+        La prima riga si ferma esattamente prima del tag di a capo. -->
+        <p>
+            Prima riga del paragrafo.<br>
+            Seconda riga del paragrafo.
+        </p>
+        
+        <br>
+        
+        <!-- Secondo caso: testo lungo che va a capo automaticamente. 
+        La formattazione blu si estende dinamicamente per tutta la prima riga fisica del blocco. -->
+        <p>
+            Prima riga del nuovo paragrafo. Prima riga del nuovo paragrafo. 
+            Prima riga del nuovo paragrafo. Prima riga. 
+            Seconda riga del nuovo paragrafo.
+        </p>
+    </div>
+    
+</body>
+</html>

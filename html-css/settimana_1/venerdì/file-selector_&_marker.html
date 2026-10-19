@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio di ::file-selector-button e ::marker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        h2 {
+            border-bottom: 2px solid black;
+            padding-bottom: 8px;
+            color: blue;
+        }
+
+        .box {
+            background: #f1f2f6;
+            border: 1px solid #dcdde1;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            max-width: 500px;
+        }
+
+        /* 1. STILIZZAZIONE DEL PULSANTE DI CARICAMENTO FILE */
+        input[type="file"]::file-selector-button {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s ease;
+        }
+
+        /* Effetto hover sul pulsante del file input */
+        input[type="file"]::file-selector-button:hover {
+            background-color: blue;
+        }
+
+        /* 2. STILIZZAZIONE DEI MARCATORI DI LISTA */
+        ul li::marker {
+            color: red;
+            font-size: 1.2em;
+        }
+
+        ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>Esempio di ::file-selector-button</h2>
+        <p>Seleziona un file:</p>
+        <!-- Input file nativo il cui pulsante interno viene stilizzato tramite pseudo-elemento -->
+        <input type="file">
+    </div>
+
+    <div class="box">
+        <h2>Esempio di ::marker</h2>
+        <p>Ecco una lista:</p>
+        <ul>
+            <li>Primo elemento</li>
+            <li>Secondo elemento</li>
+            <li>Terzo elemento</li>
+        </ul>
+    </div>
+
+</body>
+</html>

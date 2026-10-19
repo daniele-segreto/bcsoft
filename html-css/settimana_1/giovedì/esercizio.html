@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .primo-container {
+            background-color: azure;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    
+    <div class="primo-container">
+        <h3 style="background-color: rgb(247, 173, 144);">Lorem, ipsum</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit expedita, tempora molestiae ipsa modi quod qui a. Repellat, maxime eaque.</p>
+        
+        <h3 style="background-color: rgb(247, 173, 144);">Lorem, ipsum</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit expedita, tempora molestiae ipsa modi quod qui a. Repellat, maxime eaque.</p>
+    </div>
+    
+    <hr>
+    
+    <h2>Selettori</h2>
+    
+    <!-- SELETTORE DI DISCENDENTI -->
+    <div class="box box-discendenti">
+        <h3>1. Selettore di Discendenti</h3>
+        <p>Questo paragrafo è figlio diretto e diventa blu.</p>
+        <div>
+            <p>Questo paragrafo è un nipote (dentro un div interno), ma diventa blu lo stesso perché è un discendente!</p>
+        </div>
+        <p>Questo sta fuori, e diventa blu anche lui.</p>
+    </div>
+
+    <hr>
+    
+    <!-- SELETTORE DI FIGLI -->
+    <div class="box box-figli">
+        <h3>2. Selettore di Figli (>)</h3>
+        <p>Questo paragrafo è figlio diretto e diventa viola corsivo bold.</p>
+        <div>
+            <p>Questo paragrafo è dentro un div interno: NON è un figlio diretto, quindi ignora lo stile viola.</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- SELETTORE DI FRATELLI ADIACENTI -->
+    <div class="box">
+        <h3>3. Selettore di Fratelli Adiacenti (+)</h3>
+        <h4>Questo è un H3</h4>
+        <p>Questo paragrafo viene SUBITO dopo h5: diventa rosso, e in maiuscolo.</p>
+        <p>Questo secondo paragrafo viene dopo, ma non è adiacente all'H3, quindi resta normale.</p>
+        <p>Questo secondo paragrafo viene dopo, ma non è adiacente all'H3, quindi resta normale.</p>
+    </div>
+
+    <hr>
+
+    <!-- SELETTORE GENERALE DI FRATELLI -->
+    <div class="box">
+        <h3>4. Selettore Generale di Fratelli (~)</h3>
+        <h5>Questo è un H4</h5>
+        <p>Primo paragrafo successivo: viene evidenziato in viola.</p>
+        <div>Div: non viene evidenziato.</div>
+        <h6>Lui no.</h6>
+        <p>Secondo paragrafo successivo: viene evidenziato in viola anche lui.</p>
+        <p>Anche lui.</p>
+    </div>
+    
+    <hr>
+    
+    <h2>Attributo</h2>
+    <!-- Esempio paragrafo con attributo -->
+    <p sottolineato>Questo paragrafo è sottolineato e stilizzato grazie al selettore di attributo</p>
+    <p id="bg-red">Questo paragrafo è in rosso grazie all'utilizzo dell'id)</p>
+</body>
+</html>

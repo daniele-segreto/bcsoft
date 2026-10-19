@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-elementi ::after</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .box {
+            background: #f1f2f6;
+            border: 1px solid #dcdde1;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+
+        /* Regola applicata automaticamente alla fine di ogni tag <p> tramite lo pseudo-elemento ::after */
+        p::after {
+            content: " *Qui è segnalata la fine del paragrafo* ";
+            font-style: italic;
+            color: red;
+        }
+
+        .not-paragraph {
+            color: #666;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Esempio dello Pseudo-elemento ::after</h1>
+
+    <div class="box">
+        <!-- Primo paragrafo: riceve automaticamente il testo aggiuntivo in fondo -->
+        <p>Primo paragrafo di testo.</p>
+
+        <!-- Secondo paragrafo: riceve automaticamente il testo aggiuntivo in fondo -->
+        <p>Secondo paragrafo di testo.</p>
+
+        <!-- Elemento differente: non essendo un paragrafo <p>, viene ignorato dalla regola ::after -->
+        <div class="not-paragraph">Testo non presente in paragrafo</div>
+    </div>
+
+</body>
+</html>

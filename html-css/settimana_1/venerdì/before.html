@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-elementi :before e Counter Reset Avanzato</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #fdfdfd;
+            color: #333;
+            /* Inizializza il contatore 'paragraph' impostandolo a 4. 
+               Il primo incremento lo porterà a 5, utile se si desidera iniziare la numerazione da 5. */
+            counter-reset: paragraph 4; /* <----------------- */
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .box {
+            background: #f1f2f6;
+            border: 1px solid #dcdde1;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+
+        p {
+            margin: 0 0 10px 0; /* Margine azzerato come nell'esempio originale */
+        }
+
+        /* Regola applicata a tutti i paragrafi tramite lo pseudo-elemento ::before */
+        p::before {
+            /* Incrementa il contatore 'paragraph' ad ogni occorrenza di un tag <p> */
+            counter-increment: paragraph;
+            /* Genera dinamicamente il numero aggiornato del contatore */
+            content: counter(paragraph) "° paragrafo: ";
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .not-paragraph {
+            color: #666;
+            font-style: italic;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Esempio di Counter Reset Personalizzato</h1>
+
+    <div class="box">
+        <!-- Partendo da counter-reset: paragraph 4, il primo paragrafo partirà dal 5° -->
+        <p>Primo paragrafo.</p>
+        <p>Secondo paragrafo.</p>
+        <p>Terzo paragrafo.</p>
+
+        <!-- Elemento differente: non altera la numerazione dei paragrafi -->
+        <div class="not-paragraph">Testo non paragrafo</div>
+
+        <!-- Quarto paragrafo: prosegue correttamente la sequenza -->
+        <p>Quarto paragrafo.</p>
+    </div>
+
+</body>
+</html>

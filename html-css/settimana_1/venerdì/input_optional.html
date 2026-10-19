@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio della Pseudo-classe :optional</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #fdfdfd;
+        }
+
+        /* Contenitore principale stilizzato come nell'immagine */
+        .container {
+            padding: 30px;
+            background-color: MediumTurquoise;
+            border-radius: 20px;
+            max-width: 450px;
+        }
+
+        form label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #1a252f;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        /* Seleziona esclusivamente gli input facoltativi (privi dell'attributo required) */
+        input:optional {
+            border: 2px solid red;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 8px 16px;
+            background-color: #f8f9fa;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <form>
+            <!-- Campo obbligatorio: viene ignorato da :optional -->
+            <label for="name">Nome e Cognome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <!-- Campo obbligatorio: viene ignorato da :optional -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- Campo opzionale: riceve il BORDO ROSSO da input:optional -->
+            <label for="age">Età:</label>
+            <input type="number" id="age" name="age">
+
+            <!-- Textarea opzionale -->
+            <label for="comment">Commento:</label>
+            <textarea id="comment" name="comment" rows="3"></textarea>
+
+            <button type="submit">Invia</button>
+        </form>
+    </div>
+
+</body>
+</html>

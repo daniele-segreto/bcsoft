@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-classe :valid e :invalid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .box {
+            background: #f1f2f6;
+            border: 1px solid #dcdde1;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            max-width: 400px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        /* Seleziona i campi i cui dati inseriti NON sono validi (es. email errata o campo vuoto obbligatorio) */
+        input:invalid {
+            border: 5px solid red;
+        }
+
+        /* Seleziona i campi i cui dati inseriti RISPETTANO i vincoli di validazione */
+        input:valid {
+            border: 5px solid green;
+        }
+
+        /* Stile personalizzato per il pulsante di invio */
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            width: auto;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #219653;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Esempio delle Pseudo-classi :valid e :invalid</h1>
+
+    <div class="box">
+        <form>
+            <label for="email">Email:</label>
+            <!-- Un campo email obbligatorio: finché non viene inserita un'email valida, 
+                sarà considerato :invalid (bordo rosso). Diventerà :valid (bordo verde) appena corretto. -->
+            <input type="email" id="email" name="email" placeholder="nome@esempio.com" required>
+
+            <input type="submit" value="Invia">
+        </form>
+    </div>
+
+</body>
+</html>
