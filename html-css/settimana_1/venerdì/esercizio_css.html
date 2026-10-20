@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/esercizio_css.css">
 </head>
 <body>
+    
     <!--
     almeno cinque tra i seguenti selettori di pseudo-classe (hover, active, focus, first-child, last-child, nth-child, nth-last-child, only-child)
     -->
@@ -40,7 +41,9 @@
         <p>Questo è l'unico paragrafo dentro questo div (:only-child)</p>
     </div>
     
+    
     <hr>
+    
     
     <!-- 
     almeno cinque tra i seguenti selettori di pseudo-classe (nth-of-type, nth-last-of-type, first-of-type, last-of-type, only-of-type, empty, not, target) 
@@ -83,8 +86,8 @@
     <h3>NTH-LAST-OF-TYPE</h3>
     <div class="lista-penultimo">
         <p>Primo paragrafo</p>
-        <p>Secondo paragrafo (:nth-last-of-type(2) - penultimo paragrafo)</p>
-        <p>Terzo paragrafo</p>
+        <p>Secondo paragrafo</p>
+        <p>Terzo paragrafo (:nth-last-of-type(2) - penultimo paragrafo)</p>
         <p>Quarto paragrafo (ultimo)</p>
     </div>
     
@@ -95,14 +98,82 @@
         <p>Questo è l'unico paragrafo dentro questo div (:only-of-type)</p>
     </div>
     
-    <hr>
-    
-    <!-- almeno cinque tra i seguenti selettori di pseudo-classe (checked,disabled, required, optional, valid, invalid, root) -->
-    <!-- // code... -->
     
     <hr>
     
-    <!-- almeno quattro selettori di pseudo-elementi (after, before, first letter, first line, selection, placeholder) -->
-    <!-- // code... -->
+    
+    <!-- 
+    almeno cinque tra i seguenti selettori di pseudo-classe (checked, disabled, required, optional, valid, invalid, root) 
+    -->
+    <h2>checked, disabled, required, optional, valid, invalid, root</h2>
+    
+    <!-- :root -->
+    <h3>ROOT</h3>
+    <p class="test-root">Questo paragrafo eredita una variabile CSS definita in :root.</p>
+    
+    <!-- :required -->
+    <h3>REQUIRED</h3>
+    <p>
+        <label for="campo-obbligatorio">Campo Obbligatorio (:required):</label><br>
+        <input type="text" id="campo-obbligatorio" required placeholder="Questo campo è obbligatorio">
+    </p>
+    
+    <!-- :optional -->
+    <h3>OPTIONAL</h3>
+    <p>
+        <label for="campo-opzionale">Campo Opzionale (:optional):</label><br>
+        <input type="text" id="campo-opzionale" placeholder="Questo campo è facoltativo">
+    </p>
+    
+    <!-- :valid e :invalid -->
+    <h3>VALID E INVALID</h3>
+    <p>
+        <label for="campo-email">Email Validazione (:valid / :invalid):</label><br>
+        <input type="email" id="campo-email" required placeholder="Inserisci un'email valida...">
+    </p>
+    
+    <!-- :disabled -->
+    <h3>DISABLED</h3>
+    <p>
+        <label for="campo-disabilitato">Campo Disabilitato (:disabled):</label><br>
+        <input type="text" id="campo-disabilitato" disabled value="Non modificabile">
+    </p>
+    
+    <!-- :checked -->
+    <h3>CHECKED</h3>
+    <p>
+        <label>
+            <input type="checkbox" name="accetto"> Spunta la casella per applicare lo stile (:checked)
+        </label>
+    </p>
+    
+    
+    <hr>
+    
+    
+    <!-- 
+    almeno quattro selettori di pseudo-elementi (after, before, first letter, first line, selection, placeholder) 
+    -->
+    <h2>after, before, first letter, first line, selection, placeholder</h2>
+    
+    <!-- :before e :after -->
+    <h3>BEFORE E AFTER</h3>
+    <p class="testo-decorato">Questo paragrafo riceverà elementi decorativi aggiuntivi tramite i pseudo-elementi.</p>
+    
+    <!-- ::first-letter e ::first-line -->
+    <h3>FIRST-LETTER E FIRST-LINE</h3>
+    <p class="testo-lettera">La prima lettera e la prima riga di questo blocco di testo riceveranno una formattazione tipografica speciale, curata nei minimi dettagli per evidenziare la potenza di questi selettori CSS.</p>
+    
+    <!-- ::placeholder -->
+    <h3>PLACEHOLDER</h3>
+    <p>
+        <label for="campo-placeholder">Testo segnaposto personalizzato:</label><br>
+        <input type="text" id="campo-placeholder" placeholder="Testa il placeholder...">
+    </p>
+    
+    <!-- ::selection -->
+    <h3>SELECTION</h3>
+    <p class="testo-selezione">Provveda a evidenziare con il mouse questo specifico testo per osservare la personalizzazione dei colori applicata in fase di selezione.</p>
+    
 </body>
 </html>

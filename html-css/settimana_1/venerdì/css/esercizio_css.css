@@ -3,6 +3,11 @@ h3 {
     font-weight: bold;
     font-size: 20px;
 }
+h2 {
+    text-decoration: underline;
+    background-color: rgb(13, 174, 131);
+}
+
 
 /* ==========================================
     PRIMA SEZIONE: INTERAZIONE E STRUTTURA FIGLIA
@@ -29,7 +34,7 @@ ul li:first-child {
     font-weight: bold;
 }
 
-/* :nth-child() - Seleziona gli elementi in base alla posizione (es. pari) */
+/* :nth-child() - Seleziona gli elementi in base alla posizione (es. pari / dispari = odd) */
 ul li:nth-child(even) {
     background-color: rgb(134, 245, 245);
 }
@@ -44,6 +49,7 @@ div p:only-child {
     color: orangered;
     font-weight: bold;
 }
+
 
 /* ==========================================
     SECONDA SEZIONE: PSEUDO-CLASSI DI TIPO, STATO E NEGAZIONE
@@ -93,4 +99,101 @@ p:not(.evidenziato) {
 .contenitore-unico-tipo p:only-of-type {
     color: blue;
     font-weight: bold;
+}
+
+
+/* ==========================================
+    TERZA SEZIONE: MODULI, STATI E RADICE
+   ========================================== */
+
+/* :root - Definizione di variabili globali nell'elemento radice */
+:root {
+    --colore-prova: darkcyan;
+}
+
+/* Utilizzo della variabile definita in :root */
+.test-root {
+    color: var(--colore-prova);
+    font-weight: bold;
+}
+
+/* :required - Seleziona i campi di input obbligatori */
+input:required {
+    border: 2px solid red;
+}
+
+/* :optional - Seleziona i campi di input facoltativi */
+input:optional {
+    border: 2px dashed purple;
+}
+
+/* :valid - Seleziona i campi con valore valido (es. email corretta) */
+input:valid {
+    background-color: lightgreen;
+}
+
+/* :invalid - Seleziona i campi con valore non valido (es. email incompleta/errata) */
+input:invalid {
+    background-color: lightpink;
+}
+
+/* :disabled - Seleziona gli elementi disabilitati */
+input:disabled {
+    background-color: lightgray;
+    color: blue;
+    cursor: not-allowed; /* simbolo: divieto di accesso */
+}
+
+/* :checked - Seleziona gli elementi checkbox o radio quando sono spuntati */
+input[type="checkbox"]:checked {
+    outline: 3px solid green;
+}
+
+
+/* ==========================================
+    QUARTA SEZIONE: PSEUDO-ELEMENTI
+   ========================================== */
+
+/* ::before - Inserisce contenuto prima dell'elemento */
+.testo-decorato::before {
+    content: "★ ";
+    color: orange;
+    font-weight: bold;
+}
+
+/* ::after - Inserisce contenuto dopo l'elemento */
+.testo-decorato::after {
+    content: " (Verificato)";
+    color: green;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+/* ::first-letter - Modifica lo stile della prima lettera del blocco */
+.testo-lettera::first-letter {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: darkred;
+    float: left;
+    margin-right: 8px;
+    line-height: 1;
+}
+
+/* ::first-line - Modifica lo stile della prima riga del blocco di testo */
+.testo-lettera::first-line {
+    font-weight: bold;
+    color: darkblue;
+}
+
+/* ::placeholder - Personalizza lo stile del testo segnaposto nei campi di input */
+input::placeholder {
+    color: rgb(19, 72, 44);
+    font-style: italic;
+}
+
+/* ::selection - Modifica l'aspetto grafico del testo quando viene evidenziato dall'utente */
+.testo-selezione::selection {
+    background-color: gold;
+    color: rgb(61, 3, 168);
 }
