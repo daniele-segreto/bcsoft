@@ -1,0 +1,153 @@
+/* ==========================================
+STILI GENERALI E TITOLI
+========================================== */
+
+h2 {
+    text-decoration: underline;
+    background-color: rgb(13, 174, 131);
+    color: white;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #2c3e50;
+    margin-top: 30px;
+}
+
+h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #555;
+    margin-top: 20px;
+}
+
+
+/* ==========================================
+1. WIDTH, HEIGHT, MIN/MAX E OVERFLOW
+========================================== */
+
+.box-dimensioni {
+    width: 100%; /* RICHIESTO */
+    max-width: 500px; /* RICHIESTO */ /* Larghezza massima */
+    min-width: 250px; /* RICHIESTO */ /* Larghezza minima */
+    height: 100px; /* RICHIESTO */ /* Altezza fissa per testare overflow */
+    min-height: 80px; /* RICHIESTO */ /* Altezza minima */
+    overflow: auto; /* RICHIESTO */ /* Gestione della tracimazione del contenuto */
+    background-color: #eef2f5;
+    border: 1px solid #b0bec5;
+    padding: 10px;
+}
+
+
+/* ==========================================
+2. PADDING SINGOLI E ABBREVIATO (SHORTHAND)
+========================================== */
+
+/* Singole proprietà di padding */
+.box-padding-singoli {
+    padding-top: 20px; /* RICHIESTO */
+    padding-bottom: 15px; /* RICHIESTO */
+    padding-left: 30px; /* RICHIESTO */
+    padding-right: 10px; /* RICHIESTO */
+    background-color: #e8f5e9;
+    border: 1px solid #81c784;
+    margin-bottom: 15px;
+}
+
+/* Sintassi abbreviata: top/bottom left/right oppure top right bottom left */
+.box-padding-shorthand {
+    padding: 15px 25px; /* RICHIESTO */ /* Padding abbreviato */
+    background-color: #e1f5fe;
+    border: 1px solid #64b5f6;
+}
+
+
+/* ==========================================
+3. BORDI, BORDER-RADIUS, OUTLINE E BORDER-IMAGE
+========================================== */
+
+/* Bordi con singole proprietà, border-radius e outline */
+.box-bordo-base {
+    border-width: 3px; /* RICHIESTO */ /* Larghezza bordo */
+    border-style: solid; /* RICHIESTO */ /* Stile bordo */
+    border-color: #8e44ad;
+    border-radius: 12px;     /* Bordi arrotondati */
+    outline: 2px dashed #e67e22; /* RICHIESTO */ /* Contorno esterno al bordo senza intaccare il Box Model */
+    outline-offset: 4px;
+    padding: 15px;
+    margin-bottom: 25px;
+    background-color: #f4ecf7;
+}
+
+/* Border-Image tramite Gradiente Lineare */
+.box-border-image-gradiente {
+    border: 15px solid transparent; /* RICHIESTO (con gradiente) */ /* Bordo (per creare l'ampiezza del bordo e far funzionare linear-gradient | transparent: per rendere il bordo più pulito e sicuro nel caso in cui un browser non dovesse supportare la proprietà border-image */
+    border-image: linear-gradient(to right, #3498db, #2ecc71, #e74c3c) 1; /* RICHIESTO (con border) */
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+/* Border-Image tramite URL Immagine */
+.box-border-image-url {
+    border: 15px solid transparent; /* RICHIESTO (con immagine) */
+    /* 
+        - url(...): Carica il pattern a mosaico.
+        - 30%: Taglia i bordi dell'immagine sorgente al 30% della sua grandezza.
+        - round: Ridimensiona leggermente le tessere per farle entrare intere, senza tagliarle a metà.
+    */
+    border-image: url("../img/mosaic.webp") 30% round; /* RICHIESTO (con border) */
+    padding: 10px 25px;
+    background-clip: padding-box; /* Impedisce allo sfondo del box di coprire la cornice */
+}
+
+
+/* ==========================================
+4. MARGIN, MARGINI NEGATIVI E MARGIN COLLAPSING
+========================================== */
+
+/* Singole proprietà di margine e sintassi abbreviata */
+.box-margine-singolo {
+    margin-top: 20px; /* RICHIESTO */
+    margin-right: auto; /* RICHIESTO */
+    margin-bottom: 10px; /* RICHIESTO */
+    margin-left: 0; /* RICHIESTO */
+    padding: 15px;
+    background-color: #fff3e0;
+    border: 1px solid #ffb74d;
+}
+
+/* Margine negativo per sovrapposizione */
+.box-margine-negativo {
+    margin-top: -20px; /* RICHIESTO */ /* Sposta l'elemento verso l'alto sovrapponendolo */
+    margin-left: 30px;
+    padding: 15px;
+    background-color: #ffebee;
+    border: 1px solid #e57373;
+    opacity: 0.95;
+}
+
+/* Dimostrazione del Margin Collapsing */
+.contenitore-collapsing {
+    background-color: #f5f5f5;
+    padding: 5px;
+    border: 1px dashed #cccccc;
+}
+
+/* Box Superiore */
+.box-collapse-superiore {
+    margin-bottom: 40px; /* Margine inferiore di 40px */
+    padding: 10px;
+    background-color: #d1c4e9;
+}
+
+/* La distanza effettiva tra i due box sarà di 40px e non 70px a causa del collapsing (i margini non vengono sommati, si fa riferimento al margine più grande tra i 2). */
+
+/* Collaps inferiore */
+.box-collapse-inferiore {
+    margin-top: 30px; /* Margine superiore di 30px */
+    padding: 10px;
+    background-color: #c8e6c9;
+}

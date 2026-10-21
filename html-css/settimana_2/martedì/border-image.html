@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border Image - Confronto Completo Modalità</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        /* Stile base comune per tutti i box */
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 20px solid;
+            padding: 10px;
+            background-color: #ffffff;
+            box-sizing: border-box;
+            font-weight: bold;
+        }
+
+        /* 1. ROUND: L'immagine viene ridimensionata per adattarsi un numero intero di volte */
+        .round {
+            border-image: url('https://tse2.mm.bing.net/th/id/OIP.1WuN5xSTGVbEoQrklLXaqwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3') 40 round;
+        }
+
+        /* 2. STRETCH: L'immagine viene allungata/stirata lungo l'intero lato */
+        .stretch {
+            border-image: url('https://tse2.mm.bing.net/th/id/OIP.1WuN5xSTGVbEoQrklLXaqwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3') 40 stretch;
+        }
+
+        /* 3. REPEAT: L'immagine viene ripetuta continuamente (può essere tagliata agli estremi) */
+        .repeat {
+            border-image: url('https://tse2.mm.bing.net/th/id/OIP.1WuN5xSTGVbEoQrklLXaqwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3') 40 repeat;
+        }
+
+        /* 4. SPACE: L'immagine viene ripetuta e distribuita con spaziature uniformi */
+        .space {
+            border-image: url('https://tse2.mm.bing.net/th/id/OIP.1WuN5xSTGVbEoQrklLXaqwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3') 40 space;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box round">
+        Contenuto del box (round)
+    </div>
+
+    <div class="box stretch">
+        Contenuto del box (stretch)
+    </div>
+
+    <div class="box repeat">
+        Contenuto del box (repeat)
+    </div>
+
+    <div class="box space">
+        Contenuto del box (space)
+    </div>
+
+</body>
+</html>

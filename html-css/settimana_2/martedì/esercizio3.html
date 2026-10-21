@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio sul Box Model</title>
+    <link rel="stylesheet" href="css/esercizio3.css">
+</head>
+<body>
+    
+    <h2>ESERCIZIO SUL BOX MODEL</h2>
+    
+    <!-- 1. Dimensioni, Max/Min Width/Height e Overflow -->
+    <h3>DIMENSIONI, LIMITI E OVERFLOW</h3>
+    <div class="box-dimensioni">
+        <p>Questo contenitore possiede una larghezza del 100%, una larghezza massima (max-width: 500px), un'altezza fissa e un'altezza minima. Essendo il testo contenuto molto lungo per lo spazio a disposizione, il contenuto in eccesso genera una barra di scorrimento grazie alla proprietà overflow: auto.
+        
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis distinctio autem odit nulla quidem illo dolor vero neque reprehenderit? Incidunt facilis sunt beatae fugiat deleniti ipsam voluptatem aliquam facere, vel commodi laboriosam quaerat at consequuntur magni amet. Rerum optio, illo fugiat iusto laborum et quod eos perferendis ipsa dolore? Debitis.
+        </p>
+    </div>
+    
+    <!-- 2. Padding Singoli e Abbreviato -->
+    <h3>PADDING SINGOLI E ABBREVIATO</h3>
+    <div class="box-padding-singoli">
+        <p>Box con padding impostato tramite le singole proprietà (top, right, bottom, left).</p>
+    </div>
+    <div class="box-padding-shorthand">
+        <p>Box con padding impostato tramite la sintassi abbreviata (shorthand).</p>
+    </div>
+    
+    <!-- 3. Bordi, Border-Radius, Outline e Border-Image -->
+    <h3>BORDI, RADIUS, OUTLINE E BORDER-IMAGE</h3>
+    <div class="box-bordo-base">
+        <p>Box con border-width, border-style, border-radius e outline espressi in modo distinto.</p>
+    </div>
+    <div class="box-border-image-gradiente">
+        <p>Box con border-image realizzato tramite gradiente lineare.</p>
+    </div>
+    <div class="box-border-image-url">
+        <p>Box con border-image applicato da sorgente immagine esterna.</p>
+    </div>
+    
+    <!-- 4. Margin (Singoli, Shorthand, Negativi) e Margin Collapsing -->
+    <h3>MARGIN E MARGIN COLLAPSING</h3>
+    <div class="box-margine-singolo">
+        <p>Box con margini definiti singolarmente (margin-top, margin-right, ecc.).</p>
+    </div>
+    <div class="box-margine-negativo">
+        <p>Box sovrapposto verso l'alto tramite margine negativo (margin-top: -20px).</p>
+    </div>
+    
+    <h4>Dimostrazione Margin Collapsing:</h4>
+    <div class="contenitore-collapsing">
+        <div class="box-collapse-superiore">
+            <p>Box Superiore (margin-bottom: 40px)</p>
+        </div>
+        <div class="box-collapse-inferiore">
+            <p>Box Inferiore (margin-top: 30px) - La distanza effettiva tra i due box sarà di 40px e non 70px a causa del collapsing.</p>
+        </div>
+    </div>
+    
+</body>
+</html>

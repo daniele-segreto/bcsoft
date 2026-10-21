@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proprietà Logiche: padding-inline</title>
+    <style>
+        /* Stili generali applicati a tutti i div */
+        div {
+            border: 3px solid darkgreen;
+            box-sizing: border-box;
+            background-color: lightgreen;
+        }
+
+        /* Stili specifici per la classe .inline */
+        div.inline {
+            margin-bottom: 40px;
+            
+            /* Imposta il padding sui lati dell'asse inline (sinistra e destra) */
+            padding-inline: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Primo div di confronto con gli stili base -->
+    <div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tellus dolor, 
+        elementum nec pellentesque sit amet, lobortis id enim. In vitae leo at massa 
+        suscipit dapibus id ac justo.
+    </div>
+
+    <br>
+
+    <!-- Secondo div con classe .inline e padding-inline applicato -->
+    <div class="inline">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tellus dolor, 
+        elementum nec pellentesque sit amet, lobortis id enim. In vitae leo at massa 
+        suscipit dapibus id ac justo.
+    </div>
+
+</body>
+</html>

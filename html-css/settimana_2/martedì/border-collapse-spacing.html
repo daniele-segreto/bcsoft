@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border Spacing e Collapse</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 40px;
+        }
+
+        /* Stile base applicato a tutte le tabelle */
+        table {
+            width: 300px;
+            margin-bottom: 40px;
+            /* Valori possibili: collapse oppure separate */
+            border-collapse: collapse;
+        }
+
+        /* Stile comune per le celle */
+        td {
+            padding: 5px;
+            border: 2px solid red;
+            text-align: left;
+        }
+
+        /* Classe specifica per la tabella con bordi separati e spaziatura */
+        .spazio {
+            /* Spaziatura personalizzata tra le celle */
+            border-spacing: 30px;
+            /* Mantiene i bordi delle celle distinti e separati */
+            border-collapse: separate;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Prima tabella: bordi fusi (collapse) -->
+    <table>
+        <tr>
+            <td>Cella 1</td>
+            <td>Cella 2</td>
+            <td>Cella 3</td>
+        </tr>
+        <tr>
+            <td>Cella 4</td>
+            <td>Cella 5</td>
+            <td>Cella 6</td>
+        </tr>
+    </table>
+
+    <!-- Seconda tabella: bordi separati con spaziatura di 30px -->
+    <table class="spazio">
+        <tr>
+            <td>Cella 1</td>
+            <td>Cella 2</td>
+            <td>Cella 3</td>
+        </tr>
+        <tr>
+            <td>Cella 4</td>
+            <td>Cella 5</td>
+            <td>Cella 6</td>
+        </tr>
+    </table>
+
+</body>
+</html>

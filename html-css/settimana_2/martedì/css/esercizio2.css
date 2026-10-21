@@ -1,0 +1,91 @@
+/* ==========================================
+    1. FORMATI DI COLORE ED OPACITY
+   ========================================== */
+
+/* Formato 1: Nome colore diretto */
+.box-colori {
+    background-color: lightgray;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Formato 2: Esadecimale (HEX) */
+.testo-hex {
+    color: #198754;
+    font-weight: bold;
+}
+
+/* Formato 3: RGB */
+.testo-rgb {
+    color: rgb(13, 110, 253);
+    font-weight: bold;
+}
+
+/* Formato 4: HSL */
+.testo-hsl {
+    color: hsl(280, 100%, 40%);
+    font-weight: bold;
+}
+
+/* Opacity: modifica la trasparenza dell'intero elemento */
+.testo-opaco {
+    color: black;
+    opacity: 0.5;
+    font-weight: bold;
+}
+
+
+/* ==========================================
+    2. BACKGROUND COLOR E BACKGROUND IMAGE (GRADIENTE)
+   ========================================== */
+
+.box-gradiente {
+    /* background-color: Colore di sfondo base di fallback */
+    background: #36c275;
+    /* background-image con gradiente circolare */
+    background-image: radial-gradient(circle, red, yellow, green);
+    padding: 30px;
+    text-align: center;
+}
+
+.box-immagine {
+    height: 380px;
+    padding: 20px;
+    background-image: url('../img/bg.jpg');
+
+    /* background-repeat: evita che l'immagine si ripeta a tessera */
+    background-repeat: no-repeat;
+
+    /* background-position: centra l'immagine all'interno del box */
+    background-position: center center;
+
+    /* background-size: adatta l'immagine per coprire l'intero contenitore */
+    background-size: cover;
+
+    /* background-attachment: mantiene lo sfondo fisso durante lo scorrimento */
+    background-attachment: fixed;
+}
+
+
+/* ==========================================
+    4. BACKGROUND BLEND MODE
+   ========================================== */
+
+/* background-blend-mode: miscela il colore di sfondo con l'immagine di sfondo */
+.effetto-blend {
+    height: 200px;
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+
+    /* Colore di fondo da miscelare */
+    background-color: rgba(0, 255, 21, 0.7);
+
+    /* Immagine di fondo */
+    background-image: url('../img/bg2.jpg');
+
+    /* Modalità di miscelazione tra background-color e background-image */
+    background-blend-mode: multiply;
+}
+
+/* Mancano: background-clip e background-origin */

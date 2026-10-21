@@ -1,0 +1,43 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+/* 1. font-family applicato alla classe */
+.testo-famiglia {
+    font-family: "Google Sans", sans-serif; /* Importato da Google Font */
+    font-size: 22px;
+}
+
+/* 2. font-weight e font-style */
+.testo-stile {
+    font-weight: 700; /* Grassetto */
+    font-style: italic; /* Corsivo */
+}
+
+/* 3. line-height e text-align */
+.testo-linea {
+    line-height: 2.5; /* Interlinea */
+    text-align: justify; /* Allineamento giustificato */
+}
+
+/* 4. text-indent e text-decoration */
+.testo-rientro {
+    text-indent: 50px; /* Rientro prima riga */
+    text-decoration: underline #0b5ed7; /* Decorazione sottolineata */
+}
+
+/* 5. text-transform e letter-spacing */
+.testo-trasforma {
+    text-transform: uppercase; /* Tutto maiuscolo */
+    letter-spacing: 10px; /* Spaziatura tra i caratteri */
+}
+
+/* 6. word-spacing e text-shadow */
+.testo-ombra {
+    word-spacing: 6px; /* Spaziatura tra le parole */
+    text-shadow: 2px 8px 10px rgba(0, 0, 0, 0.7); /* Ombra del testo */
+    font-size: 50px;
+}
+
+/* Mancano: font-variant e font */

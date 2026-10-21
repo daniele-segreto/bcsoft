@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio Overflow</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 40px;
+        }
+        
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: lightpink;
+            border: 3px solid black;
+            margin: 20px;
+            
+            /* 
+            Gestione dello straripamento del contenuto:
+            'auto' mostra la barra di scorrimento solo quando il testo supera le dimensioni del box.
+            */
+            overflow: auto;
+        }
+        
+        /* 
+        Valori possibili per la proprietà overflow:
+        - visible: valore predefinito, il contenuto straripa all'esterno del box.
+        - hidden: il contenuto in eccesso viene tagliato e nascosto.
+        - scroll: le barre di scorrimento sono sempre visibili.
+        - auto: le barre di scorrimento compaiono solo se necessarie.
+        */
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tellus dolor, 
+        elementum nec pellentesque sit amet, lobortis id enim. In vitae leo at massa 
+        suscipit dapibus id ac justo. Suspendisse laoreet enim ac mattis egestas. 
+        Suspendisse non ultricies lacus. Nunc quis ligula condimentum, viverra ex eget, 
+        euismod neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
+        posuere cubilia curae; Maecenas est dui, viverra ac malesuada ac, facilisis ac dui. 
+        Donec semper turpis nec rhoncus tempor. Duis ultricies est mauris, et hendrerit 
+        ante luctus id. Fusce ac dolor et sem condimentum.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate nisi provident repudiandae deleniti velit, amet dolorum incidunt rem sint voluptates maiores quos laborum. Architecto, voluptatum necessitatibus fugiat voluptas laborum cumque sunt facilis veritatis voluptate reprehenderit, consequuntur ullam natus autem, doloribus sint omnis libero. Nisi ullam eaque, perspiciatis doloremque non a corporis, explicabo, rerum exercitationem fugiat delectus nobis quia blanditiis in! Beatae odit tempore eaque asperiores ut doloremque, excepturi labore error iure, commodi earum omnis. Fugiat tempore quod sit incidunt ipsa. Distinctio perferendis, fugiat aspernatur ex, nemo officia cum numquam ullam itaque molestias sunt nobis amet cumque maxime dolorum culpa quisquam.
+    </div>
+    
+</body>
+</html>

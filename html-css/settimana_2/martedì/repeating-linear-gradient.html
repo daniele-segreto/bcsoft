@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border Image - Gradienti e Gradienti Ripetuti</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .sezione {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        /* Stile base comune per i box con gradiente */
+        .box-gradient {
+            width: 400px;
+            height: 200px;
+            border-width: 10px;
+            border-style: solid;
+            padding: 15px;
+            background-color: white;
+            box-sizing: border-box;
+            font-weight: bold;
+        }
+        
+        /* 1. Gradiente lineare standard */
+        .gradient-box {
+            border-image: linear-gradient(to left, yellow, orange) 1;
+        }
+        
+        /* 2. Gradiente lineare ripetuto */
+        .box-repeating {
+            /* 
+            repeating-linear-gradient ripete ciclicamente il gradiente:
+            - 180deg definisce l'angolo di orientamento.
+            - 30% indica la dimensione del primo ciclo prima della ripetizione.
+            */
+            border-image: repeating-linear-gradient(180deg, yellow, orange 30%) 1;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Bordi con Gradiente Lineare Standard</h2>
+    <div class="sezione">
+        <div class="box-gradient gradient-box">
+            Contenuto del box 1
+        </div>
+    </div>
+    
+    <h2>Bordi con Gradiente Lineare Ripetuto</h2>
+    <div class="sezione">
+        <div class="box-gradient box-repeating">
+            Contenuto del box 2
+        </div>
+    </div>
+    
+</body>
+</html>
