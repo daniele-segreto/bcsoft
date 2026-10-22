@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guida Completa: Background Origin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Stile comune applicato a tutti i box */
+        .box {
+            width: 430px;
+            height: 230px;
+            border: 5px dashed red;
+            padding: 15px;
+            background-image: url('./img/bg-white.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-sizing: content-box;
+            margin-bottom: 20px;
+        }
+
+        /* 1. PADDING-BOX: Origine dell'immagine allineata al margine del padding */
+        #paddingbox {
+            background-origin: padding-box;
+        }
+
+        /* 2. BORDER-BOX: Origine dell'immagine allineata al margine esterno del bordo */
+        #borderbox {
+            background-origin: border-box;
+        }
+
+        /* 3. CONTENT-BOX: Origine dell'immagine allineata all'area del contenuto */
+        #contentbox {
+            background-origin: content-box;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Background Origin: Padding-Box (Default)</h2>
+    <div id="paddingbox" class="box">
+        <h3>Box 1</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tellus dolor, elementum nec pellentesque sit amet, lobortis id enim. In vitae leo at massa suscipit dapibus id ac justo.
+        </p>
+    </div>
+
+    <h2>Background Origin: Border-Box</h2>
+    <div id="borderbox" class="box">
+        <h3>Box 2</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tellus dolor, elementum nec pellentesque sit amet, lobortis id enim. In vitae leo at massa suscipit dapibus id ac justo.
+        </p>
+    </div>
+
+    <h2>Background Origin: Content-Box</h2>
+    <div id="contentbox" class="box">
+        <h3>Box 3</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tellus dolor, elementum nec pellentesque sit amet, lobortis id enim. In vitae leo at massa suscipit dapibus id ac justo.
+        </p>
+    </div>
+
+</body>
+</html>

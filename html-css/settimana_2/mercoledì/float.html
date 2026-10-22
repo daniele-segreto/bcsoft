@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimostrazione CSS Float</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 40px;
+            color: #333;
+        }
+
+        /* Contenitore principale */
+        header {
+            background-color: #ffffff;
+            border: 2px solid #333;
+            padding: 20px;
+            /* TRUCCO DEL CLEARING: Forza il contenitore a racchiudere gli elementi float */
+            overflow: hidden; 
+        }
+
+        /* Regole geometriche di base per i box */
+        div {
+            margin: 10px;
+            width: 50px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Elementi fluttuanti a sinistra */
+        .left {
+            float: left; /* Valori possibili: left, right, none */
+            background: hotpink;
+            color: white;
+        }
+
+        /* Elementi fluttuanti a destra */
+        .right {
+            float: right;
+            background: aquamarine;
+            color: #333;
+        }
+
+        /* Paragrafo descrittivo */
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="left">1</div>
+        <div class="left">2</div>
+        <!-- 4 e 3 perchè gli elementi da destra, quando fluttuano vengono invertiti (a livello visivo) -->
+        <div class="right">4</div>
+        <div class="right">3</div>
+        
+        <!-- Il paragrafo non viene posizionato ne a destra, ne a sinistra, quindi va al centro. -->
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nibh arcu, porta non risus nec, volutpat sagittis eros. Aenean tristique quam quam. Nullam maximus non ante et rutrum. Nullam maximus ultrices sem, sit amet pellentesque est condimentum non. Donec blandit, mi eu ornare semper, nunc justo posuere mi, ut iaculis leo risus non ipsum. Suspendisse mattis massa elementum ultrices feugiat.</p>
+    </header>
+
+</body>
+</html>

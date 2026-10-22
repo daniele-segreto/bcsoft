@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimostrazione Metodi di Posizionamento CSS</title>
+    <style>
+        /* Reset di base e impostazione pagina */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            padding: 20px;
+            /* Per consentire lo scrolling e testare fixed e sticky */
+            min-height: 250vh; 
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .spiegazione {
+            background-color: #ffffff;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        /* Contenitore generico per i test (Contenitore principale) */
+        .sezione-test {
+            background-color: #ffffff;
+            border: 2px dashed #bbb;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            position: relative; /* Serve da riferimento per gli elementi absolute al suo interno */
+            /* FONDAMENTALE: "position: relative" sul contenitore principale, diventa l'ancora di riferimento per i figli absolute */
+        }
+        
+        .box {
+            width: 180px;
+            height: 100px;
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+        }
+        
+        /* 1. POSITION: STATIC */
+        .box-static {
+            background-color: #6c757d;
+            position: static;
+            /* Proprietà come top/left vengono ignorate */
+            top: 50px;
+            left: 50px;
+        }
+        
+        /* 2. POSITION: RELATIVE */
+        .box-relative {
+            background-color: #28a745;
+            position: relative;
+            top: 20px;  /* Si sposta di 20px verso il basso rispetto alla sua posizione originaria */
+            left: 90px; /* Si sposta di 40px verso destra rispetto alla sua posizione originaria */
+        }
+        
+        /* 3. POSITION: ABSOLUTE */
+        .box-absolute {
+            background-color: #dc3545;
+            position: absolute;
+            top: 15px;
+            right: 15px; /* Incollato nell'angolo in alto a destra della sezione (contenitore relative) */
+        }
+        
+        /* 4. POSITION: FIXED */
+        .box-fixed {
+            background-color: #fd7e14;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000; /* Garantisce che stia sempre sopra agli altri elementi */
+            width: 140px;
+            height: 70px;
+            font-size: 14px;
+        }
+        
+        /* 5. POSITION: STICKY */
+        .box-sticky {
+            background-color: #17a2b8;
+            position: sticky;
+            top: 5px; /* Si blocca a 10px dal bordo superiore dello schermo durante lo scroll */
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Guida Pratica al Posizionamento CSS</h1>
+    
+    <div class="spiegazione">
+        <p>Provi a scorrere la pagina verso il basso per osservare il comportamento dinamico degli elementi <strong>FIXED</strong> (in basso a destra) e <strong>STICKY</strong> (si blocca in alto durante lo scroll).</p>
+    </div>
+    
+    <!-- 1. STATICO -->
+    <h2>1. Posizionamento Statico (Default)</h2>
+    <div class="sezione-test">
+        <div class="box box-static">
+            STATIC<br>(Ignora top/left)
+        </div>
+        <p style="margin-top: 10px;">Segue il normale flusso del documento.</p>
+    </div>
+    
+    <!-- 2. RELATIVO -->
+    <h2>2. Posizionamento Relativo</h2>
+    <div class="sezione-test">
+        <div class="box box-relative">
+            RELATIVE<br>(Spostato di 20px, 90px)
+        </div>
+        <p style="margin-top: 30px; color: #888;">N.B. Lo spazio originario resta occupato e riservato nel layout.</p>
+    </div>
+    
+    <!-- 3. ASSOLUTO -->
+    <h2>3. Posizionamento Assoluto</h2>
+    <div class="sezione-test">
+        <div class="box box-absolute">
+            ABSOLUTE<br>(Top 15px, Right 15px)
+        </div>
+        <p>Viene rimosso dal flusso normale e posizionato rispetto al contenitore rettangolare tratteggiato (che ha <code>position: relative</code>).</p>
+    </div>
+    
+    <!-- 4. STICKY -->
+    <h2>4. Posizionamento Sticky</h2>
+    <div class="sezione-test" style="height: 400px;">
+        <div class="box box-sticky">
+            STICKY<br>(Incolla a top 5px)
+        </div>
+        <p>Scorra la pagina: questo blocco scorre normalmente finché non raggiunge 5px dal bordo superiore, dove rimane bloccato.</p>
+        
+        <br>
+
+        <!-- CONTENUTO DI RIEMPIMENTO -->
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores mollitia laudantium sint quisquam autem iure error molestias voluptatibus officia quis esse blanditiis aliquam nemo incidunt, nam amet ab, sed provident? Modi, ad architecto. Soluta quod accusamus repellendus! Magnam deleniti facere sequi corrupti, exercitationem architecto amet, quos nisi officiis, iusto saepe quidem praesentium? Aliquam, maiores rem! Quia porro, dicta, sapiente et ea magni accusantium provident ullam magnam voluptate ad explicabo vero perspiciatis expedita nostrum officia suscipit officiis itaque? Itaque nam distinctio, hic neque iusto, numquam dignissimos et tempore aspernatur sunt eum voluptas nulla! Voluptatem dolores, aut iusto at quas iure sunt.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, blanditiis! Doloremque et aspernatur beatae suscipit deleniti recusandae cupiditate, placeat deserunt maiores est ad quas ut nihil! Odio minima eos qui possimus doloribus reprehenderit officiis. Commodi odio vel nobis? Blanditiis dolorum, facilis omnis, praesentium odit dolorem laboriosam impedit corporis voluptas exercitationem, nam veniam. Repudiandae tempora sint veniam itaque fugiat dicta aspernatur adipisci eum quidem asperiores corrupti distinctio consequuntur a officiis vel dignissimos dolores, dolore ab voluptates ex. Consequatur optio nobis veritatis, possimus, non sapiente commodi sed eum hic repellendus molestiae, amet modi voluptatum nulla. Dolor hic odit blanditiis explicabo qui quidem.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente rerum doloribus, perferendis quidem eveniet ullam qui. Omnis alias pariatur quaerat fugit doloribus rerum qui tenetur consectetur, aliquid adipisci quas tempore iusto possimus necessitatibus in a, repellat tempora at voluptatibus recusandae. Officia placeat, porro rem fugit asperiores deserunt recusandae ex qui maiores est obcaecati laboriosam non et, possimus odit iure ab veritatis dolorum dolor enim. Fuga ad architecto ut doloribus tenetur amet? Nemo maiores ad quaerat repellendus vero beatae quidem! Culpa quaerat eum ut, numquam natus quis quo placeat voluptates dolorum, sequi maiores..
+        </p>
+    </div>
+    
+    <!-- 5. FIXED -->
+    <div class="box box-fixed">
+        FIXED<br>(Incollato allo schermo)
+    </div>
+    
+</body>
+</html>

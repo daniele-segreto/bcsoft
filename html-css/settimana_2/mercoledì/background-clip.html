@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guida Completa: Background Clip</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        /* Stile base comune per i box dimostrativi */
+        .box {
+            width: 350px;
+            height: 200px;
+            padding: 25px;
+            border: 10px dotted blue;
+            font-size: 28px;
+            font-weight: bold;
+            box-sizing: border-box;
+            background-image: url('https://images6.alphacoders.com/314/314939.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* 1. CONTENT-BOX: Lo sfondo è limitato all'area del contenuto */
+        .content {
+            background-clip: content-box;
+        }
+        
+        /* 2. BORDER-BOX: Lo sfondo si estende fin sotto il bordo puntinato */
+        .border {
+            background-clip: border-box;
+        }
+        
+        /* 3. PADDING-BOX: Lo sfondo si arresta al margine interno del bordo */
+        .padding {
+            background-clip: padding-box;
+        }
+        
+        /* 4. TEXT: Lo sfondo viene ritagliato lungo le sagome del testo */
+        .text {
+            background-image: url('https://images6.alphacoders.com/314/314939.jpg');
+            background-size: cover;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text; /* Per garantire la massima compatibilità */
+            font-size: 65px;
+            font-weight: 900;
+            text-transform: uppercase;
+            border: none;
+            height: auto;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Background Clip: Content-Box</h2>
+    <div class="box content">
+        Contenuto del box
+    </div>
+    
+    <h2>Background Clip: Border-Box</h2>
+    <div class="box border">
+        Contenuto del box
+    </div>
+    
+    <h2>Background Clip: Padding-Box</h2>
+    <div class="box padding">
+        Contenuto del box
+    </div>
+    
+    <h2>Background Clip: Text (Maschera di Testo)</h2>
+    <div class="box text">
+        TESTO CON SFONDO
+    </div>
+    
+</body>
+</html>

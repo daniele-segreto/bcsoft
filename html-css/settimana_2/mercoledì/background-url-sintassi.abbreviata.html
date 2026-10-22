@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Shorthand</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 40px;
+        }
+        
+        .box {
+            margin-top: 30px;
+            width: 400px;
+            height: 300px;
+            
+            /* 
+            Proprietà shorthand 'background':
+            - url(...): immagine di sfondo
+            - no-repeat: impedisce la ripetizione
+            - center: posizionamento centrale
+            - / cover: lo slash (/) è obbligatorio prima di specificare il background-size
+            */
+            background: url('https://i.pinimg.com/originals/76/5f/69/765f69e2a5fbd306e6e677feebdf59a9.jpg') no-repeat center / cover;
+            
+            border: 5px solid cadetblue;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+        <!-- Contenuto del box -->
+    </div>
+    
+</body>
+</html>

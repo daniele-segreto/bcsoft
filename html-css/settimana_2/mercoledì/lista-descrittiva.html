@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubrica con Position Sticky</title>
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 40px;
+            color: #333;
+        }
+
+        /* Contenitore principale della rubrica */
+        .rubrica-container {
+            width: 500px;
+            background-color: #ffffff;
+            border: 2px solid #333;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Intestazione della lettera (es. A, F, L, S) con comportamento sticky */
+        dt {
+            background: seagreen;
+            border: 2px solid black;
+            color: white;
+            font: bold 21px Verdana;
+            padding-left: 12px;
+            
+            /* Il cuore della funzionalità sticky */
+            position: sticky;
+            top: -1px;
+            z-index: 10; /* Assicura che l'intestazione rimanga sopra gli altri elementi durante lo scroll */
+        }
+
+        /* Voci testuali associate alla categoria */
+        dd {
+            font: 20px Verdana;
+            line-height: 45px;
+            margin: 0;
+            padding-left: 12px;
+            background-color: #ffffff;
+        }
+
+        /* Selettore adiacente: applica il bordo superiore solo se un elemento <dd> è preceduto da un altro <dd> */
+        dd + dd {
+            border-top: 2px solid grey;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="rubrica-container">
+        
+        <!-- Sezione Lettera A -->
+        <div class="gruppo-lettera">
+            <dt>A</dt>
+            <dd>Amato Fabio</dd>
+            <dd>Arcobaleno Colorato</dd>
+            <dd>Asti Francesco</dd>
+            <dd>Attimo Fuggente</dd>
+            <dd>Aula Web</dd>
+        </div>
+
+        <!-- Sezione Lettera F -->
+        <div class="gruppo-lettera">
+            <dt>F</dt>
+            <dd>Fantasma Formaggino</dd>
+            <dd>Femore Rotto</dd>
+            <dd>Fisarmonica Armonica</dd>
+            <dd>Foscolo Ugo</dd>
+        </div>
+
+        <!-- Sezione Lettera L -->
+        <div class="gruppo-lettera">
+            <dt>L</dt>
+            <dd>Lanterna Magica</dd>
+            <dd>Leone Coraggioso</dd>
+            <dd>Linguaggio Silenzioso</dd>
+            <dd>Luna Park</dd>
+        </div>
+
+        <!-- Sezione Lettera S (Aggiunta) -->
+        <div class="gruppo-lettera">
+            <dt>S</dt>
+            <dd>Sassofono Blu</dd>
+            <dd>Stella Cometa</dd>
+            <dd>Strada Maestra</dd>
+            <dd>Sussurro Notturno</dd>
+        </div>
+
+    </div>
+
+</body>
+</html>

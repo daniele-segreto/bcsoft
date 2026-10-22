@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List style position</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            color: #333;
+        }
+        
+        /* 
+        1. OUTSIDE (Valore predefinito)
+        Il marcatore (il punto elenco) viene posizionato ALL'ESTERNO 
+        del box di contenuto e del colore di sfondo. 
+        Visivamente, i punti elenco fluttuano sul margine sinistro 
+        e non intaccano il blocco colorato.
+        */
+        ul.a {
+            list-style-position: outside;
+            background-color: hotpink;  
+            margin: 50px;              
+            padding: 20px;
+        }
+        
+        /* 
+        2. INSIDE
+        Il marcatore viene posizionato ALL'INTERNO del box di contenuto.
+        Viene trattato come parte integrante del testo: se il testo va a capo, 
+        la riga successiva rientra tornando sotto al marcatore 
+        anziché allinearsi al margine sinistro.
+        */
+        ul.b {
+            list-style-position: inside;
+            background-color: lightblue;
+            margin: 50px;              
+            padding: 20px;
+        }
+        
+        li {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Lista A con position: outside -> I pallini restano fuori dallo sfondo rosa -->
+    <ul class="a">
+        <li>Nulla facilisi. Quisque euismod varius tortor, elementum vulputate sem tempus at. Duis placerat dui tortor, ac varius metus placerat vitae. Donec ac diam aliquam magna fringilla fermentum. Suspendisse sed rhoncus nisl, eleifend ornare nisi.</li>
+        <li>Vestibulum aliquam diam sit amet convallis imperdiet. Morbi sed viverra tortor, vitae posuere quam. Sed aliquet eu sem a commodo.</li>
+        <li>Duis pretium semper libero. Aenean ut ex velit. Etiam tempor turpis sit amet mi iaculis pharetra.</li>
+    </ul>
+    
+    <!-- Lista B con position: inside -> I pallini rientrano dentro lo sfondo azzurro -->
+    <ul class="b">
+        <li>Nulla facilisi. Quisque euismod varius tortor, elementum vulputate sem tempus at. Duis placerat dui tortor, ac varius metus placerat vitae. Donec ac diam aliquam magna fringilla fermentum. Suspendisse sed rhoncus nisl, eleifend ornare nisi.</li>
+        <li>Vestibulum aliquam diam sit amet convallis imperdiet. Morbi sed viverra tortor, vitae posuere quam. Sed aliquet eu sem a commodo.</li>
+        <li>Duis pretium semper libero. Aenean ut ex velit. Etiam tempor turpis sit amet mi iaculis pharetra.</li>
+    </ul>
+    
+</body>
+</html>

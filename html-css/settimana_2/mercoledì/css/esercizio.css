@@ -1,0 +1,270 @@
+/* ==========================================
+    STILI GENERALI E TITOLI
+   ========================================== */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    padding-bottom: 100px;
+}
+
+h2 {
+    text-decoration: underline;
+    background-color: rgb(13, 174, 131);
+    color: white;
+    padding: 10px;
+}
+
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #2c3e50;
+    margin-top: 35px;
+    border-bottom: 2px solid #0dea83;
+    padding-bottom: 5px;
+}
+
+
+/* ==========================================
+    GESTIONE DEI POSIZIONAMENTI (POSITION)
+   ========================================== */
+
+/* position: static - Flusso documentale normale (standard), ignora top/left/right/bottom */
+.box-static {
+    position: static; /* RICHIESTO! */
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    margin-bottom: 15px;
+    top: 20px; /* comando ignorato */
+    left: 20px; /* comando ignorato */
+}
+
+/* position: sticky - Ibrido tra relative e fixed, si fissa al raggiungimento di una soglia */
+.box-sticky {
+    position: sticky; /* RICHIESTO! */
+    top: 0; /* fissata in alto a sinistra */
+    background-color: #0d6efd;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    z-index: 500; /* RICHIESTO! */
+}
+
+/* position: fixed - Ancorato in modo assoluto rispetto alla finestra del browser */
+.box-fixed {
+    position: fixed; /* RICHIESTO! */
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffc107;
+    color: #212529;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* RICHIESTO! */ /* Assicura che stia sempre in primo piano durante lo scorrimento */
+}
+
+/* position: relative - Mantiene lo spazio originario ma fa da riferimento per i figli assoluti */
+.contenitore-relativo {
+    position: relative; /* RICHIESTO! */
+    height: 140px;
+    background-color: #e9ecef;
+    border: 2px dashed #6c757d;
+    padding: 10px;
+    margin-top: 15px;
+    top: 5px; /* comando eseguito */
+}
+/* position: absolute - Rimosso dal flusso, posizionato rispetto al primo antenato con position impostata */
+.box-absolute-1 {
+    position: absolute; /* RICHIESTO! */
+    top: 40px; /* comando eseguito */
+    left: 30px; /* comando eseguito */
+    width: 180px;
+    height: 70px;
+    background-color: #dc3545;
+    color: white;
+    padding: 10px;
+    z-index: 1; /* RICHIESTO! */
+}
+.box-absolute-2 {
+    position: absolute;
+    top: 60px; /* comando eseguito */
+    left: 80px; /* comando eseguito */
+    width: 180px;
+    height: 70px;
+    background-color: #198754;
+    color: white;
+    padding: 10px;
+    z-index: 2; /* RICHIESTO! */ /* Sovrapposto al box 1 grazie allo z-index superiore */
+}
+
+
+/* ==========================================
+    PROPRIETÀ VISIBILITY
+   ========================================== */
+
+/* visibility: visible - Valore di default, rende l'elemento visibile */
+.box-visibile {
+    visibility: visible; /* RICHIESTO! */
+    background-color: #d1e7dd;
+    color: #0f5132;
+    padding: 10px;
+    border: 1px solid #badbcc;
+    margin-bottom: 10px;
+}
+
+/* visibility: hidden - Nasconde l'elemento ma preserva lo spazio occupato */
+.box-nascosto {
+    visibility: hidden; /* RICHIESTO! */
+    background-color: #f8f9fa;
+    color: #842029;
+    padding: 10px;
+    border: 1px solid #f5c2c7;
+    margin-bottom: 10px;
+}
+
+
+/* ==========================================
+    PROPRIETÀ DISPLAY
+   ========================================== */
+
+/* display: block - Forzatura di un elemento inline a occupare l'intera riga */
+.d-block {
+    display: block; /* RICHIESTO! */
+    background-color: #d1e7dd;
+    color: #0f5132;
+    padding: 10px;
+    border: 1px solid #badbcc;
+    margin-bottom: 15px;
+}
+
+/* display: inline - Forzatura di un elemento block a stare in linea senza rispettare width/height */
+.d-inline {
+    display: inline; /* RICHIESTO! */
+    background-color: #f8d7da;
+    color: #842029;
+    padding: 5px 10px;
+    border: 1px solid #f5c2c7;
+    margin-right: 5px;
+}
+
+/* display: inline-block - Permette l'affiancamento in linea mantenendo il rispetto di width, height e padding (che non avremmo potuto utilizzare se fosse stato solo inline) */
+.d-inline-block {
+    display: inline-block; /* RICHIESTO! */
+    width: 220px;
+    height: 60px;
+    background-color: #cff4fc;
+    color: #055160;
+    padding: 10px;
+    border: 1px solid #b6effb;
+    margin-right: 10px;
+    vertical-align: middle; /* Allinea verticalmente gli elementi affiancati al centro */
+}
+
+/* display: flex - Attiva il contesto di layout flessibile unidimensionale */
+.d-flex {
+    display: flex; /* RICHIESTO! */
+    gap: 10px; /* Definisce lo spazio (margine) tra gli elementi figli, sia in orizzontale che in verticale, senza applicarlo ai bordi esterni */
+    background-color: #e2e3e5;
+    padding: 10px;
+    border: 1px solid #d3d6d8;
+}
+/* Seleziona SOLO i tag <div> che sono FIGLI DIRETTI di un elemento con classe .d-flex */
+.d-flex > div {
+    flex: 1; /* Dice al div di crescere e occupare tutto lo spazio disponibile in modo equo all'interno del contenitore flex */
+    background-color: #0b5ed7;     
+    color: white;     
+    padding: 15px;     
+    text-align: center;     
+    font-weight: bold;
+}
+
+/* display: grid - Attiva il contesto di layout a griglia bidimensionale */
+.d-grid {
+    /* Definisce il contenitore come un grid container */
+    display: grid; /* RICHIESTO! */
+    /* Crea 2 colonne di uguale larghezza (1 frazione dello spazio disponibile ciascuna) */
+    grid-template-columns: repeat(2, 1fr);
+    /* Imposta uno spazio (verticale e orizzontale) di 10px tra gli elementi della griglia */
+    gap: 10px;
+    background-color: #e2e3e5;
+    padding: 10px;
+    border: 1px solid #d3d6d8;
+}
+/* Seleziona SOLO i tag <div> che sono FIGLI DIRETTI di un elemento con classe .d-grid */
+.d-grid > div {
+    background-color: #6f42c1;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* display: table - Emula il comportamento di rendering di una tabella HTML (sui nostri div) */
+.d-table {
+    display: table; /* RICHIESTO! Attiva il comportamento di rendering di una tabella */
+    width: 100%;
+    border-collapse: collapse; /* Unisce i bordi delle celle adiacenti in un unico bordo, evitando il doppio spessore, elimina lo spazio in più */
+}
+/* Definisce un elemento che si comporta come una riga della tabella (<tr>) */
+.d-table-row {
+    display: table-row; /* Imposta il comportamento di rendering come "RIGA" di una tabella */
+}
+/* Definisce gli elementi interni che si comportano come le singole celle (<td>) */
+.d-table-cell {
+    display: table-cell; /* Imposta il comportamento di rendering come "CELLA" di una tabella */
+    border: 1px solid #2c3e50;
+    padding: 10px;
+    background-color: #fff3cd;
+    color: #664d03;
+}
+
+/* display: none - Rimuove completamente l'elemento dal flusso del documento */
+.d-none {
+    display: none; /* RICHIESTO! */
+}
+
+
+/* ==========================================
+    PROPRIETÀ FLOAT E CLEAR
+   ========================================== */
+
+/* Contenitore di contenimento per gli elementi fluttuanti */
+.contenitore-float {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 15px;
+    margin-top: 15px;
+    overflow: hidden; /* Tecnica di clearfix moderna per contenere i float all'interno del blocco */
+}
+/* float: left - Rimuove l'elemento dal flusso normale e lo spinge a sinistra */
+.box-float-left {
+    float: left; /* RICHIESTO! */
+    width: 45%;
+    background-color: #fd7e14;
+    color: white;
+    padding: 15px;
+    border-radius: 4px;
+}
+/* float: right - Rimuove l'elemento dal flusso normale e lo spinge a destra */
+.box-float-right {
+    float: right; /* RICHIESTO! */
+    width: 45%;
+    background-color: #20c997;
+    color: white;
+    padding: 15px;
+    border-radius: 4px;
+}
+/* clear: both - Serve a impedire che un elemento si posizioni "a fianco di elementi precedenti" con float (sia a sinistra che a destra), costringendolo a "andare a capo" e a posizionarsi al di sotto di essi */
+.box-clear {
+    clear: both; /* RICHIESTO! */
+    background-color: #6c757d;
+    color: white;
+    padding: 12px;
+    margin-top: 20px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+}

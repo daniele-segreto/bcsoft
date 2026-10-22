@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background linear-gradient per textarea con righe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 40px;
+        }
+        
+        form {
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .campo-input {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        input {
+            width: 380px;
+            padding: 5px;
+        }
+        
+        /* Stilizzazione avanzata della textarea con effetto foglio a righe */
+        textarea {
+            width: 100%;
+            height: 180px;
+            /* Altezza della riga di scrittura */
+            line-height: 24px;
+            
+            /* Gradiente lineare che forma la riga orizzontale */
+            background-image: linear-gradient(
+            to bottom, 
+            lightgray 1px, 
+            transparent 1px
+            );
+            
+            /* Sincronizzazione della dimensione del pattern con il line-height */
+            background-size: 100% 24px;
+            
+            /* Font a spaziatura fissa per un allineamento rigoroso dello spazio orizzontale */
+            font-family: monospace;
+            
+            padding: 5px;
+            resize: vertical;
+            border: 1px solid #666;
+            box-sizing: border-box;
+        }
+        
+        button {
+            align-self: flex-start;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <form>
+        <div class="campo-input">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome">
+        </div>
+        
+        <div class="campo-input">
+            <label for="email">Email:</label>
+            <input type="email" id="email">
+        </div>
+        
+        <div>
+            <label for="messaggio">Messaggio:</label>
+            <textarea id="messaggio"></textarea>
+        </div>
+        
+        <button type="submit">Invia</button>
+    </form>
+    
+</body>
+</html>

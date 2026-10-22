@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio Pratico Visibility</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        .box {
+            width: 300px;
+            height: 60px;
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            line-height: 60px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            border-radius: 6px;
+        }
+
+        /* 1. VISIBLE (Default) */
+        .box-1 {
+            visibility: visible;
+        }
+
+        /* 2. HIDDEN (Nasconde l'elemento ma MANTIENE lo spazio) */
+        .box-2 {
+            visibility: hidden;
+            background-color: #e74c3c; /* Rosso per distinguerlo */
+        }
+
+        /* 3. VISIBLE */
+        .box-3 {
+            visibility: visible;
+        }
+
+        /* Esempio aggiuntivo per COLLAPSE applicato alle tabelle */
+        table {
+            margin-top: 30px;
+            border-collapse: collapse; /* Rimuove il bordo/o lo spazio tra le righe della tabella */
+            width: 300px;
+        }
+
+        td {
+            border: 2px solid #333;
+            padding: 10px;
+            text-align: center;
+            background-color: #2ecc71;
+            color: white;
+            font-weight: bold;
+        }
+
+        .riga-collassata {
+            visibility: collapse; /* Rimuove lo spazio della riga come display: none nelle tabelle */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Dimostrazione della proprietà Visibility</h1>
+    <p>Nota visivamente lo spazio vuoto lasciato dal secondo blocco:</p>
+
+    <div class="box box-1">Blocco 1 (Visibile)</div>
+    <div class="box box-2">Blocco 2 (Hidden)</div>
+    <div class="box box-3">Blocco 3 (Visibile)</div>
+
+    <!-- Esempio aggiuntivo di collapse su elemento tabellare -->
+    <h2>Esempio di visibility: collapse</h2>
+    <table>
+        <tr>
+            <td>Riga Prima (Visibile)</td>
+        </tr>
+        <tr class="riga-collassata">
+            <td>Riga Centrale (Collapse)</td>
+        </tr>
+        <tr>
+            <td>Riga Terza (Visibile)</td>
+        </tr>
+    </table>
+
+</body>
+</html>

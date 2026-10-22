@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 40px;
+            color: #333;
+        }
+        
+        /* Contenitore principale simulato come una tabella HTML */
+        .table {
+            display: table;
+            width: 50%
+        }
+        
+        /* Contenitore intermedio che simula la riga della tabella (table-row) */
+        /* Se non esplicitato, i div figli diretti si comportano come righe se racchiusi in display: table */
+        
+        /* Singole celle della tabella */
+        .table-cell {
+            display: table-cell;
+            padding: 20px;
+            border: 2px dashed red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="table">
+        <!-- Riga 1 -->
+        <div>
+            <div class="table-cell">Cella 1</div>
+            <div class="table-cell">Cella 2</div>
+            <div class="table-cell">Cella 3</div>
+        </div>
+        <!-- Riga 2 -->
+        <div>
+            <div class="table-cell">Cella 1</div>
+            <div class="table-cell">Cella 2</div>
+            <div class="table-cell">Cella 3</div>
+        </div>
+        <!-- Riga 3 -->
+        <div>
+            <div class="table-cell">Cella 1</div>
+            <div class="table-cell">Cella 2</div>
+            <div class="table-cell">Cella 3</div>
+        </div>
+    </div>
+    
+</body>
+</html>

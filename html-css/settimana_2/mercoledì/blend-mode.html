@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background blend</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 40px;
+        }
+        
+        .box {
+            /* Dimensioni del contenitore */
+            width: 300px;
+            height: 200px;
+            
+            /* 
+            Definizione di sfondi multipli sovrapposti:
+            1. Immagine superiore (soggetto)
+            2. Immagine inferiore (sfondo pop-art geometrico verde)
+            */
+            background-image: url('https://cdn.pixabay.com/photo/2020/06/08/22/50/dog-5276317_960_720.png'), 
+            url('https://static.vecteezy.com/system/resources/previews/000/196/497/original/green-pop-art-comic-book-style-retro-background-with-exploding-r-vector.jpg');
+            
+            /* Estensione e copertura dei livelli di sfondo */
+            background-size: cover;
+            
+            /* Posizionamento centrale delle immagini */
+            background-position: center;
+            
+            /* Modalità di fusione tra i layer di sfondo */
+            background-blend-mode: hue;
+            
+            /* Spaziatura interna superiore */
+            padding-top: 150px;
+            
+            border: 2px solid #333;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+        <!-- Contenuto opzionale del box -->
+    </div>
+    
+</body>
+</html>

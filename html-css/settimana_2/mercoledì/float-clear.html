@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            margin-top: 30px;
+            font-size: 20px;
+        }
+
+        /* Contenitore generale con bordo rosso */
+        .box-contenitore {
+            border: 2px solid red;
+            padding: 15px;
+            margin-bottom: 25px;
+            background-color: #ffffff;
+        }
+
+        /* Elemento fluttuante a destra (Bordo Blu) */
+        .div-float {
+            float: right;
+            padding: 10px;
+            border: 2px solid blue;
+            background-color: #f9f9f9;
+            margin-left: 15px;
+            margin-bottom: 10px;
+        }
+
+        /* Secondo blocco standard senza clear */
+        .div-senza-clear {
+            padding: 10px;
+            border: 2px solid red;
+            background-color: #ffffff;
+        }
+
+        /* Secondo blocco con l'utilizzo di clear */
+        .div-con-clear {
+            padding: 10px;
+            border: 2px solid red;
+            background-color: #ffffff;
+            clear: right; /* Possibili valori: left, right, both, none */
+            /* con clear: pulisco l'elemento che non voglio far sporcare dalla fluttuazione */
+        }
+
+        p {
+            line-height: 1.6;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. SENZA UTILIZZO DI CLEAR -->
+    <h2>*Non utilizzo clear*</h2>
+    <div class="box-contenitore">
+        <div class="div-float">Div che non prevede l'uso del clear</div>
+        <p>
+            Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. 
+            Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo 
+            tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque 
+            secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni '60, con 
+            la diffusione dei fogli di caratteri trasferibili "Letraset", che contenevano passaggi del Lorem Ipsum, e più recentemente da software 
+            di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum.
+        </p>
+    </div>
+
+    <!-- 2. UTILIZZO DI CLEAR -->
+    <h2>*Utilizzo clear*</h2>
+    <div class="box-contenitore">
+        <div class="div-float">Div che prevede l'uso del clear</div>
+        <div class="div-con-clear">
+            <p>
+                Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. 
+                Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo 
+                tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque 
+                secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni '60, con 
+                la diffusione dei fogli di caratteri trasferibili "Letraset", che contenevano passaggi del Lorem Ipsum, e più recentemente da software 
+                di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guida Completa: Background Size</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 40px;
+        }
+
+        /* Stile comune per tutti i box dimostrativi */
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 2px solid orange;
+            margin-bottom: 30px;
+            background-image: url('https://media-cdn.tripadvisor.com/media/photo-p/15/4f/52/c0/puok-burger-store-il.jpg');
+        }
+
+        /* 1. COVER: Copre l'intero box mantenendo le proporzioni e tagliando l'eccesso */
+        .cover {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* 2. AUTO: Mantiene le dimensioni originali dell'immagine */
+        .auto {
+            background-size: auto;
+            background-repeat: no-repeat;
+        }
+
+        /* 3. DIMENSIONE FISSA IN PIXEL: Forza la larghezza a 150px scalando proporzionalmente */
+        .pixel {
+            background-size: 150px;
+            /* Di default il background si ripete (repeat) coprendo lo spazio */
+        }
+
+        /* 4. CONTAIN: Adatta l'immagine interamente dentro il box senza tagliarla */
+        .contain {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* 5. PERCENTUALE: Ridimensiona l'immagine al 30% delle dimensioni del box */
+        .percentuale {
+            background-size: 30%;
+            /* Si ripete creando un pattern a griglia */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Modalità Cover -->
+    <div class="box cover"></div>
+
+    <!-- 2. Modalità Auto -->
+    <div class="box auto"></div>
+
+    <!-- 3. Modalità Pixel Fissi -->
+    <div class="box pixel"></div>
+
+    <!-- 4. Modalità Contain -->
+    <div class="box contain"></div>
+
+    <!-- 5. Modalità Percentuale -->
+    <div class="box percentuale"></div>
+
+</body>
+</html>

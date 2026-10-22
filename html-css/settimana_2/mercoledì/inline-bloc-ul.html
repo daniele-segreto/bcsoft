@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Centrata con display inline-block</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 40px;
+            color: #333;
+        }
+
+        /* Contenitore che applica l'allineamento centrale */
+        #lista {
+            text-align: center;
+        }
+
+        /* La lista non ordinata trasformata in inline-block */
+        ul {
+            display: inline-block;
+            text-align: left; /* Mantiene il testo interno allineato a sinistra per pulizia visiva */
+            background-color: #f9f9f9;
+            padding: 20px 40px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        li {
+            line-height: 30px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="lista">
+        <ul>
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+        </ul>
+    </div>
+
+</body>
+</html>

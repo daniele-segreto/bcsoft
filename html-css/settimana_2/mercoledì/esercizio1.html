@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio sui Posizionamenti CSS</title>
+    <link rel="stylesheet" href="css/esercizio.css">
+</head>
+<body>
+    
+    <h2>POSITION</h2>
+    
+    <!-- :static -->
+    <h3>STATIC</h3>
+    <div class="box-static">
+        <p>Elemento con <strong>position: static</strong> (comportamento standard nel flusso della pagina).</p>
+    </div>
+    
+    <!-- :sticky -->
+    <h3>STICKY</h3>
+    <div class="box-sticky">
+        <p>Intestazione Sticky (position: sticky - si blocca in alto durante lo scorrimento della pagina)</p>
+    </div>
+    
+    <!-- :relative e :absolute -->
+    <h3>RELATIVE E ABSOLUTE</h3>
+    <div class="contenitore-relativo">
+        <p>Contenitore con <strong>position: relative</strong> (funge da riferimento geometrico)</p>
+        <div class="box-absolute-1">
+            Box Absolute 1 (z-index: 1)
+        </div>
+        <div class="box-absolute-2">
+            Box Absolute 2 (z-index: 2 - sovrapposto)
+        </div>
+    </div>
+
+    <!-- :fixed -->
+    <div class="box-fixed">
+        Pannello Fisso (position: fixed)
+    </div>
+    
+    
+    <!-- VISIBILITY -->
+    <h2>VISIBILITY</h2>
+    <div class="box-visibile">
+        Questo elemento ha <strong>visibility: visible</strong> (visibile a schermo).
+    </div>
+    <div class="box-nascosto">
+        Questo elemento ha <strong>visibility: hidden</strong> (invisibile, ma mantiene lo spazio occupato nel layout).
+    </div>
+    <p><em>(Si nota come lo spazio sopra questo paragrafo sia riservato dal box invisibile con visibility: hidden).</em></p>
+    
+
+    <!-- DISPLAY -->
+    <h2>DISPLAY</h2>
+    
+    <!-- display: block -->
+    <h3>DISPLAY BLOCK</h3>
+    <span class="d-block">Questo elemento &lt;span&gt; (normalmente inline) è impostato su <strong>display: block</strong>, quindi occupa l'intera larghezza disponibile e va a capo.</span>
+    
+    <!-- display: inline -->
+    <h3>DISPLAY INLINE</h3>
+    <div class="d-inline">Questo &lt;div&gt; 1 ha <strong>display: inline</strong>.</div>
+    <div class="d-inline">Questo &lt;div&gt; 2 ha <strong>display: inline</strong> (rimane sulla stessa riga).</div>
+    
+    <!-- display: inline-block -->
+    <h3>DISPLAY INLINE-BLOCK</h3>
+    <div class="d-inline-block">Box 1 (inline-block: affiancato e con dimensioni)</div>
+    <div class="d-inline-block">Box 2 (inline-block: affiancato e con dimensioni)</div>
+    
+    <!-- display: flex -->
+    <h3>DISPLAY FLEX</h3>
+    <div class="d-flex">
+        <div>Item Flex 1</div>
+        <div>Item Flex 2</div>
+        <div>Item Flex 3</div>
+    </div>
+    
+    <!-- display: grid -->
+    <h3>DISPLAY GRID</h3>
+    <div class="d-grid">
+        <div>Cella Grid 1</div>
+        <div>Cella Grid 2</div>
+        <div>Cella Grid 3</div>
+        <div>Cella Grid 4</div>
+    </div>
+    
+    <!-- display: table -->
+    <h3>DISPLAY TABLE</h3>
+    <div class="d-table">
+        <!-- riga 1 -->
+        <div class="d-table-row">
+            <!-- celle -->
+            <div class="d-table-cell">Cella Tabella 1 (display: table-cell)</div>
+            <div class="d-table-cell">Cella Tabella 2 (display: table-cell)</div>
+        </div>
+        <!-- riga 2 -->
+        <div class="d-table-row">
+            <!-- celle -->
+            <div class="d-table-cell">Cella Tabella 3 (display: table-cell)</div>
+            <div class="d-table-cell">Cella Tabella 4 (display: table-cell)</div>
+        </div>
+    </div>
+    
+    <!-- display: none -->
+    <h3>DISPLAY NONE</h3>
+    <p class="d-none">Questo paragrafo ha display: none e NON viene renderizzato nel layout.</p>
+    <p><em>(Notare come, a differenza di visibility: hidden, l'elemento con display: none venga completamente rimosso dal flusso senza occupare spazio).</em></p>
+    
+    <!-- FLOAT E CLEAR -->
+    <h2>FLOAT E CLEAR</h2>
+    <div class="contenitore-float">
+        <div class="box-float-left">
+            Box con <strong>float: left</strong> (fluttua a sinistra)
+        </div>
+        <div class="box-float-right">
+            Box con <strong>float: right</strong> (fluttua a destra)
+        </div>
+        <div class="box-clear">
+            Elemento con <strong>clear: both</strong> 
+        </div>
+    </div>
+    
+</body>
+</html>

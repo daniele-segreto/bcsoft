@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visibility e Tabella con Solo CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        /* 1. Nascondiamo fisicamente il checkbox nativo */
+        #toggle-paragrafo {
+            display: none;
+        }
+
+        /* 2. Stilizzazione della label come pulsante viola */
+        .btn-toggle {
+            display: inline-block;
+            font-size: 20px;
+            padding: 20px;
+            background-color: purple;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            user-select: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-toggle:hover {
+            background-color: #512da8;
+        }
+
+        /* 3. Stile del paragrafo */
+        p {
+            font-weight: bold;
+            visibility: visible;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* 4. TRUCCO CSS PURISTICO: 
+           Quando il checkbox è spuntato (:checked), applica visibility: hidden al paragrafo adiacente */
+        #toggle-paragrafo:checked + .btn-toggle + p {
+            visibility: hidden;
+        }
+
+        /* 5. Stile della tabella come nell'anteprima */
+        table {
+            background-color: lightblue;
+            border: 5px solid blue;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        td {
+            border: 2px solid red;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            min-width: 70px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Checkbox invisibile per memorizzare lo stato del click -->
+    <input type="checkbox" id="toggle-paragrafo">
+
+    <!-- Label stilizzata da pulsante -->
+    <label for="toggle-paragrafo" class="btn-toggle">Nascondi il paragrafo</label>
+
+    <!-- Paragrafo controllato dallo stato del checkbox -->
+    <p>Questo è un paragrafo visibile. Ma può sparire con un solo click!</p>
+
+    <!-- Tabella completa a griglia 3x3 -->
+    <table>
+        <tr>
+            <td>Acqua</td>
+            <td></td>
+            <td>Fuoco</td>
+        </tr>
+        <tr>
+            <td>Quattro</td>
+            <td>Cinque</td>
+            <td>Dieci</td>
+        </tr>
+        <tr>
+            <td>Farfalla</td>
+            <td></td>
+            <td>Balena</td>
+        </tr>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio Pratico Display: Block, Inline e Inline-Block</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 40px;
+            color: #333;
+        }
+        
+        h2 {
+            margin-top: 30px;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+        }
+        
+        /* ==========================================
+        1. DISPLAY: BLOCK
+        ========================================== */
+        .box-block {
+            display: block;
+            background-color: #dc3545; /* Rosso */
+            color: white;
+            width: 300px;  /* Accetta larghezza */
+            height: 60px; /* Accetta altezza */
+            margin-bottom: 15px;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        /* ==========================================
+        2. DISPLAY: INLINE
+        ========================================== */
+        .box-inline {
+            display: inline;
+            background-color: #ffc107; /* Giallo */
+            color: black;
+            width: 300px;  /* VIENE IGNORATO! */
+            height: 100px; /* VIENE IGNORATO! */
+            padding: 15px; /* Si applica ai lati ma sballa sopra/sotto */
+            margin: 20px;  /* Solo orizzontale */
+            font-weight: bold;
+        }
+        
+        /* Contenitore per testare l'inline */
+        .contenitore-inline {
+            background-color: #e2e8f0;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+        
+        /* ==========================================
+        3. DISPLAY: INLINE-BLOCK (è un mix tra inline e block)
+        ========================================== */
+        .box-inline-block {
+            display: inline-block;
+            background-color: #28a745; /* Verde */
+            color: white;
+            width: 180px;  /* VIENE RISPETTATO! */
+            height: 60px;  /* VIENE RISPETTATO! */
+            margin-right: 10px;
+            padding: 0px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Guida Pratica ai Tipi di Display</h1>
+    
+    <!-- SEZIONE 1: BLOCK -->
+    <h2>1. Display: block</h2>
+    <p>Gli elementi block occupano tutta la larghezza disponibile e vanno sempre a capo uno sotto l'altro:</p>
+    
+    <div class="box-block">Blocco Rosso 1</div>
+    <div class="box-block">Blocco Rosso 2</div>
+    
+    
+    <!-- SEZIONE 2: INLINE -->
+    <h2>2. Display: inline</h2>
+    <p>Gli elementi inline si mettono in riga. <strong>Nota</strong>: ignorano larghezza (width) e altezza (height):</p>
+    
+    <div class="contenitore-inline">
+        <span class="box-inline">Testo Inline 1</span>
+        <span class="box-inline">Testo Inline 2</span>
+        <span class="box-inline">Testo Inline 3</span>
+    </div>
+    
+    
+    <!-- SEZIONE 3: INLINE-BLOCK -->
+    <h2>3. Display: inline-block</h2>
+    <p>Il perfetto compromesso: restano affiancati sulla stessa riga, ma rispettano larghezza, altezza e spaziature:</p>
+    
+    <div>
+        <div class="box-inline-block">Pulsante 1</div>
+        <div class="box-inline-block">Pulsante 2</div>
+        <div class="box-inline-block">Pulsante 3</div>
+    </div>
+    
+</body>
+</html>
