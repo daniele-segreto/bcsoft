@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation iteration count</title>
+    <style>
+        .box {
+            background-color: yellowgreen;
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+        }
+
+        .box:hover {
+            /* Associa l'animazione denominata "ruota" al passaggio del mouse */
+            animation-name: ruota;
+            /* Definisce la durata di un singolo ciclo dell'animazione (1 secondo) */
+            animation-duration: 1s;
+            /* Stabilisce quante volte l'animazione deve ripetersi */
+            animation-iteration-count: 3; /* Valori possibili: un numero intero >= 1 oppure "infinite" */
+        }
+
+        /* Fotogrammi chiave (keyframes) per la rotazione dell'elemento */
+        @keyframes ruota {
+            0% {
+                /* Punto di partenza: nessuna rotazione */
+                transform: rotate(0);
+            }
+            100% {
+                /* Punto di arrivo: rotazione di 180 gradi */
+                transform: rotate(180deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box"></div>
+
+</body>
+</html>

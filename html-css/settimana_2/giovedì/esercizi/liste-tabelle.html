@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio liste e tabelle</title>
+    <link rel="stylesheet" href="css/liste-tabelle.css">
+</head>
+<body>
+    <!-- LIST-STYLE-IMAGE -->
+    <h3>LIST-STYLE-IMAGE</h3>
+    <ul class="lista-con-immagine">
+        <li>Primo elemento con icona grafica personalizzata.</li>
+        <li>Secondo elemento con icona grafica personalizzata.</li>
+        <li>Terzo elemento con icona grafica personalizzata.</li>
+    </ul>
+    
+    <hr>
+    
+    <!-- LIST-STYLE-POSITION -->
+    <h3>LIST-STYLE-POSITION: OUTSIDE vs INSIDE</h3>
+    
+    <p><strong>1. Con OUTSIDE (Il pallino è fuori dal box dell'elemento):</strong></p>
+    <ul class="esempio-outside">
+        <li>Questo è un testo abbastanza lungo per andare a capo e dimostrare come il marcatore resti rigorosamente all'esterno del bordo sinistro.</li>
+    </ul>
+    
+    <p><strong>2. Con INSIDE (Il pallino è dentro il box, il testo scorre sotto):</strong></p>
+    <ul class="esempio-inside">
+        <li>Questo è un testo abbastanza lungo per andare a capo e dimostrare come il marcatore rientri all'interno del riquadro, allineando il testo.</li>
+    </ul>
+    
+    <hr>
+    
+    <!-- LIST-STYLE-TYPE -->
+    <h3>LIST-STYLE-TYPE</h3>
+    
+    <p><strong>Lista non ordinata con cerchio vuoto (circle):</strong></p>
+    <ul class="lista-cerchio">
+        <li>Primo elemento della lista circolare.</li>
+        <li>Secondo elemento della lista circolare.</li>
+    </ul>
+    
+    <p><strong>Lista non ordinata con quadratino (square):</strong></p>
+    <ul class="lista-quadrato">
+        <li>Primo elemento della lista quadrata.</li>
+        <li>Secondo elemento della lista quadrata.</li>
+    </ul>
+    
+    <p><strong>Lista ordinata con numeri romani maiuscoli (upper-roman):</strong></p>
+    <ol class="lista-romani">
+        <li>Primo elemento con numerazione romana.</li>
+        <li>Secondo elemento con numerazione romana.</li>
+    </ol>
+    
+    <hr>
+    
+    <!-- TABLE-LAYOUT -->
+    <h3>TABLE-LAYOUT: AUTO (Standard)</h3>
+    <table class="tab-auto">
+        <tr>
+            <th>Codice</th>
+            <th>Descrizione</th>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>Questo è un testo molto lungo che costringerà la colonna ad allargarsi automaticamente.</td>
+        </tr>
+    </table>
+    
+    <h3>TABLE-LAYOUT: FIXED (Rigido)</h3>
+    <table class="tab-fixed">
+        <tr>
+            <th class="col-codice">Codice</th>
+            <th class="col-descrizione">Descrizione</th>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>Questo è un testo molto lungo, ma la colonna non supererà la larghezza imposta.</td>
+        </tr>
+    </table>
+    
+    <hr>
+    
+    <!-- EMPTY-CELLS -->
+    <h3>EMPTY-CELLS: SHOW (Default)</h3>
+    <table class="tab-empty-show">
+        <tr>
+            <th>Codice</th>
+            <th>Prodotto</th>
+            <th>Disponibilità</th>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>Tastiera Meccanica</td>
+            <td></td> <!-- Cella vuota -->
+        </tr>
+    </table>
+    
+    <h3>EMPTY-CELLS: HIDE</h3>
+    <table class="tab-empty-hide">
+        <tr>
+            <th>Codice</th>
+            <th>Prodotto</th>
+            <th>Disponibilità</th>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>Mouse Wireless</td>
+            <td></td> <!-- Cella vuota (senza bordi) -->
+        </tr>
+    </table>
+    
+    <hr>
+    
+    <!-- CAPTION-SIDE -->
+    <h3>CAPTION-SIDE: TOP (Default)</h3>
+    <table class="tab-caption-top">
+        <caption>Tabella 1: Elenco dei prodotti con didascalia in alto.</caption>
+        <tr>
+            <th>Codice</th>
+            <th>Prodotto</th>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>Monitor LED</td>
+        </tr>
+    </table>
+    
+    <h3>CAPTION-SIDE: BOTTOM</h3>
+    <table class="tab-caption-bottom">
+        <caption>Tabella 2: Elenco dei prodotti con didascalia in basso.</caption>
+        <tr>
+            <th>Codice</th>
+            <th>Prodotto</th>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>Cuffie Wireless</td>
+        </tr>
+    </table>
+</body>
+</html>

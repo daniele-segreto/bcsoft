@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotate</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            border: 3px dashed red;
+            margin-top: 50px;
+            /* Rende fluida la transizione della rotazione nello stato di hover */
+            transition: 1s;
+        }
+        
+        #box1:hover {
+            /* Rotazione bidimensionale standard sull'asse Z (piano dello schermo) di 180 gradi */
+            rotate: 180deg;
+        }
+        
+        #box2:hover {
+            /* Rotazione tridimensionale specificando l'asse (x, y oppure z) */
+            rotate: x 180deg;
+        }
+        
+        #box3:hover {
+            /* Rotazione 3D avanzata tramite un vettore personalizzato: 
+            - I primi tre numeri definiscono le coordinate del vettore (es. 1 0.5 2)
+            - L'ultimo valore definisce l'angolo di rotazione (es. 360deg) */
+            rotate: 1 0.5 2 360deg;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box" id="box1">Box 1</div>
+    <div class="box" id="box2">Box 2</div>
+    <div class="box" id="box3">Box 3</div>
+    
+</body>
+</html>

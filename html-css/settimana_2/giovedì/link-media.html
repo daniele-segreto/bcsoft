@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes">
+    <title>Media queries link</title>
+    
+    <!-- Esempio di applicazione di un foglio di stile esterno condizionale tramite l'attributo media -->
+    <link rel="stylesheet" type="text/css" href="stile-mobile.css" media="screen and (max-width: 600px)">
+
+    <style>
+        /* ==========================================================
+           STILI DI BASE (per schermi superiori a 601px)
+           ========================================================== */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: lightblue;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            padding: 25px;
+            flex: 1;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        /* ==========================================================
+           MEDIA QUERY INTERNA: Si attiva per schermi da 601px in su
+           ========================================================== */
+        @media only screen and (min-width: 601px) {
+            /* Regole specifiche per desktop o schermi ampi */
+        }
+
+        /* Esempio di media query per schermi stretti (<= 600px) gestita internamente */
+        @media only screen and (max-width: 600px) {
+            header {
+                background-color: blue;
+            }
+            nav {
+                background-color: yellow;
+            }
+            footer {
+                background-color: blue;
+            }
+            main h2 {
+                color: red;
+            }
+            main p {
+                background-image: url('https://picsum.photos/id/1018/800/500');
+                background-size: cover;
+                color: white;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Header</h1>
+    </header>
+
+    <nav>
+        <span>Voce 1</span> | 
+        <span>Voce 2</span> | 
+        <span>Voce 3</span> | 
+        <span>Voce 4</span>
+    </nav>
+
+    <main>
+        <h2>Main</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras leo lorem, dictum et lorem suscipit, mollis elementum neque. Vivamus urna est, sodales ut scelerisque vitae, facilisis rutrum libero. In hac habitasse platea dictumst.</p>
+    </main>
+
+    <footer>
+        <p>Footer</p>
+    </footer>
+
+</body>
+</html>

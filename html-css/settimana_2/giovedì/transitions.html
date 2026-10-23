@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempi di Transizioni CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            color: #333;
+        }
+        
+        /* --- PRIMO ESEMPIO: Transizione semplice del colore di sfondo --- */
+        .transition-1 {
+            color: white;
+            font-size: 24px;
+            padding: 20px;
+            background-color: red;
+            transition-property: background-color;
+            transition-duration: 1s;
+        }
+        
+        .transition-1:hover {
+            background-color: blue;
+        }
+        
+        /* --- SEPARATORE 1 --- */
+        hr {
+            margin: 40px 0;
+            border: 1px solid #ccc;
+        }
+        
+        /* --- SECONDO ESEMPIO: Transizioni multiple con durate differenziate --- */
+        .transition-2 {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            transition-property: width, height, background-color;
+            transition-duration: 5s, 5s, 1s;
+        }
+        
+        .transition-2:hover {
+            width: 200px;
+            height: 200px;
+            background-color: hotpink;
+        }
+        
+        /* --- TERZO ESEMPIO: Transizione con ritardo (Transition Delay) --- */
+        .box-delay {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            transition-property: background-color;
+            transition-duration: 1s;
+            transition-delay: 2s;
+            text-align: center;
+            line-height: 300px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .box-delay:hover {
+            background-color: blue;
+        }
+        
+        /* --- QUARTO ESEMPIO: Funzione di temporizzazione (Transition Timing Function) --- */
+        .box-timing {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            transition-property: background-color;
+            transition-duration: 2s;
+            transition-timing-function: ease-out;
+            text-align: center;
+            line-height: 300px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        /* 
+        Valori possibili di transition-timing-function:
+        - ease: applica un'accelerazione graduale all'inizio e alla fine della transizione.
+        - ease-in: applica un'accelerazione graduale all'inizio della transizione.
+        - ease-out: applica una decelerazione graduale alla fine della transizione.
+        - ease-in-out: applica l'accelerazione graduale all'inizio e la decelerazione graduale alla fine della transizione.
+        - linear: applica una transizione con una velocità costante dall'inizio alla fine, senza accelerazione o decelerazione.
+        - cubic-bezier(n,n,n,n): consente di specificare una curva di bezier personalizzata per controllare l'andamento della transizione. I valori possono variare da 0 a 1 e definiscono i punti di controllo della curva.
+        */
+        
+        .box-timing:hover {
+            background-color: yellow;
+        }
+        
+        /* --- QUINTO ESEMPIO: Transizione a scatti (Steps) --- */
+        .box-steps {
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+            transition-property: width;
+            transition-duration: 2s;
+            transition-timing-function: steps(4);
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            line-height: 100px;
+        }
+        
+        /* 
+        Valori possibili con steps:
+        - steps(5): divide la transizione in un numero definito di scatti netti.
+        - step-start: il salto avviene immediatamente all'inizio del cambio di stato.
+        - step-end: il salto avviene alla fine della durata della transizione.
+        */
+        
+        .box-steps:hover {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Primo blocco: Transizione semplice sul colore -->
+    <div class="transition-1">
+        Sposta il cursore del mouse qui per vedere la transizione graduale del colore di sfondo.
+    </div>
+    
+    <!-- Primo separatore -->
+    <hr>
+    
+    <!-- Secondo blocco: Transizione avanzata su dimensioni e colore con tempi diversi -->
+    <div class="transition-2"></div>
+    
+    <!-- Secondo separatore -->
+    <hr>
+    
+    <!-- Terzo blocco: Transizione con ritardo -->
+    <div class="box-delay">
+        Sposta il cursore del mouse qui
+    </div>
+    
+    <!-- Terzo separatore -->
+    <hr>
+    
+    <!-- Quarto blocco: Transizione con funzione di temporizzazione -->
+    <div class="box-timing">
+        Sposta il cursore del mouse qui
+    </div>
+    
+    <!-- Quarto separatore -->
+    <hr>
+    
+    <!-- Quinto blocco: Transizione a scatti con steps -->
+    <div class="box-steps">
+        CARICAMENTO
+    </div>
+    
+</body>
+</html>

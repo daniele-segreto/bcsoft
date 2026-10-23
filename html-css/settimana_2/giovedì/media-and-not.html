@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media query con: Not</title>
+    <style>
+        /* 
+        Si attiva solo se lo schermo è <= 768px E NON è <= 480px.
+        In pratica definisce un intervallo (range) compreso tra 481px e 768px.
+        */
+        @media screen and (max-width: 768px) and (not (max-width: 480px)) {
+            body {
+                background-color: lightgreen;
+            }
+        }
+        
+        /* eventuale stile per gli schermi con larghezza massima di 480px 
+        
+        @media screen and (max-width: 480px) {
+        body {
+        background-color: lightcoral;
+        }
+        }
+        
+        */
+    </style>
+</head>
+<body>
+    
+    <h1>Media query con: Not</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae commodo risus.</p>
+    
+</body>
+</html>

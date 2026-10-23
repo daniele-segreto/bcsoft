@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate</title>
+    <style>
+        /* Contenitore principale che definisce la prospettiva per il 3D */
+        .box {
+            perspective: 300px; /* aiuta a creare una prospettiva-profondità tridimensionale, agendo sulla distanza tra l'oggetto da rendere tridimensionale e l'utente */
+        }
+
+        /* Stile comune per i box figli all'interno della classe .box */
+        .box > div {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            border: 3px dashed red;
+            margin-top: 50px;
+            transition: 1s;
+        }
+
+        /* 1. Traslazione solo lungo l'asse X (orizzontale) */
+        #box1:hover {
+            translate: 30px;
+        }
+
+        /* 2. Traslazione lungo l'asse X e l'asse Y (verticale) */
+        #box2:hover {
+            translate: 30px 20px;
+        }
+
+        /* 3. Traslazione tridimensionale lungo gli assi X, Y e Z (profondità) */
+        #box3:hover {
+            translate: 10px 10px -40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div id="box1">Translate <br>X</div>
+        <div id="box2">Translate <br>X,Y</div>
+        <div id="box3">Translate <br>X,Y,Z</div>
+    </div>
+
+</body>
+</html>

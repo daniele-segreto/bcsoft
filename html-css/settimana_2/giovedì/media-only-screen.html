@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio Media Query Responsive</title>
+    <style>
+        /* ==========================================================
+        STILI DI BASE (per schermi grandi / desktop)
+        ========================================================== */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: lightblue;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        main {
+            padding: 20px;
+        }
+        
+        footer {
+            background-color: black;
+            color: white;
+            padding: 5px;
+            text-align: center;
+        }
+        
+        /* ==========================================================
+        MEDIA QUERY: Si attiva solo quando la larghezza dello schermo 
+        è pari o inferiore a 600 pixel (dispositivi mobili)
+        ========================================================== */
+        @media only screen and (max-width: 600px) {
+            
+            /* Modifica il colore di sfondo dell'header */
+            header {
+                background-color: blue;
+            }
+            
+            /* Modifica il colore di sfondo della barra di navigazione */
+            nav {
+                background-color: yellow;
+            }
+            
+            /* Modifica il colore di sfondo del footer */
+            footer {
+                background-color: blue;
+            }
+            
+            /* Cambia il colore del titolo h2 all'interno del main in rosso */
+            main h2 {
+                color: red;
+            }
+            
+            /* Aggiunge un'immagine di sfondo e adatta il testo nei paragrafi del main */
+            main p {
+                background-image: url('https://picsum.photos/id/1018/800/500');
+                background-size: cover;
+                color: white;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Header</h1>
+    </header>
+    
+    <nav>
+        <span>Voce 1</span> | 
+        <span>Voce 2</span> | 
+        <span>Voce 3</span> | 
+        <span>Voce 4</span>
+    </nav>
+    
+    <main>
+        <h2>Main</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras leo lorem, dictum et lorem suscipit, mollis elementum neque. Vivamus urna est, sodales ut scelerisque vitae, facilisis rutrum libero. In hac habitasse platea dictumst. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas obcaecati, consequuntur repudiandae hic explicabo sunt aut aliquid nostrum sint expedita unde beatae perspiciatis laboriosam cumque quam eum libero dolorem aperiam? Nemo sapiente reprehenderit modi quam deserunt hic asperiores doloremque nesciunt quidem fuga facilis consectetur, quibusdam alias fugiat officia labore est dolorem laboriosam ad ut harum ducimus ipsam. Id molestiae facilis voluptatem accusamus recusandae veritatis non velit dolorem? Et quia voluptatibus enim quasi? Explicabo voluptas quidem voluptates expedita. At porro dignissimos sapiente commodi reiciendis itaque dolorum nemo consectetur laboriosam esse minima aliquam sint inventore, sunt veniam dolorem. A dolorum reprehenderit quis!</p>
+    </main>
+    
+    <footer>
+        <p>Footer</p>
+    </footer>
+    
+</body>
+</html>

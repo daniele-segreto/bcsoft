@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation name</title>
+    <style>
+        /* Definisce i fotogrammi chiave (keyframes) che compongono l'animazione denominata "slitta" */
+        @keyframes slitta {
+            0% { transform: translateX(0); } /* Punto di partenza dell'animazione */
+            50% { transform: translateX(200px); } /* A metà percorso si sposta a destra */
+            100% { transform: translateY(400px); }/* Punto di arrivo: si sposta in basso */
+            /* 100% { transform: translate(200px, 400px); } */ /* Per fare tutto in un punto e mantenere la cordinata */
+        }
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* Associa l'animazione personalizzata "slitta" all'elemento */
+            animation-name: slitta;
+            /* Stabilisce la durata complessiva dell'animazione (2 secondi) */
+            animation-duration: 2s; /* Valori possibili: s (secondi) o ms (millisecondi) */
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box"></div>
+    
+</body>
+</html>

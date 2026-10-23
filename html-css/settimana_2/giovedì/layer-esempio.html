@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempi Pratici Direttiva Layer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+        }
+        
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        
+        /* ==========================================================
+        SEZIONE 1: L'ordine dei Layer batte la specificità dei selettori
+        ========================================================== */
+        
+        /* Primo layer: usa un ID (#titolo-1), che normalmente sarebbe potentissimo */
+        @layer base {
+            #titolo-1 {
+                color: blue;
+            }
+        }
+        
+        /* Secondo layer: usa una semplice classe (.rosso). 
+        Visto che questo layer è scritto dopo, vincerà lui a prescindere dall'ID! */
+        @layer importante {
+            .rosso {
+                color: red;
+            }
+        }
+        
+        
+        /* ==========================================================
+        SEZIONE 2: La supremazia del codice scritto fuori dai Layer
+        ========================================================== */
+        
+        /* Questo layer prova a colorare il testo di verde */
+        @layer mio-layer {
+            .testo-personalizzato {
+                color: green;
+                font-size: 20px;
+            }
+        }
+        
+        /* Questa regola è SCRITTA FUORI DA QUALSIASI LAYER. 
+        Ha la precedenza assoluta e trasformerà il testo in viola. */
+        .testo-personalizzato {
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Guida pratica ai Layer CSS</h1>
+    
+    <!-- SEZIONE 1 -->
+    <section>
+        <h2>Esempio 1: L'ordine dei Layer batte la specificità</h2>
+        <p>L'elemento sottostante possiede sia un ID che una classe:</p>
+        
+        <!-- Il testo diventerà ROSSO perché il layer "importante" è dichiarato per ultimo, 
+        nonostante #titolo-1 utilizzi un ID (che in condizioni normali batterebbe una classe). -->
+        <h3 id="titolo-1" class="rosso">Questo testo è rosso (vince l'ordine del layer)!</h3>
+    </section>
+    
+    <!-- SEZIONE 2 -->
+    <section>
+        <h2>Esempio 2: La precedenza del codice esterno</h2>
+        <p>L'elemento sottostante si trova dentro un layer che imposta il colore verde:</p>
+        
+        <!-- Il testo sarà VIOLA perché le regole CSS scritte all'esterno di qualsiasi 
+        @layer mantengono sempre la precedenza assoluta sui layer. -->
+        <p class="testo-personalizzato">Questo paragrafo è viola perché il codice esterno vince su tutto!</p>
+    </section>
+    
+</body>
+</html>

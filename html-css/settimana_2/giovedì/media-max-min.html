@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media query: Width e Height</title>
+    <style>
+        /* Stili di base per il corpo della pagina */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            font-size: 16px;
+        }
+        
+        /* 1. Si attiva se la larghezza dello schermo è al massimo 768px */
+        @media screen and (max-width: 768px) {
+            body {
+                background-color: orange;
+            }
+        }
+        
+        /* 2. Si attiva se la larghezza dello schermo è almeno 1024px */
+        @media screen and (min-width: 1024px) {
+            body {
+                background-color: aqua;
+            }
+        }
+        
+        /* 3. Si attiva se l'altezza della finestra è al massimo 300px */
+        @media screen and (max-height: 300px) {
+            body {
+                background-color: yellow;
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Media query con Width e Height</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae commodo risus.</p>
+    
+</body>
+</html>

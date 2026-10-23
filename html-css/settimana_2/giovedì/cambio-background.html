@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animazione Background</title>
+    <style>
+        .box {
+            width: 600px;
+            height: 350px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background-size: cover;
+            background-position: center;
+            
+            /* Associa l'animazione denominata "cambiasfondo" all'elemento */
+            animation-name: cambiasfondo;
+            /* Stabilisce la durata complessiva del ciclo di animazione (12 secondi) */
+            animation-duration: 12s;
+            /* Configura la ripetizione continua e infinita dell'animazione */
+            animation-iteration-count: infinite;
+        }
+        
+        /* Fotogrammi chiave per la transizione dinamica delle immagini di sfondo */
+        @keyframes cambiasfondo {
+            0% {
+                background-image: url("https://picsum.photos/id/1000/800/500");
+            }
+            33% {
+                background-image: url("https://picsum.photos/id/1001/800/500");
+            }
+            66% {
+                background-image: url("https://picsum.photos/id/1002/800/500");
+            }
+            100% {
+                background-image: url("https://picsum.photos/id/1003/800/500");
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box"></div>
+    
+</body>
+</html>

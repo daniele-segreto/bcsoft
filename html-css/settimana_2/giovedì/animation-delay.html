@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Delay e Scorrimento</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            background-color: aquamarine;
+            
+            /* Fondamentale: rende l'elemento posizionato, permettendo l'uso 
+            delle proprietà di offset come 'left' per lo scorrimento */
+            position: relative;
+            
+            /* Associa l'animazione personalizzata denominata "scorri" all'elemento */
+            animation-name: scorri;
+            
+            /* Stabilisce la durata di un singolo ciclo dell'animazione (3 secondi) */
+            animation-duration: 3s;
+            
+            /* Introduce un tempo di attesa (ritardo) di 2 secondi prima che 
+            l'animazione inizi effettivamente la sua esecuzione */
+            animation-delay: 2s;
+            
+            /* Configura la ripetizione infinita e continua del ciclo di animazione */
+            animation-iteration-count: infinite;
+        }
+        
+        /* Fotogrammi chiave (keyframes) che definiscono la traiettoria dello spostamento */
+        @keyframes scorri {
+            0% {
+                /* Punto di partenza: l'elemento si trova nella sua posizione iniziale (0px) */
+                left: 0;
+            }
+            100% {
+                /* Punto di arrivo: l'elemento si sposta verso destra di 400 pixel */
+                left: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box">Box scorrevole</div>
+    
+</body>
+</html>

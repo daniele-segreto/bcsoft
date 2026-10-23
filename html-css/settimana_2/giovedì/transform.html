@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform origin</title>
+    <style>
+        .box {
+            width: 80px;
+            height: 80px;
+            background-color: hotpink;
+            margin: 100px;
+            /* Mantiene l'elemento alla sua dimensione originale (100%) nello stato iniziale */
+            transform: scale(1);
+        }
+
+        .box:hover {
+            /* Ingrandisce l'elemento al 150% della sua dimensione al passaggio del mouse */
+            transform: scale(1.5);
+            /* Sposta il punto di ancoraggio della trasformazione nell'angolo in basso a sinistra */
+            transform-origin: bottom left;
+        }
+
+        /*
+        Valori possibili per transform-origin:
+        - Unità di misura in pixel (px)
+        - Percentuali (%)
+        - Posizioni orizzontali: left, right, center
+        - Posizioni verticali: top, bottom
+        */
+    </style>
+</head>
+<body>
+
+    <div class="box"></div>
+
+</body>
+</html>

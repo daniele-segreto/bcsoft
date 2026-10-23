@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation fill mode</title>
+    <style>
+        .box {
+            border-top: 10px dashed red;
+            margin-top: 30px;
+        }
+        
+        @keyframes cresci {
+            0% {
+                font-size: 0;
+            }
+            100% {
+                font-size: 60px;
+            }
+        }
+        
+        /* Comportamento senza animation-fill-mode (o con valore "none") */
+        .box:hover .box2 {
+            animation-name: cresci;
+            animation-duration: 2s;
+            margin-top: 30px;
+            /* Al termine dei 2 secondi dell'animazione, l'elemento ripristina 
+            immediatamente lo stato iniziale (font-size originario), perdendo gli stili del 100% */
+        }
+        
+        /* Comportamento con animation-fill-mode: forwards */
+        .box:hover .box1 {
+            animation-name: cresci;
+            animation-duration: 2s;
+            /* Mantiene in modo permanente gli stili finali definiti al 100% (font-size: 60px) 
+            anche dopo il completamento dell'animazione */
+            animation-fill-mode: forwards; /* FILL-MODE*/
+            margin-top: 30px;
+        }
+        
+        /*
+        Valori possibili per animation-fill-mode:
+        
+        none: l'elemento non viene influenzato prima o dopo l'animazione.
+        
+        forwards: l'elemento mantiene lo stato finale dell'animazione dopo il suo completamento.
+        
+        backwards: l'elemento applica lo stato iniziale dell'animazione prima che essa inizi 
+        (durante l'eventuale periodo di animation-delay).
+        
+        both: applica sia la regola di forwards che quella di backwards.
+        */
+    </style>
+</head>
+<body>
+    
+    <p>Sposta il cursore del mouse sulla barra tratteggiata rossa. C'è una sorpresa per te :-)</p>
+    <div class="box">
+        <div class="box1">Cosa succederà...</div>
+        <div class="box2">...MAI?</div>
+    </div>
+    
+</body>
+</html>

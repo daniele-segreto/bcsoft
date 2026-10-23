@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation direction</title>
+    <style>
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: brown;
+            margin: 60px;
+            position: relative;
+            animation-name: scorri;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            /* Definisce la direzione di riproduzione dell'animazione nei cicli successivi */
+            animation-direction: alternate; /* Valori possibili: normal, reverse, alternate, alternate-reverse */
+        }
+
+        /* Fotogrammi chiave (keyframes) per lo scorrimento orizzontale */
+        @keyframes scorri {
+            0% {
+                left: 0;
+            }
+            100% {
+                left: 450px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box"></div>
+
+</body>
+</html>

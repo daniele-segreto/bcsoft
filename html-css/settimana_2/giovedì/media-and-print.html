@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media query con: Only e And</title>
+    <style>
+        /* ==========================================================
+        MEDIA QUERY: Si attiva solo su schermi a colori (screen) 
+        con una larghezza minima di 768 pixel (es. tablet e desktop)
+        ========================================================== */
+        @media only screen and (min-width: 768px) {
+            body {
+                background-color: hotpink;
+                color: white;
+            }
+        }
+        
+        /* ==========================================================
+        MEDIA QUERY PRINT: Si attiva esclusivamente quando l'utente 
+        stampa la pagina o apre l'anteprima di stampa
+        ========================================================== */
+        @media print {
+            body {
+                color: black;
+            }
+            h1 {
+                color: red;
+            }
+            p {
+                font-style: italic;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Media query con: Only e And</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae commodo risus.</p>
+    
+</body>
+</html>

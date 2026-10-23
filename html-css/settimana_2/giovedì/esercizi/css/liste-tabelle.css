@@ -1,0 +1,171 @@
+h3 {
+    border-bottom: 2px solid brown;
+    background-color: rgb(0, 255, 174);
+}
+
+
+/* ==========================================
+PROPRIETÀ LIST-STYLE-IMAGE
+========================================== */
+
+/* list-style-image - Sostituito con background personalizzato per gestire dimensioni e posizione */
+.lista-con-immagine {
+    list-style: none; /* Rimuove il puntino nativo della lista */
+    padding-left: 0;
+    margin-left: 20px;
+}
+
+.lista-con-immagine li {
+    position: relative;
+    padding-left: 30px; /* Spazio a sinistra per fare posto all'icona senza sovrapporla al testo */
+    margin-bottom: 8px;
+    background-image: url('../img/icon-triste.png'); /* RICHIESTO! */
+    background-repeat: no-repeat;
+    background-position: left center; /* Allinea l'icona a sinistra e verticalmente al centro rispetto al testo */
+    background-size: 18px 18px; /* <--- CONTROLLO ESATTO DELLE DIMENSIONI (modifichi i pixel a piacimento) */
+}
+
+
+/* ==========================================
+PROPRIETÀ LIST-STYLE-POSITION
+========================================== */
+
+/* Stili comuni per evidenziare il perimetro dei list items */
+.esempio-outside li,
+.esempio-inside li {
+    background-color: #fff3cd;
+    border: 2px solid #ffecb5;
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 300px; /* Limitiamo la larghezza per forzare l'andata a capo */
+}
+
+/* OUTSIDE: Il marcatore (pallino) fluttua all'esterno del bordo giallo */
+.esempio-outside {
+    list-style-position: outside; /* RICHIESTO! */
+}
+
+/* INSIDE: Il marcatore viene inglobato all'interno del riquadro */
+.esempio-inside {
+    list-style-position: inside; /* RICHIESTO! */
+}
+
+
+/* ==========================================
+PROPRIETÀ LIST-STYLE-TYPE
+========================================== */
+
+/* list-style-type: circle - Sostituisce il punto pieno standard con un cerchio vuoto */
+.lista-cerchio {
+    list-style-type: circle; /* RICHIESTO! */
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+/* list-style-type: square - Sostituisce il punto standard con un quadratino pieno */
+.lista-quadrato {
+    list-style-type: square; /* RICHIESTO! */
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+/* list-style-type: upper-roman - Utilizza i numeri romani (I, II, III...) per le liste ordinate */
+.lista-romani {
+    list-style-type: upper-roman; /* RICHIESTO! */
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+
+/* ==========================================
+PROPRIETÀ TABLE-LAYOUT
+========================================== */
+
+/* Stili di base per la visualizzazione dei bordi */
+table {
+    width: 100%;
+    /* Unisce i bordi delle celle in un'unica linea sottile ed evita bordi doppi */
+    border-collapse: collapse; /* RICHIESTO! */
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #000;
+    padding: 8px;
+}
+
+/* 1. Layout automatico: la tabella si adatta dinamicamente al testo */
+.tab-auto {
+    table-layout: auto; /* RICHIESTO! */
+}
+
+/* 2. Layout fisso: rispetta rigidamente le larghezze assegnate */
+.tab-fixed {
+    table-layout: fixed; /* RICHIESTO! */
+}
+
+Classi dirette per definire la larghezza delle colonne senza selettori complessi */
+.col-codice {
+width: 30%;
+}
+
+.col-descrizione {
+width: 80%;
+}
+
+
+/* ==========================================
+PROPRIETÀ EMPTY-CELLS
+========================================== */
+
+/* Stili comuni per le tabelle di prova (richiedono border-collapse: separate) */
+.tab-empty-show,
+.tab-empty-hide {
+    width: 100%;
+    /* Mantiene le celle separate (obbligatorio affinché empty-cells possa funzionare) */
+    border-collapse: separate; /* RICHIESTO! */
+    border-spacing: 4px; /* Crea uno spazio visibile tra le celle separate */
+    margin-bottom: 20px;
+}
+
+/* Applica uno sfondo verde chiaro a tutte le celle (th e td) delle tabelle per empty-cells */
+.tab-empty-show th,
+.tab-empty-show td,
+.tab-empty-hide th,
+.tab-empty-hide td {
+    background-color: #86dd3a;
+}
+
+/* empty-cells: show - Mostra i bordi e lo sfondo anche nelle celle vuote */
+.tab-empty-show {
+    empty-cells: show; /* RICHIESTO! */ /* (Valore predefinito) */
+}
+
+/* empty-cells: hide - Rimuove i bordi e lo sfondo dalle celle completamente vuote */
+.tab-empty-hide {
+    empty-cells: hide; /* RICHIESTO! */
+}
+
+
+/* ==========================================
+PROPRIETÀ CAPTION-SIDE
+========================================== */
+
+/* Stili di base per la didascalia */
+caption {
+    font-weight: bold;
+    padding: 6px;
+    color: #1763af;
+    background-color: yellow;
+    border: 1px solid black;
+}
+
+/* caption-side: top - Posiziona la didascalia sopra la tabella (valore predefinito) */
+.tab-caption-top {
+    caption-side: top; /* RICHIESTO! */
+}
+
+/* caption-side: bottom - Posiziona la didascalia sotto la tabella */
+.tab-caption-bottom {
+    caption-side: bottom; /* RICHIESTO! */
+}

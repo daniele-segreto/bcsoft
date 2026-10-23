@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation-timing-function</title>
+    <style>
+        .box > div[class] {
+            /* Associa l'animazione denominata "cresci" all'elemento */
+            animation-name: cresci;
+            /* Definisce la durata di un ciclo completo dell'animazione (10 secondi) */
+            animation-duration: 10s;
+            /* Imposta la ripetizione continua e infinita dell'animazione */
+            animation-iteration-count: infinite;
+            margin-bottom: 20px;
+        }
+        
+        /* Fotogrammi chiave che definiscono lo stato iniziale (0%) e finale (100%) dell'animazione */
+        @keyframes cresci {
+            0% {
+                min-width: 15em;
+                width: 15em;
+                background-color: black;
+                border: 3px solid red;
+                color: white;
+            }
+            100% {
+                min-width: 20em;
+                width: 100vw; /* Percentuale della larghezza della viewport */
+                background-color: blue;
+                border: 3px solid red;
+                color: white;
+            }
+        }
+        
+        /* --- APPLICAZIONE E DIFFERENZE DELLE TIMING FUNCTIONS --- */
+        
+        .ease {
+            /* Applicazione standard: l'animazione parte lentamente, accelera sensibilmente nella 
+            parte centrale e rallenta dolcemente prima di fermarsi o ricominciare. È l'effetto 
+            più naturale e fluido per l'occhio umano. */
+            animation-timing-function: ease;
+        }
+        
+        .easein {
+            /* Partenza frenata: l'animazione comincia in modo molto lento e graduale, per poi 
+            acquistare velocità rapidamente nella seconda metà fino alla fine. Dà l'impressione 
+            che l'oggetto stia accelerando uscendo da una posizione di quiete. */
+            animation-timing-function: ease-in;
+        }
+        
+        .easeout {
+            /* Arrivo frenato: l'animazione parte alla massima velocità e decelera progressivamente 
+            man mano che si avvicina alla fine, rallentando dolcemente fino a fermarsi. È perfetto 
+            per elementi che devono occupare la loro posizione finale con grazia. */
+            animation-timing-function: ease-out;
+        }
+        
+        .easeinout {
+            /* Combinazione simmetrica: l'animazione inizia lentamente, accelera nella parte 
+            centrale del tragitto e rallenta gradualmente nella fase finale. Risulta estremamente 
+            morbido e ideale per transizioni di layout eleganti. */
+            animation-timing-function: ease-in-out;
+        }
+        
+        .linear {
+            /* Velocità costante: l'animazione mantiene esattamente la stessa velocità dall'inizio 
+            alla fine, senza alcuna accelerazione o decelerazione. Il movimento appare meccanico 
+            e rigoroso, ideale per elementi ripetitivi o sfondi in movimento continuo. */
+            animation-timing-function: linear;
+        }
+        
+        .cubic {
+            /* Curva personalizzata (Cubic Bézier): consente di modellare l'andamento in modo 
+            estatto tramite punti di controllo matematici. Nell'esempio specificato, i valori 
+            superiori a 1 (come 1.3) creano un effetto dinamico di "rimbalzo" o "overshoot", 
+            dove l'elemento supera leggermente il traguardo per poi assestarsi. */
+            animation-timing-function: cubic-bezier(0.5, 0.7, 1, 1.3);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+        <div class="ease">ease</div>
+        <div class="easein">ease-in</div>
+        <div class="easeout">ease-out</div>
+        <div class="easeinout">ease-in-out</div>
+        <div class="linear">linear</div>
+        <div class="cubic">cubic-bezier</div>
+    </div>
+    
+</body>
+</html>

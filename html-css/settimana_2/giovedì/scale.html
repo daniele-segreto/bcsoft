@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scale</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            border: 4px dashed red;
+            margin: 80px;
+            /* Rende fluida la transizione di scala nello stato di hover */
+            transition: 1s;
+        }
+        
+        #box1:hover {
+            /* Scala l'elemento in modo proporzionale sia in larghezza che in altezza al 150% */
+            scale: 1.5;
+        }
+        
+        #box2:hover {
+            /* Riduce l'elemento in modo proporzionale al 50% delle sue dimensioni */
+            scale: 0.5;
+        }
+        
+        #box3:hover {
+            /* Scala in modo asimmetrico: 
+            - Il primo valore (0.5) agisce sull'asse X (larghezza al 50%)
+            - Il secondo valore (1.5) agisce sull'asse Y (altezza al 150%) */
+            scale: 0.5 1.5;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box" id="box1">Box 1</div>
+    <div class="box" id="box2">Box 2</div>
+    <div class="box" id="box3">Box 3</div>
+    
+</body>
+</html>

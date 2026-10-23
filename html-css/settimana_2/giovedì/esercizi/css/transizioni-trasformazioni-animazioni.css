@@ -1,0 +1,300 @@
+/* ==========================================
+STILI GENERALI CONDIVISI PER TUTTI I BOX
+========================================== */
+.box-transizione,
+.box-ritardo,
+.box-ease,
+.box-linear,
+.box-transform,
+.box-origin-center,
+.box-origin-corner,
+.box-skew-x,
+.box-skew-y,
+.box-animazione,
+.box-durata,
+.box-ritardo-animazione,
+.box-timing-ease,
+.box-timing-linear,
+.box-direzione,
+.box-fill-mode { /* AGGIUNTO QUI */
+    width: 200px;
+    height: 100px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+h2 {
+    border-bottom: 2px solid brown;
+    background-color: rgb(255, 255, 75);
+}
+
+
+/* ==========================================
+PROPRIETÀ TRANSITION-PROPERTY
+========================================== */
+
+.box-transizione {
+    background-color: #1763af;
+    /* 1. Definiamo QUALE proprietà CSS deve subire la transizione quando cambia stato */
+    transition-property: background-color; /* RICHIESTO! */
+    /* 2. Indichiamo la durata della transizione */
+    transition-duration: 1s; /* RICHIESTO! */
+}
+
+/* Stato al passaggio del mouse (:hover) */
+.box-transizione:hover {
+    background-color: #fe2600;
+}
+
+
+/* ==========================================
+PROPRIETÀ TRANSITION-DELAY
+========================================== */
+
+.box-ritardo {
+    background-color: #495057;
+    transition-property: background-color; /* RICHIESTO! */
+    transition-duration: 1s; /* RICHIESTO! */
+    /* Definisce il tempo di attesa prima che la transizione abbia effettivo inizio */
+    transition-delay: 1s; /* RICHIESTO! */
+}
+
+.box-ritardo:hover {
+    background-color: #11c614;
+}
+
+
+/* ==========================================
+PROPRIETÀ TRANSITION-TIMING-FUNCTION
+========================================== */
+
+.box-ease,
+.box-linear {
+    height: 80px; /* Altezza specifica leggermente ridotta per questo gruppo */
+    background-color: #1763af;
+    transition-property: width; /* La transizione agirà sulla larghezza del box */
+    transition-duration: 2s;    /* Durata di 2 secondi */
+}
+
+/* 1. Ease: parte lentamente, accelera al centro e rallenta alla fine */
+.box-ease {
+    transition-timing-function: ease; /* RICHIESTO! (Valore predefinito) */
+}
+
+.box-ease:hover {
+    width: 400px;
+}
+
+/* 2. Linear: mantiene una velocità costante per tutta la durata */
+.box-linear {
+    transition-timing-function: linear; /* RICHIESTO! */
+}
+
+.box-linear:hover {
+    width: 400px;
+}
+
+
+/* ==========================================
+PROPRIETÀ TRANSFORM
+========================================== */
+
+.box-transform {
+    background-color: #1763af;
+    /* Per apprezzare la trasformazione al passaggio del mouse, uniamo transizione e trasformazione */
+    transition: transform 0.8s ease; 
+}
+
+/* Stato al passaggio del mouse (:hover) con l'uso della proprietà transform */
+.box-transform:hover {
+    /* Applicazione della proprietà transform combinando ingrandimento e rotazione */
+    transform: scale(1.50) rotate(360deg); /* RICHIESTI! ---> sia "transform" che "scale" */
+    margin-left: 50px;
+}
+
+
+/* ==========================================
+PROPRIETÀ TRANSFORM-ORIGIN
+========================================== */
+
+/* Stili specifici per i box dedicati a transform-origin */
+.box-origin-center,
+.box-origin-corner {
+    background-color: #1763af;
+    /* Uniamo la transizione per apprezzare la rotazione in modo fluido */
+    transition: transform 1s ease;
+    width: 50%;
+}
+
+/* 1. Centro: il fulcro della rotazione è al centro del box (valore predefinito) */
+.box-origin-center {
+    transform-origin: center center; /* RICHIESTO! */
+}
+
+.box-origin-center:hover {
+    transform: rotate(45deg); /* RICHIESTO! */
+}
+
+/* 2. Angolo superiore sinistro: il fulcro si sposta nell'angolo */
+.box-origin-corner {
+    transform-origin: top left; /* RICHIESTO! */
+}
+
+.box-origin-corner:hover {
+    transform: rotate(45deg); /* RICHIESTO! */
+}
+
+
+/* ==========================================
+PROPRIETÀ SKEW (Inclinazione)
+========================================== */
+
+/* Stili specifici per i box dedicati a skew */
+.box-skew-x,
+.box-skew-y {
+    background-color: #1763af;
+    /* Uniamo la transizione per apprezzare l'inclinazione in modo fluido */
+    transition: transform 0.8s ease;
+    width: 50%;
+    height: 70px;
+}
+
+/* 1. SkewX: inclina l'elemento lungo l'asse orizzontale */
+.box-skew-x:hover {
+    transform: skewX(15deg); /* RICHIESTO! */
+}
+
+/* 2. SkewY: inclina l'elemento lungo l'asse verticale */
+.box-skew-y:hover {
+    transform: skewY(15deg); /* RICHIESTO! */
+}
+
+
+/* ==========================================
+PROPRIETÀ ANIMATION-NAME E @KEYFRAMES
+========================================== */
+
+.box-animazione {
+    background-color: #1763af;
+    /* 1. Collega l'elemento al blocco @keyframes tramite il nome scelto */
+    animation-name: spostaColore; /* RICHIESTO! */
+    /* 2. Indichiamo una durata temporanea per permettere all'animazione di avviarsi */
+    animation-duration: 3s;
+}
+
+/* Definizione dei fotogrammi chiave dell'animazione */
+@keyframes spostaColore { /* RICHIESTO! */
+    0% {
+        background-color: #1763af;
+        transform: translateX(0);
+    }
+    50% {
+        background-color: #1acb09;
+        transform: translateX(250px);
+    }
+    100% {
+        background-color: #fe2600;
+        transform: translateX(0);
+    }
+}
+
+
+/* ==========================================
+PROPRIETÀ ANIMATION-DURATION E ITERATION-COUNT
+========================================== */
+
+.box-durata {
+    background-color: #1763af;
+    animation-name: spostaColore;
+    
+    /* 1. animation-duration: definisce quanto dura un ciclo completo dell'animazione */
+    animation-duration: 2s; /* RICHIESTO! (Più rapida rispetto ai 3s precedenti) */
+    
+    /* 2. animation-iteration-count: stabilisce quante volte l'animazione viene eseguita 
+    (può essere un numero intero oppure 'infinite') */
+    animation-iteration-count: infinite; /* RICHIESTO! */
+}
+
+
+/* ==========================================
+PROPRIETÀ ANIMATION-DELAY
+========================================== */
+
+.box-ritardo-animazione {
+    background-color: #1763af;
+    animation-name: spostaColore;
+    animation-duration: 2s;
+    /* Definisce il tempo di attesa prima che l'animazione abbia effettivo inizio */
+    animation-delay: 1s; /* RICHIESTO! */
+}
+
+
+/* ==========================================
+PROPRIETÀ ANIMATION-TIMING-FUNCTION
+========================================== */
+
+.box-timing-ease,
+.box-timing-linear {
+    background-color: #1763af;
+    animation-name: spostaColore;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+/* 1. Ease: accelerazione in partenza e rallentamento in arrivo (Valore predefinito) */
+.box-timing-ease {
+    animation-timing-function: ease; /* RICHIESTO! */
+}
+
+/* 2. Linear: velocità costante dall'inizio alla fine */
+.box-timing-linear {
+    animation-timing-function: linear; /* RICHIESTO! */
+}
+
+
+/* ==========================================
+PROPRIETÀ ANIMATION-DIRECTION
+========================================== */
+
+.box-direzione {
+    background-color: #1763af;
+    animation-name: spostaColore;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    
+    /* Stabilisce che l'animazione inverte la direzione a ogni ciclo */
+    animation-direction: alternate; /* RICHIESTO! */
+
+    /* 
+    - normal: Comportamento predefinito. L'animazione procede sempre nel verso standard (da 0% a 100%) a ogni ciclo.
+    - reverse: L'animazione viene eseguita interamente al contrario (da 100% a 0%) a ogni ciclo.
+    - alternate: L'animazione procede in avanti nel primo ciclo e all'indietro nel ciclo successivo, creando un moto armonico alternato.
+    - alternate-reverse: L'animazione parte al contrario (da 100% a 0%) nel primo ciclo e inverte la direzione nei cicli successivi.
+    */
+}
+
+
+/* ==========================================
+PROPRIETÀ ANIMATION-FILL-MODE
+========================================== */
+
+.box-fill-mode {
+    background-color: #1763af;
+    animation-name: spostaColore;
+    animation-duration: 2s;
+    animation-iteration-count: 1; /* Eseguito una sola volta per apprezzare lo stato finale */
+    
+    /* Mantiene lo stile dell'ultimo fotogramma (100%) una volta terminata l'animazione */
+    animation-fill-mode: forwards; /* RICHIESTO! */
+    
+    /*
+    - none: Comportamento predefinito. L'elemento non trattiene alcuno stile dei keyframes prima dell'avvio o dopo la conclusione.
+    - forwards: Al termine dell'animazione, l'elemento mantiene lo stile definito nell'ultimo fotogramma (100%).
+    - backwards: Durante l'eventuale animation-delay, l'elemento applica immediatamente lo stile del primo fotogramma (0%).
+    - both: Combina entrambi i comportamenti: applica lo stile del primo fotogramma durante il ritardo e mantiene l'ultimo alla fine. 
+    */
+}

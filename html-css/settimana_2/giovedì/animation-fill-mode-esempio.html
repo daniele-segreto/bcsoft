@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confronto Animation Fill Mode</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            margin-bottom: 30px;
+            border-bottom: 2px dashed #ccc;
+            padding-bottom: 15px;
+        }
+
+        .box {
+            width: 80px;
+            height: 80px;
+            background-color: crimson;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            position: relative;
+            
+            /* Impostazioni comuni dell'animazione */
+            animation-name: sposta;
+            animation-duration: 2s;
+            animation-delay: 2s; /* 2 secondi di attesa prima di partire */
+        }
+
+        /* L'animazione sposta il box a destra e cambia colore */
+        @keyframes sposta {
+            0% {
+                left: 0px;
+                background-color: crimson;
+            }
+            100% {
+                left: 300px;
+                background-color: midnightblue;
+            }
+        }
+
+        /* 1. NONE: Comportamento standard predefinito */
+        .box-none {
+            animation-fill-mode: none;
+        }
+
+        /* 2. FORWARDS: Mantiene lo stato finale dopo l'animazione */
+        .box-forwards {
+            animation-fill-mode: forwards;
+        }
+
+        /* 3. BACKWARDS: Applica lo stato iniziale durante il ritardo */
+        .box-backwards {
+            animation-fill-mode: backwards;
+        }
+
+        /* 4. BOTH: Applica sia backwards che forwards */
+        .box-both {
+            animation-fill-mode: both;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <p><strong>1. none (Default):</strong> Durante l'attesa sta fermo a sinistra. Finita l'animazione, scatta bruscamente indietro alla posizione iniziale.</p>
+        <div class="box box-none">none</div>
+    </div>
+
+    <div class="container">
+        <p><strong>2. forwards:</strong> Durante l'attesa sta fermo a sinistra. Finita l'animazione, <em>resta bloccato</em> nella posizione finale a destra.</p>
+        <div class="box box-forwards">forwards</div>
+    </div>
+
+    <div class="container">
+        <p><strong>3. backwards:</strong> Già <em>durante i 2 secondi di attesa</em> salta subito allo stato iniziale del keyframe (0%), per poi partire.</p>
+        <div class="box box-backwards">backwards</div>
+    </div>
+
+    <div class="container">
+        <p><strong>4. both:</strong> Fa entrambe le cose: si posiziona in anticipo durante l'attesa (backwards) e resta bloccato alla fine (forwards).</p>
+        <div class="box box-both">both</div>
+    </div>
+
+</body>
+</html>

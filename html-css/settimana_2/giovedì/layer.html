@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direttiva Layer</title>
+    <style>
+        /*
+        Regole fondamentali dei Layer CSS:
+        - La direttiva @layer serve a gestire la priorità degli stili indipendentemente dalla specificità dei selettori o dall'ordine in cui sono scritti nel codice.
+        - Gli stili scritti senza @layer hanno sempre la precedenza su tutti i @layer definiti nel file.
+        - Se usi !important all'interno di un layer, l'ordine di precedenza si inverte.
+        */
+
+        /* Primo layer: definisce regole con selettore più specifico (#content p) ma con priorità inferiore */
+        @layer uno {
+            #content p {
+                color: blue;
+            }
+        }
+
+        /* Secondo layer: definisce regole con selettore meno specifico (.testo-rosso) ma con priorità superiore 
+           poiché dichiarato dopo il layer "uno" */
+        @layer due {
+            .testo-rosso {
+                color: red;
+            }
+        }
+
+        /* Regola globale definita all'esterno di qualsiasi @layer (ha la massima precedenza assoluta) */
+        /* #content p { color: blue; } */
+        /* .testo-rosso { color: red; } */
+    </style>
+</head>
+<body>
+
+    <div id="content">
+        <p class="testo-rosso">Questo testo sarà del colore...?</p>
+    </div>
+
+</body>
+</html>

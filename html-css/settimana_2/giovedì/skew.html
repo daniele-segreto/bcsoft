@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skew</title>
+    <style>
+        .normal {
+            width: 100px;
+            height: 100px;
+            background-color: lightgreen;
+            margin: 30px;
+        }
+
+        .skew {
+            width: 100px;
+            height: 100px;
+            background-color: violet;
+            margin: 30px;
+            /* Inclina l'elemento di 20 gradi rispetto al piano orizzontale, deformandolo in un parallelogramma */
+            transform: skew(20deg);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="normal">Normal</div>
+    <div class="skew">Skew</div>
+
+</body>
+</html>

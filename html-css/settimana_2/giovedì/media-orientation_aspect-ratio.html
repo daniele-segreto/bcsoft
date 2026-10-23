@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media query con Orientation e Aspect-ratio</title>
+    <style>
+        /* Stili di base per il corpo della pagina */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        
+        /* 1. Si attiva se il dispositivo è orientato in verticale (portrait) */
+        @media screen and (orientation: portrait) {
+            body {
+                background-color: orange;
+            }
+        }
+        
+        /* 2. Si attiva se il dispositivo è orientato in orizzontale (landscape) */
+        @media screen and (orientation: landscape) {
+            body {
+                background-color: yellowgreen;
+            }
+        }
+        
+        /* 3. Si attiva se il rapporto di forma (aspect-ratio) della finestra è almeno 16/9 */
+        @media screen and (min-aspect-ratio: 16/9) {
+            body {
+                background-color: yellow;
+            }
+        }
+        
+        /* 4. Si attiva se il rapporto di forma della finestra è almeno 21/9 (schermi ultra-panoramici) */
+        @media screen and (min-aspect-ratio: 21/9) {
+            body {
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Media query con Orientation e Aspect-ratio</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae commodo risus.</p>
+    
+</body>
+</html>
