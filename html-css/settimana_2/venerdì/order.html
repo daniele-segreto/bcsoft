@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio della proprietà order</title>
+    <style>
+        /* 1. Il Contenitore Flexbox */
+        .container {
+            display: flex;
+            gap: 15px;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        /* 2. Stile di base per le scatole */
+        .box {
+            background-color: #3498db;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 30px;
+            text-align: center;
+            flex: 1; /* Distribuisce lo spazio in modo equo */
+        }
+
+        /* 3. Utilizzo della proprietà order per alterare la sequenza visiva */
+        
+        .box-uno {
+            order: 2; /* Verrà mostrato per secondo (o dopo il 3) */
+        }
+
+        .box-due {
+            order: 3; /* Verrà mostrato per ultimo */
+        }
+
+        .box-tre {
+            order: 1; /* Grazie a questo numero basso, balzerà visivamente al PRIMO posto */
+            background-color: #e74c3c; /* Evidenziato in rosso per chiarezza */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Nell'HTML l'ordine è: 1, poi 2, poi 3 -->
+        <div class="box box-uno">Box 1</div>
+        <div class="box box-due">Box 2</div>
+        <div class="box box-tre">Box 3 (Primo grazie a order: 1)</div>
+    </div>
+
+</body>
+</html>

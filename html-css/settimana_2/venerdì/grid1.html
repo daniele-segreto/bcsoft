@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+    <style>
+        /* Struttura principale del corpo basata su CSS Grid */
+        body {
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-rows: auto auto 1fr auto; /* Definisce le 4 righe principali: header, nav, main, footer */
+            min-height: 100vh; /* Garantisce che la pagina occupi almeno l'intera altezza dello schermo */
+        }
+
+        /* Regole comuni per le sezioni principali */
+        header, nav, main, footer {
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Stile e posizionamento dell'Header */
+        header {
+            background-color: black;
+            color: white;
+            grid-column: 1 / -1; /* Si estende per tutta la larghezza della griglia */
+        }
+
+        /* Stile e posizionamento della Barra di Navigazione */
+        nav {
+            background-color: hotpink;
+            grid-row: 2;         /* Posizionato sulla seconda riga */
+            grid-column: 1 / -1; /* Occupa tutte le colonne disponibili */
+        }
+
+        /* Stile della lista dei link orizzontali */
+        li {
+            display: inline-block;
+            margin-right: 30px;
+        }
+
+        /* Stile e posizionamento del Main (Grid Annidata) */
+        main {
+            background-color: lightgrey;
+            grid-row: 3;         /* Posizionato sulla terza riga */
+            grid-column: 1 / -1; /* Occupa l'intera larghezza */
+            display: grid;       /* Griglia annidata all'interno del main */
+            grid-template-columns: 1fr 1fr; /* Divide il contenuto in due colonne uguali */
+        }
+
+        /* Posizionamento del testo all'interno del main */
+        main p {
+            grid-column: 1;
+            justify-self: center;
+            align-self: center;
+            margin-top: 15px;
+            margin-bottom: 30px;
+        }
+
+        /* Stile del Footer */
+        footer {
+            background-color: black;
+            color: white;
+            grid-column: 1 / -1; /* Si estende per tutta la larghezza in basso */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Header</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec fermentum elit. Vestibulum id ex quis lectus congue vestibulum. Sed vitae urna at eros laoreet convallis nec in justo. Integer et sollicitudin metus. Ut tincidunt dui sit amet orci pretium, sit amet sodales mi scelerisque.</p>
+        <img src="https://placehold.co/300x300" alt="Immagine">
+    </main>
+
+    <footer>
+        <p>Footer</p>
+    </footer>
+
+</body>
+</html>

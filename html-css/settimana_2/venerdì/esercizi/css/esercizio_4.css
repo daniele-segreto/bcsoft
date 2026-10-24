@@ -1,0 +1,190 @@
+/* ==========================================
+STILI GENERALI E STRUTTURALI
+========================================== */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333333;
+    margin: 0;
+    padding: 20px;
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #1f2937;
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+}
+
+/* ==========================================
+PUNTO 1: BOX RUOTATO DI 45°
+========================================== */
+/* ruotare di 45° un div contenente del testo; */
+
+.contenitore-rotazione {
+    padding: 70px 0; /* Spazio sufficiente per contenere la rotazione senza sovrapposizioni */
+    text-align: center;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+}
+
+.box-ruotato {
+    width: 250px;
+    margin: 0 auto;
+    background-color: #3b82f6;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: rotate(45deg); /* Ruota il div di 45 gradi */
+    text-align: center;
+}
+
+/* ==========================================
+PUNTO 2: TRANSIZIONE GRADUALE COLORE DI SFONDO
+========================================== */
+/* cambiare gradualmente il colore di sfondo di un div al passaggio del mouse; */
+
+.box-transizione-colore {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #10b981; /* Colore di sfondo iniziale */
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.9s ease-in-out; /* Rende graduale il cambiamento della proprietà background-color */
+}
+
+.box-transizione-colore:hover {
+    background-color: #ef4444; /* Colore di sfondo finale al passaggio del mouse */
+}
+
+/* ==========================================
+PUNTO 3: ANIMAZIONE COLORE IN LOOP INFINITO
+========================================== */
+/* cambiare gradualmente il colore di sfondo di un div (da un colore iniziale ad un colore finale e viceversa) in un loop infinito; */
+
+.box-loop-infinito {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    /* 
+    Scomposizione e commento degli attributi della proprietà 'animation':
+    1. cambioColoreLoop : Nome dell'animazione (collegato direttamente al blocco @keyframes).
+    2. 3s              : Durata di un ciclo completo dell'animazione (3 secondi).
+    3. infinite        : Numero di ripetizioni (l'animazione viene eseguita in un loop infinito).
+    4. alternate       : Direzione dell'animazione (inverte il senso di marcia a ogni ciclo: andata e ritorno).
+    5. ease-in-out     : Curva di accelerazione (l'animazione inizia lentamente, accelera e rallenta verso la fine).
+    */
+    animation: cambioColoreLoop 3s infinite alternate ease-in-out;
+}
+
+/* Definizione dei fotogrammi chiave per la transizione bidirezionale del colore */
+@keyframes cambioColoreLoop {
+    0% {
+        background-color: #8b5cf6; /* Colore iniziale (Viola) */
+    }
+    100% {
+        background-color: #f59e0b; /* Colore finale (Arancione) */
+    }
+}
+
+/* ==========================================
+PUNTO 4: TRANSIZIONE GRADUALE DIMENSIONI
+========================================== */
+/* cambiare gradualmente le dimensioni di un div (da 150px X 150px a 300px X 200px) al passaggio del mouse; */
+
+.box-ridimensionabile {
+    width: 150px;  /* Larghezza iniziale */
+    height: 150px; /* Altezza iniziale */
+    margin: 0 auto;
+    background-color: #ec4899;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Transizione fluida applicata a larghezza e altezza */
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+.box-ridimensionabile:hover {
+    width: 300px;  /* Larghezza finale al passaggio del mouse */
+    height: 200px; /* Altezza finale al passaggio del mouse */
+}
+
+/* ==========================================
+PUNTO 5: TRASFORMAZIONI COMPLESSE MULTIPLE
+========================================== */
+
+.contenitore-trasformazione-complessa {
+    padding: 100px 0; /* Spazio contenitivo per accogliere gli spostamenti, lo scalamento e la rotazione */
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* agire, al passaggio del mouse, su di un div di dimensione 300px X300px in modo che sia spostato di 50px in orizzontale e 80px in verticale, sia ruotato di 30° e sia scalato al 120% delle dimensioni originali. */
+
+.box-trasformazione-complessa {
+    width: 300px;  /* Dimensione fissa di 300px */
+    height: 300px; /* Dimensione fissa di 300px */
+    background-color: #06b6d4;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Transizione fluida per l'intera proprietà transform */
+    transition: transform 0.5s ease;
+}
+
+.box-trasformazione-complessa:hover {
+    /* 
+    Combinazione delle tre trasformazioni:
+    1. translate(50px, 80px) : Spostamento di 50px a destra (orizzontale) e 80px in basso (verticale).
+    2. rotate(30deg)          : Rotazione di 30 gradi in senso orario.
+    3. scale(1.2)             : Ingrandimento al 120% rispetto alle dimensioni originali.
+    */
+    transform: translate(50px, 80px) rotate(30deg) scale(1.2);   
+}

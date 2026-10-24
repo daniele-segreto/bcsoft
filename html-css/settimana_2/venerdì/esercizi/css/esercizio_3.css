@@ -1,0 +1,154 @@
+/* ==========================================
+STILI GENERALI E STRUTTURALI
+========================================== */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333333;
+    margin: 0;
+    padding: 20px;
+    height: 1000px; /* Altezza estesa per facilitare il test delle posizioni fisse/assolute */
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================
+PUNTO 1: BOX POSIZIONATO IN ALTO A DESTRA
+========================================== */
+
+/* posizionare un div rispetto al bordo superiore destro della finestra del browser con una distanza di 100px; */
+.box-alto-destra {
+    position: absolute; /* Posizionamento rispetto al primo contenitore posizionato o al viewport */
+    top: 100px;         /* Distanza di 100px dal bordo superiore */
+    right: 100px;       /* Distanza di 100px dal bordo destro */
+    width: 220px;
+    background-color: #3b82f6;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+/* ==========================================
+PUNTO 2: POSIZIONAMENTO RELATIVO
+========================================== */
+
+.box-riferimento { /* Per vedere quanto si sposta il box successivo */
+    background-color: #e5e7eb;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+/* spostare un div di 50px verso il basso e 25px verso destra rispetto alla sua posizione originale; */
+.box-relativo {
+    position: relative; /* Mantiene lo spazio originale nel flusso, ma sposta visivamente l'elemento */
+    top: 12px;          /* Era richiesto uno spostamento di 50px verso il basso (ho fatto 12 per non sovrapporlo agli altri elementi) */
+    left: 25px;         /* Spostamento di 25px verso destra */
+    background-color: #10b981;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================
+PUNTO 3: POSIZIONAMENTO FISSO IN ALTO A SINISTRA
+========================================== */
+/* posizionare e fissare un div rispetto al bordo superiore sinistro della finestra del browser con una distanza di 20px;  */
+
+.box-fisso-sinistra {
+    position: fixed; /* Fissa l'elemento rispetto alla finestra del browser, restando visibile durante lo scroll */
+    top: 20px;       /* Distanza di 20px dal bordo superiore */
+    left: 20px;      /* Distanza di 20px dal bordo sinistro */
+    width: 200px;
+    background-color: #8b5cf6;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+/* ==========================================
+PUNTO 4: POSIZIONAMENTO RISPETTO AL CONTENITORE
+========================================== */
+/* posizionare un div rispetto ad un altro div contenitore con una distanza di 15px dal bordo superiore e 60px dal bordo destro; */
+
+.contenitore-relativo {
+    position: relative; /* Crea il contesto di posizionamento per il figlio assoluto */
+    background-color: #f3f4f6;
+    border: 2px dashed #9ca3af;
+    padding: 20px;
+    height: 150px;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+.box-assoluto-interno {
+    position: absolute; /* Posizionamento assoluto rispetto al contenitore padre */
+    top: 15px;          /* Distanza di 15px dal bordo superiore del contenitore */
+    right: 60px;        /* Distanza di 60px dal bordo destro del contenitore */
+    width: 250px;
+    background-color: #f59e0b;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================
+PUNTO 5: LISTA ORIZZONTALE (ELEMENTI DA 200px)
+========================================== */
+/* visualizzare gli elementi di una lista non ordinata (tre elementi, conuna larghezza di 200px) su una singola riga; */
+
+.lista-orizzontale {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.lista-orizzontale li {
+    display: inline-block; /* Dispone gli elementi della lista sulla singola riga */
+    width: 200px;          /* Imposta la larghezza fissa di 200px per ciascun elemento */
+    background-color: #e0e7ff;
+    color: #1e3a8a;
+    padding: 10px;
+    margin-right: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid #c7d2fe;
+}
+
+/* ==========================================
+PUNTO 6: NASCONDERE IL TESTO AL PASSAGGIO DEL MOUSE
+========================================== */
+/* nascondere il testo di un paragrafo quando sposto il cursore del mouse sul paragrafo stesso. */
+
+.paragrafo-nascondi {
+    font-size: 25px;
+    background-color: chartreuse;
+    padding: 5px 13px;
+    transition: color 0.3s ease;
+}
+
+.paragrafo-nascondi:hover {
+    background-color: transparent; /* Rende lo sfondo trasparente al passaggio del mouse mantenendo lo spazio del blocco */
+    color: transparent; /* Rende il testo trasparente al passaggio del mouse mantenendo lo spazio del blocco */
+    /* visibility: hidden; */ /* Nasconde l'elemento, ma occupa lo spazio */
+    /* display: none; */ /* Non funziona su firefox | alternative --> color: transparent (con transizione) /o visibily: hidden */
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex wrap con note esplicative</title>
+    <style>
+        /* Contenitore principale Flexbox */
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            
+            /* da provare flex-flow:
+            flex-flow: row wrap; */
+            
+            /* Valori possibili di flex-wrap:
+            
+            nowrap: gli elementi flessibili sono disposti in una singola riga o in una singola colonna e, se non c'è abbastanza spazio, essi possono essere ridimensionati per adattarsi allo spazio disponibile.
+            
+            wrap: gli elementi flessibili vengono disposti in più righe (o colonne). Se gli elementi non riescono ad adattarsi orizzontalmente (o verticalmente), vengono spostati in una nuova riga (o colonna).
+            
+            wrap-reverse: simile a wrap ma qui gli elementi flessibili vengono disposti in ordine inverso. */
+            
+            background-color: yellow;
+            padding: 20px;
+            gap: 10px;
+        }
+        
+        /* Stile dei singoli box numerati */
+        .container > div {
+            background-color: blue;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 30px;
+            font-weight: bold;
+            width: 80px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 style="text-align: center;">Flex-wrap</h1>
+    
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+    </div>
+    
+</body>
+</html>

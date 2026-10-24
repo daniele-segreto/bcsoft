@@ -1,0 +1,121 @@
+/* ==========================================
+STILI GENERALI E STRUTTURALI (Esercizio 1)
+========================================== */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333333;
+    margin: 0;
+    padding: 20px;
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ==========================================
+SELETTORI RELAZIONALI
+========================================== */
+
+/* 1. SELETTORE DI DISCENDENTI (spazio): 
+Seleziona tutti i tag <p> che si trovano all'interno di .wrapper, a qualunque livello di annidamento. */
+.wrapper p {
+    font-size: 16px;
+    color: #5c0276;
+    margin-bottom: 10px;
+}
+
+/* 2. SELETTORE DI FIGLI (>): 
+Seleziona solo i figli diretti (di primo livello) di .contenuto-principale. */
+.contenuto-principale > .sezione-articolo {
+    background-color: #effab0;
+    border: 4px solid #d1d5db; /* Utilizzo della proprietà border */
+    padding: 20px;            /* Utilizzo del padding */
+    margin-bottom: 20px;      /* Utilizzo del margin */
+    border-radius: 6px;
+}
+
+/* 3. SELETTORE DI FRATELLI ADIACENTI (+): 
+Seleziona il paragrafo .testo-secondario che si trova immediatamente dopo l'elemento .testo-evidenziato. */
+.testo-evidenziato + .testo-secondario {
+    font-style: italic;       /* Utilizzo di font-style */
+    font-weight: bold;        /* Utilizzo di font-weight */
+    color: #1d4ed8;
+    text-align: justify;      /* Utilizzo di text-align */
+}
+
+/* 4. SELETTORE GENERALE DI FRATELLI (~): 
+Seleziona la lista .lista-elementi che segue un tag <h2> condividendo lo stesso genitore. */
+h2 ~ .lista-elementi {
+    background-color: #d0dcec;
+    border-left: 4px solid #3b82f6;
+    padding: 15px 15px 15px 30px;
+    margin-top: 15px;
+}
+
+
+/* ==========================================
+SELETTORE DI ATTRIBUTO (Esercizio 1)
+========================================== */
+
+/* Seleziona l'elemento in base all'attributo specifico data-tipo="speciale" */
+[data-tipo="speciale"] {
+    background-color: #fef3c7; /* Background-color con valore specifico richiesto */
+    border: 3px solid #f59e0b;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 6px;
+}
+
+
+/* ==========================================
+PSEUDO-ELEMENTI ::before e ::after
+========================================== */
+
+h2::before {
+    content: "📌 "; /* Icona a scelta libera */
+}
+
+h2::after {
+    content: " [ Sezione Verificata ✔ ]"; /* Contenuto testuale aggiunto */
+    font-size: 0.85rem;
+    font-weight: bold;
+    font-style: italic;
+    color: #096f00;
+    margin-left: 10px;
+}
+
+
+/* ==========================================
+PSEUDO-ELEMENTI TIPOGRAFICI E DI SELEZIONE
+========================================== */
+
+/* Modifica la prima lettera */
+.testo-evidenziato::first-letter {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #e11d48;
+    float: left;
+    line-height: 1;
+    margin-right: 8px;
+}
+
+/* Modifica la prima linea */
+.testo-secondario::first-line {
+    font-weight: bold;
+    color: #b45309;
+}
+
+/* Evidenzia il contenuto sottolineato */
+::selection {
+    background-color: #9ff63b;
+    color: #0e0d0d;
+}

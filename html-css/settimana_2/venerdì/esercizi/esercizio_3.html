@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 3 - Posizionamento e Visibilità CSS</title>
+    <!-- Collegamento al foglio di stile esterno -->
+    <link rel="stylesheet" href="css/esercizio_3.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+        <header>
+            <h1>Esercizio 3 - Posizionamento e Modelli CSS</h1>
+            <p>Applicazione pratica delle proprietà di posizionamento e visibilità.</p>
+        </header>
+        
+        <main>
+            <!-- Sezione 1: Div posizionato rispetto al bordo superiore destro della finestra -->
+            <section>
+                <h2>1. Posizionamento in alto a destra -------></h2>
+                <div class="box-alto-destra">
+                    1. Box posizionato a 100px dal bordo superiore destro della finestra.
+                </div>
+            </section>
+            
+            <!-- Sezione 2: Div con posizionamento relativo (spostato verso il basso e verso destra) -->
+            <section>
+                <h2>2. Posizionamento Relativo (: relative)</h2>
+                <div class="box-riferimento">
+                    2. Box di riferimento (posizione normale nel flusso della pagina).
+                </div>
+                <div class="box-relativo">
+                    2. Questo box è spostato di 12px verso il basso (anzichè 50px) e 25px verso destra rispetto alla sua posizione originale.
+                </div>
+            </section>
+            
+            <!-- Sezione 3: Div posizionato e fissato rispetto al bordo superiore sinistro della finestra -->
+            <section>
+                <h2>3. Posizionamento Fisso in alto a sinistra</h2>
+                <div class="box-fisso-sinistra">
+                    3. Box fissato a 20px dal bordo superiore sinistro della finestra.
+                </div>
+            </section>
+            
+            <!-- Sezione 4: Div posizionato rispetto a un div contenitore -->
+            <section>
+                <h2>4. Posizionamento Assoluto rispetto al Contenitore</h2>
+                <div class="contenitore-relativo">
+                    Contenitore padre (position: relative).
+                    <div class="box-assoluto-interno">
+                        Box figlio posizionato a 15px dal top e 60px dal right del contenitore.
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sezione 5: Lista non ordinata con elementi disposti su una singola riga -->
+            <section>
+                <h2>5. Lista Orizzontale (Elementi da 200px)</h2>
+                <ul class="lista-orizzontale">
+                    <li>Primo Elemento</li>
+                    <li>Secondo Elemento</li>
+                    <li>Terzo Elemento</li>
+                </ul>
+            </section>
+            
+            <!-- Sezione 6: Paragrafo che nasconde il testo al passaggio del mouse -->
+            <section>
+                <h2>6. Nascondere il Testo al Passaggio del Mouse</h2>
+                <p class="paragrafo-nascondi">
+                    Questo è il testo del paragrafo. Quando sposterà il cursore del mouse sopra di esso, il testo diventerà invisibile.
+                </p>
+            </section>
+        </main>
+    </div>
+    
+</body>
+</html>

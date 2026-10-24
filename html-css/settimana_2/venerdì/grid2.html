@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid con grid-template-areas</title>
+    <style>
+        /* Azzeramento dei margini di base della pagina */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 1. IL CONTENITORE PRINCIPALE (Grid Container) */
+        .container {
+            display: grid;
+            /* Definiamo 3 colonne (la centrale è più larga: 1fr 3fr 1fr) */
+            grid-template-columns: 1fr 3fr 1fr;
+            /* Definiamo 3 righe (header, contenuto centrale flessibile, footer) */
+            grid-template-rows: auto 1fr auto;
+            /* Mappatura visiva delle aree della griglia principale */
+            grid-template-areas: 
+                "header header header"
+                "nav main aside"
+                "footer footer footer";
+            min-height: 100vh;
+            grid-gap: 5px; /* Distanza tra le aree */
+        }
+
+        /* 2. STILI E ASSEGNAZIONE DELLE AREE PER I FIGLI PRINCIPALI */
+        .header {
+            grid-area: header;
+            background-color: darkorchid;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .nav {
+            grid-area: nav;
+            background-color: peachpuff;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 3. IL MAIN COME GRIGLIATORE ANNIDATO (Nested Grid) */
+        .main {
+            grid-area: main;
+            display: grid;
+            /* Sotto-griglia interna al main divisa in sezioni */
+            grid-template-areas: 
+                "section-one section-two"
+                "section-three section-three";
+            grid-gap: 5px;
+        }
+
+        .section-one {
+            grid-area: section-one;
+            background-color: skyblue;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section-two {
+            grid-area: section-two;
+            background-color: mediumaquamarine;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section-three {
+            grid-area: section-three;
+            background-color: lightpink;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .aside {
+            grid-area: aside;
+            background-color: darksalmon;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: darkblue;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">Header</header>
+        <nav class="nav">Nav</nav>
+        
+        <main class="main">
+            <section class="section-one">Section 1</section>
+            <section class="section-two">Section 2</section>
+            <section class="section-three">Section 3</section>
+        </main>
+
+        <!-- tag per barre laterali, contenuti correlati, banner laterali -->
+        <aside class="aside">Aside</aside>
+        
+        <footer class="footer">Footer</footer>
+    </div>
+
+</body>
+</html>

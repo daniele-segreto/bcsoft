@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Grid Layoutit</title>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container { 
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 5px; /* Aggiunto un piccolo gap per distinguere le aree */
+            min-height: 100vh; /* Forza il contenitore ad occupare tutta l'altezza dello schermo */
+            grid-template-areas:
+                "Header Header Header Header"
+                "Sidebar Main Main Aside"
+                "Sidebar Main Main Aside"
+                "Sidebar Main Main Aside"
+                "Footer Footer Footer Footer";
+        }
+        
+        /* Regole di stile per visualizzare le aree */
+        .Header { 
+            grid-area: Header; 
+            background-color: darkorchid; 
+            color: white; 
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .Sidebar { 
+            grid-area: Sidebar; 
+            background-color: peachpuff; 
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .Main { 
+            grid-area: Main; 
+            background-color: skyblue; 
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .Aside { 
+            grid-area: Aside; 
+            background-color: darksalmon; 
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .Footer { 
+            grid-area: Footer; 
+            background-color: darkblue; 
+            color: white; 
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="Header">Header</div>
+        <div class="Sidebar">Sidebar</div>
+        <div class="Main">Main</div>
+        <div class="Aside">Aside</div>
+        <div class="Footer">Footer</div>
+    </div>
+</body>
+</html>

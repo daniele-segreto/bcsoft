@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 2 - Pseudo-classi CSS</title>
+    <!-- Collegamento al foglio di stile esterno -->
+    <link rel="stylesheet" href="css/esercizio_2.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <header>
+            <h1>Esercizio 2 - Selettori di Pseudo-classe</h1>
+            <p>Applicazione pratica delle pseudo-classi CSS.</p>
+        </header>
+
+        <main>
+            <!-- Sezione 1: Lista interattiva per il test dello pseudo-selettore :hover -->
+            <section>
+                <h2>1. Interattività della Lista (:hover)</h2>
+                <ul class="lista-interattiva">
+                    <li>Primo elemento della lista (passi il mouse qui sopra)</li>
+                    <li>Secondo elemento della lista (passi il mouse qui sopra)</li>
+                    <li>Terzo elemento della lista (passi il mouse qui sopra)</li>
+                </ul>
+            </section>
+
+            <!-- Sezione 2: Tabella con 8 righe, righe pari in bold e riga vuota -->
+            <section>
+                <h2>2. Tabella Strutturata (:nth-child e :empty)</h2>
+                <table class="tabella-dati">
+                    <tr><td>Riga 1: Elemento di dati standard</td></tr>
+                    <tr><td>Riga 2: Riga pari (sarà in grassetto)</td></tr>
+                    <tr><td>Riga 3: Elemento di dati standard</td></tr>
+                    <tr><td>Riga 4: Riga pari (sarà in grassetto)</td></tr>
+                    <tr><td>Riga 5: Elemento di dati standard</td></tr>
+                    <tr><td>Riga 6: Riga pari (sarà in grassetto)</td></tr>
+                    <tr><td>Riga 7: Elemento di dati standard</td></tr>
+                    <tr></td></tr> <!-- Riga completamente vuota per testare :empty -->
+                </table>
+            </section>
+
+            <!-- Sezione 3: Paragrafo di destinazione per il test dello pseudo-selettore :target -->
+            <section>
+                <h2>3. Ancoraggio e Sfondo Dinamico (:target)</h2>
+                <p>Clicca sul seguente collegamento per attivare l'ancoraggio: <a href="#paragrafo-obiettivo">Vai al paragrafo di destinazione</a></p>
+                
+                <p id="paragrafo-obiettivo" class="paragrafo-target">
+                    Questo è il paragrafo di destinazione. Quando il link sovrastante viene cliccato, l'URL si aggiorna con l'hash e questo elemento riceve lo stile definito tramite lo pseudo-selettore :target.
+                </p>
+            </section>
+
+            <!-- Sezione 4: Pulsante interattivo per il test di :hover e :active -->
+            <section>
+                <h2>4. Stati del Pulsante (:hover e :active)</h2>
+                <button class="pulsante-interattivo">Pulsante di Verifica</button>
+            </section>
+
+            <!-- Sezione 5: Form con campi obbligatori, opzionali e disabilitati -->
+            <section>
+                <h2>5. Stati dei Campi del Form (:required, :optional, :disabled)</h2>
+                <form class="form-verifica">
+                    <div class="form-group">
+                        <label for="campo-obbligatorio">Campo Obbligatorio:</label>
+                        <input type="text" id="campo-obbligatorio" required placeholder="Obbligatorio">
+                    </div>
+                    <div class="form-group">
+                        <label for="campo-opzionale">Campo Opzionale:</label>
+                        <input type="text" id="campo-opzionale" optional placeholder="Opzionale">
+                    </div>
+                    <div class="form-group">
+                        <label for="campo-disabilitato">Campo Disabilitato:</label>
+                        <input type="text" id="campo-disabilitato" disabled value="Non modificabile">
+                    </div>
+                </form>
+            </section>
+
+            <!-- Sezione 6: Serie di paragrafi per il test del primo paragrafo sottolineato -->
+            <section>
+                <h2>6. Selezione del Primo Paragrafo (:first-of-type)</h2>
+                <div class="serie-paragrafi">
+                    <p>Questo è il primo paragrafo della serie e apparirà sottolineato in base alla regola CSS applicata.</p>
+                    <p>Questo è il secondo paragrafo della serie di testo standard.</p>
+                    <p>Questo è il terzo paragrafo della serie di testo standard.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>

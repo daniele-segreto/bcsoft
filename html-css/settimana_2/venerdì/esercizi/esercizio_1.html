@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 1 - Selettori e Pseudo-elementi CSS</title>
+    <!-- Collegamento al foglio di stile esterno -->
+    <link rel="stylesheet" href="css/esercizio_1.css">
+</head>
+<body>
+
+    <!-- Elemento contenitore principale -->
+    <div id="contenitore-principale" class="wrapper">
+        
+        <!-- Header strutturale -->
+        <header>
+            <h1>Esercizio Pratico sui Selettori CSS</h1>
+            <p>Analisi avanzata delle relazioni e dei pseudo-elementi.</p>
+        </header>
+
+        <!-- Sezione principale (Main) con elementi annidati -->
+        <main class="contenuto-principale">
+            
+            <section class="sezione-articolo">
+                <h2>Sezione di Prova e Relazioni</h2>
+                <p class="testo-evidenziato">Questo è il primo paragrafo di testo standard all'interno della sezione.</p>
+                <p class="testo-secondario">Questo è il secondo paragrafo adiacente, utile per testare i selettori di fratelli.</p>
+                
+                <!-- Lista con classe attiva nel CSS -->
+                <ul class="lista-elementi">
+                    <li>Primo elemento della lista (discendente diretto)</li>
+                    <li>Secondo elemento della lista con un <a href="#" data-azione="speciale">collegamento ipertestuale</a></li>
+                    <li>Terzo elemento della lista</li>
+                </ul>
+            </section>
+
+            <!-- Box laterale con attributo mirato per il selettore di attributo -->
+            <aside data-tipo="speciale">
+                <h3>Selettore di attributo</h3>
+                <p>Contenuto secondario utile per testare il selettore di attributo richiesto dalla traccia.</p>
+            </aside>
+
+        </main>
+
+        <!-- Piè di pagina -->
+        <footer>
+            <p>In questo spazio vuoto va il footer.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

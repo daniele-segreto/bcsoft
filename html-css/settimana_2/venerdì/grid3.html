@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid con Justify</title>
+    <style>
+        /* Contenitore principale della griglia */
+        .container {
+            display: grid;
+            
+            /* 
+               justify-content: controlla l'allineamento orizzontale dell'intera griglia
+               all'interno del suo contenitore genitore.
+               Valori possibili: center, start, end, stretch, space-between, space-around, space-evenly
+            */
+            justify-content: center; /* Impostato su 'center' nella prima schermata o 'stretch' nella seconda */
+            
+            grid-template-columns: auto auto auto; /* 3 colonne che adattano la larghezza al contenuto o allo spazio */
+            gap: 20px;
+            background-color: yellow;
+            padding: 20px;
+        }
+
+        /* Stile per tutti i div figli diretti di .container */
+        .container > div {
+            background-color: blue;
+            color: white;
+            text-align: center;
+            font-size: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+</body>
+</html>

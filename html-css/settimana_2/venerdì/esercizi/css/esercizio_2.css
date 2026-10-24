@@ -1,0 +1,151 @@
+/* ==========================================
+STILI GENERALI E STRUTTURALI
+========================================== */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333333;
+    margin: 0;
+    padding: 20px;
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================
+PUNTO 1: LISTA INTERATTIVA CON :hover
+========================================== */
+
+/* Seleziona ogni elemento <li> all'interno di .lista-interattiva quando il cursore vi passa sopra */
+.lista-interattiva li:hover {
+    color: #dc2626; /* Colore rosso richiesto dalla traccia */
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+/* ==========================================
+PUNTO 2: TABELLA CON RIGHE PARI E RIGA VUOTA
+========================================== */
+
+/* 1. Seleziona le righe pari (2, 4, 6, 8) della tabella e applica il font bold */
+.tabella-dati tr:nth-child(even) {
+    font-weight: bold;
+    background-color: #f3f4f6;
+}
+/* Alternativa di pseudo-classe equivalente per le righe pari:
+.tabella-dati tr:nth-child(2n) { ... } */
+
+/* 2. Seleziona una riga priva di contenuto (:empty) e applica sfondo rosso e padding di 30px */
+.tabella-dati tr:empty {
+    background-color: #dc2626; /* Sfondo rosso richiesto */
+    padding: 30px;            /* Padding di 30px */
+    display: block;           /* Necessario affinché il padding agisca correttamente sulla riga vuota */
+}
+
+/* ==========================================
+PUNTO 3: PARAGRAFO TARGET CON :target
+========================================== */
+
+/* Applica uno sfondo colorato e una transizione quando l'elemento diventa il target attivo dell'URL */
+.paragrafo-target:target {
+    background-color: #fef08a; /* Sfondo giallo/crema evidenziato */
+    border-left: 4px solid #eab308;
+    padding: 15px;
+    transition: background-color 0.3s ease;
+}
+
+/* ==========================================
+PUNTO 4: STATI DEL PULSANTE (:hover e :active)
+========================================== */
+
+/* Stile di base del pulsante */
+.pulsante-interattivo {
+    background-color: #e5e7eb;
+    color: #1f2937;
+    border: 1px solid #d1d5db;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+/* Diventa di colore blu quando il cursore del mouse vi passa sopra (:hover) */
+.pulsante-interattivo:hover {
+    background-color: #2563eb; /* Colore blu */
+    color: #ffffff;
+}
+
+/* Diventa di colore giallo quando il pulsante è cliccato (:active) */
+.pulsante-interattivo:active {
+    background-color: #eab308; /* Colore giallo */
+    color: #1f2937;
+}
+
+/* ==========================================
+PUNTO 5: STATI DEI CAMPI DEL FORM (:required, :optional, :disabled)
+========================================== */
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #d1d5db;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Stile per i campi obbligatori (:required) */
+.form-group input:required {
+    border-left: 4px solid #ef4444; /* Bordo sinistro rosso distintivo */
+    background-color: #fef2f2;
+}
+
+/* Stile per i campi opzionali (:optional) */
+.form-group input:optional {
+    border-left: 4px solid #3b82f6; /* Bordo sinistro blu distintivo */
+    background-color: #eff6ff;
+}
+
+/* Stile per i campi disabilitati (:disabled) */
+.form-group input:disabled {
+    background-color: #e5e7eb;
+    color: #9ca3af;
+    border-color: #d1d5db;
+    cursor: not-allowed;
+    font-style: italic;
+}
+
+/* ==========================================
+PUNTO 6: PRIMO PARAGRAFO DI UNA SERIE
+========================================== */
+
+/* Rendere sottolineato il primo paragrafo di testo di una serie di paragrafi */
+.serie-paragrafi p:first-of-type {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #1e3a8a;
+}
+/* Selettori di pseudo-classe alternativi equivalenti per raggiungere lo stesso risultato:
+- .serie-paragrafi p:first-child (se il paragrafo è il primo figlio assoluto del contenitore)
+- .serie-paragrafi p:nth-of-type(1)
+- .serie-paragrafi p:nth-child(1) */
