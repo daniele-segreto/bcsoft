@@ -1,0 +1,302 @@
+/**
+ * Foglio di stile globale del portale DC Universe.
+ * Definisce la tipografia, i layout responsive, le transizioni e i componenti grafici.
+ */
+
+/* --- 2. NAVBAR E NAV-LINKS --- */
+/* Stili per la transizione fluida dei link di navigazione */
+.custom-nav-link {
+    transition:
+    color 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+}
+
+/* Effetto al passaggio del mouse sui link della navbar */
+.custom-nav-link:hover {
+    color: #000000 !important;
+    transform: translateY(-1px);
+}
+
+/* Posizionamento relativo per l'indicatore della pagina attiva */
+.active-page {
+    position: relative;
+}
+
+/* Linea di sottolineatura dinamica per evidenziare la pagina corrente */
+.active-page::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    right: 1rem;
+    height: 2px;
+    background-color: #0d6efd;
+}
+
+
+/* --- 3. SEZIONE CARD FUMETTI PRINCIPALI --- */
+/* Configurazione generale delle card dei fumetti */
+.comic-card {
+    background: transparent !important;
+    border: none !important;
+    max-width: 210px;
+    margin: 0 auto;
+}
+
+/* Dimensionamento e gestione delle immagini di copertina */
+.comic-cover-img {
+    height: 310px !important;
+    width: 100% !important;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Riduzione dimensionale del titolo all'interno della card */
+.comic-card .card-title {
+    font-size: 0.8rem !important;
+}
+
+/* Stile per i testi di supporto in formato ridotto */
+.comic-card .small {
+    font-size: 0.72rem !important;
+}
+
+/* Adattamento tipografico dei pulsanti nelle card */
+.comic-card .btn {
+    font-size: 0.7rem !important;
+    padding-top: 0.35rem !important;
+    padding-bottom: 0.35rem !important;
+}
+
+/* Media query per ottimizzare la visualizzazione su dispositivi mobili */
+@media (max-width: 768px) {
+    .comic-card {
+        max-width: 170px;
+    }
+    
+    .comic-cover-img {
+        height: 230px !important;
+    }
+}
+
+/* Effetto zoom al passaggio del mouse sulla copertina */
+.comic-card:hover .comic-cover-img {
+    transform: scale(1.03);
+}
+
+
+/* --- 4. SEZIONE PROMO CARD (CON OMBRA E PULSANTE AGGIORNATI) --- */
+/* Struttura principale delle card promozionali con ombreggiatura */
+.promo-card {
+    background-color: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07) !important;
+    transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Effetto di elevazione al passaggio del mouse sulla card promozionale */
+.promo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Contenitore con taglio geometrico obliquo inferiore dell'immagine */
+.promo-img-wrapper {
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+    background-color: #000;
+}
+
+/* Stile e posizionamento dell'immagine promozionale */
+.promo-img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+}
+
+/* Tipografia dei titoli all'interno delle promo card */
+.promo-title {
+    font-family: "Anton", sans-serif;
+    font-size: 1.5rem;
+    color: #000;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.5px;
+}
+
+/* Sottotitolo promozionale in maiuscolo */
+.promo-subtitle {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    line-height: 1.3;
+    margin-bottom: 0;
+}
+
+/* Pulsante promozionale con font Anton e bordi arrotondati */
+.promo-btn {
+    font-family: "Anton", sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.8px;
+    color: #000;
+    background-color: transparent;
+    border: 1.5px solid #000;
+    border-radius: 6px;
+    padding: 6px 28px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Effetto hover con inversione cromatica per il pulsante promozionale */
+.promo-btn:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+
+/* --- 5. STILI PER COMIC SECTION --- */
+/* Struttura della singola card di fumetto all'interno della griglia */
+.comic-item-card {
+    background: transparent !important;
+    border: none !important;
+    max-width: 220px; 
+    margin: 0 auto;   
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Effetto di sollevamento al passaggio del mouse sulla card */
+.comic-item-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Formato verticale originale per le copertine dei fumetti */
+.comic-cover {
+    height: 330px !important; 
+    width: 100% !important;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Tipografia dei titoli dei fumetti in font Anton */
+.comic-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+    color: #000;
+    margin-bottom: 0.4rem;
+}
+
+/* Stile per il prezzo riservato all'utente */
+.our-price {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #000;
+    text-transform: uppercase;
+}
+
+/* Stile per il prezzo di copertina barrato */
+.cover-price {
+    font-size: 0.72rem;
+    color: #666;
+    text-transform: uppercase;
+}
+
+/* Evidenziazione dello sconto applicato */
+.discount-text {
+    font-family: 'Anton', sans-serif;
+    font-size: 0.9rem;
+    color: #007bff;
+    letter-spacing: 0.5px;
+}
+
+/* Pulsante per l'aggiunta al carrello con larghezza estesa */
+.comic-cart-btn {
+    font-family: 'Anton', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.8px;
+    color: #000;
+    background-color: transparent;
+    border: 1.5px solid #000;
+    border-radius: 6px;
+    padding: 8px 16px;
+    width: 100%; 
+    transition: all 0.2s ease-in-out;
+}
+
+/* Effetto hover per il pulsante del carrello */
+.comic-cart-btn:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+/* Adattamento responsive delle card fumetto per dispositivi mobili */
+@media (max-width: 768px) {
+    .comic-item-card {
+        max-width: 180px;
+    }
+    
+    .comic-cover {
+        height: 260px !important;
+    }
+}
+
+
+/* --- 6. STILI PER IL FOOTER DC --- */
+/* Sezione inferiore principale del portale con bordo superiore blu */
+.footer-dc {
+    background-color: #000000;
+    border-top: 4px solid #007bff; 
+    width: 100%;
+}
+
+/* Dimensionamento del logo istituzionale nel footer */
+.footer-logo {
+    height: 60px;
+    width: auto;
+}
+
+/* Configurazione tipografica per i link legali nel footer */
+.footer-links {
+    font-family: "Anton", sans-serif;
+    letter-spacing: 0.8px;
+    font-size: 0.95rem;
+}
+
+/* Stile base dei collegamenti nel footer */
+.footer-link {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+/* Effetto al passaggio del mouse sui link del footer */
+.footer-link:hover {
+    color: #007bff;
+}
+
+/* Separatore visivo tra i link del footer */
+.footer-divider {
+    color: #ffffff;
+    margin: 0 4px;
+}
+
+/* Testo del disclaimer legale in formato ridotto */
+.footer-disclaimer {
+    font-size: 0.72rem;
+    color: #cccccc;
+    max-width: 750px;
+    line-height: 1.4;
+}
+
+/* Nota di copyright in evidenza con font Anton */
+.footer-copyright {
+    font-family: "Anton", sans-serif;
+    font-size: 0.85rem;
+    color: #ffffff;
+    letter-spacing: 0.8px;
+}
