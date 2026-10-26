@@ -158,7 +158,7 @@ PUNTO 5: TRASFORMAZIONI COMPLESSE MULTIPLE
     align-items: center;
 }
 
-/* agire, al passaggio del mouse, su di un div di dimensione 300px X300px in modo che sia spostato di 50px in orizzontale e 80px in verticale, sia ruotato di 30° e sia scalato al 120% delle dimensioni originali. */
+/* agire, al passaggio del mouse, su di un div di dimensione 300px X 300px in modo che sia spostato di 50px in orizzontale e 80px in verticale, sia ruotato di 30° e sia scalato al 120% delle dimensioni originali. (vedi giù) */
 
 .box-trasformazione-complessa {
     width: 300px;  /* Dimensione fissa di 300px */

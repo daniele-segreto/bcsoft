@@ -1,0 +1,116 @@
+/* ==========================================
+STILI DI BASE (MOBILE FIRST / GENERALE)
+========================================== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.site-header {
+    text-align: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: white;
+    border-radius: 8px;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+/* ==========================================
+MEDIA QUERIES - APPLICAZIONE DEI REQUISITI
+========================================== */
+
+/* 1. SMARTPHONE (Dispositivi con larghezza massima di 576px) */
+/* screen - and - width */
+@media screen and (max-width: 576px) {
+    body {
+        background-color: #a7e30f;
+        padding: 10px;
+    }
+    
+    .site-header h1 {
+        font-size: 1.4rem;
+    }
+}
+
+/* 2. TABLET (Dispositivi con larghezza compresa tra 577px e 992px) */
+/* only - screen - and - width - height */
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+    body {
+        background-color: #27abe9;
+    }
+    
+    .content-container {
+        /* Attiva il layout a griglia bidimensionale per il contenitore */
+        display: grid;
+        /* Suddivide lo spazio disponibile esattamente in 2 colonne di eguale larghezza (50% ciascuna) tramite unità frazionali (fr) */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 3. DESKTOP (Dispositivi con larghezza superiore a 992px) */
+/* screen - and - width */
+@media screen and (min-width: 993px) {
+    body {
+        background-color: #ed4700;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .content-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 4. Regole per la stampa */
+/* print */
+@media print {
+    body {
+        background-color: rgb(184, 79, 255) !important;
+        color: black !important;
+    }
+    
+    .site-header {
+        background: none;
+        color: black;
+        border-bottom: 2px solid black;
+        background-color: #a7e30f;
+    }
+}
+
+/* 4. CONTROLLO ALTEZZA (Dispositivi con altezza ridotta, es. laptop compatti o finestre ridotte in verticale) */
+/* screen - and - height */
+@media screen and (max-height: 600px) {
+    body {
+        padding: 5px; /* Riduce i padding verticali quando lo spazio in altezza è limitato */
+        background-color: blue;
+    }
+}
+
+/* 5. UTILIZZO DELL'OPERATORE LOGICO 'not' */
+/* Questa regola si applica a tutto ciò che NON è uno schermo (es. dispositivi vocali, reader particolari o anche per la stampa) */
+/* not */
+@media not screen {
+    body {
+        font-size: 110%;
+        /* background-color: rgb(20, 220, 33) !important; */
+        /* de-commentare al momento (conflitto con "print") */
+    }
+}

@@ -1,0 +1,120 @@
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Nota: Struttura impostata con il supporto di https://grid.layoutit.com/ */
+
+/* ==========================================
+STRUTTURA DESKTOP (CSS GRID CORE)
+========================================== */
+.container { 
+    /* 1. Attivazione del contesto a griglia */
+    display: grid; /* RICHIESTO! */
+    
+    /* 2. Definizione delle colonne con unità frazionali (fr)
+    - "1fr" (Fractional Unit / Unità Frazionaria) rappresenta una frazione dello spazio libero disponibile.
+    - Scrivere "1fr 1fr 1fr 1fr" suddivide lo spazio orizzontale in 4 parti uguali (25% ciascuna). */
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* RICHIESTO! */
+    
+    /* 3. Definizione dell'altezza delle righe 
+    - Suddivide lo spazio verticale disponibile in 5 parti uguali. */
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr; /* RICHIESTO! */
+    
+    /* 4. Gestione dello spazio tra le celle (equivalente a grid-gap) */
+    gap: 5px; /* RICHIESTO! (grid-gap e gap fanno la stessa cosa; gap è la sintassi moderna e unificata) */
+    
+    /* Forza il contenitore ad occupare l'intera altezza del viewport */
+    min-height: 100vh;
+    
+    /* 5. Definizione geometrica delle aree nominate */
+    grid-template-areas: /* RICHIESTO! */
+    "Header Header Header Header"
+    "Sidebar Main Main Aside"
+    "Sidebar Main Main Aside"
+    "Sidebar Main Main Aside"
+    "Footer Footer Footer Footer";
+}
+
+/* ==========================================
+INTEGRAZIONE RESPONSIVE (MEDIA QUERIES)
+========================================== */
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* RICHIESTO! */
+        grid-template-rows: auto; /* RICHIESTO! */
+        min-height: auto;
+        grid-template-areas: /* RICHIESTO! Ogni elemento prende l'unica colonna disponibile */
+        "Header"
+        "Sidebar"
+        "Main"
+        "Aside"
+        "Footer";
+        padding: 10px;
+    }
+}
+
+/* ==========================================
+ASSOCIAZIONE DELLE AREE AI SINGOLI ELEMENTI
+========================================== */
+.Header { 
+    /* grid-area ->
+    - Questo comando scollega l'elemento dal flusso normale del file HTML e lo posiziona esattamente nella "casella" assegnata nel disegno globale stabilito da "grid-template-areas" nel contenitore padre (il .container).
+    - Assegna questo specifico elemento all'interno dell'area denominata "Header", precedentemente definita in "grid-template-areas" sul contenitore padre.
+    - Funziona come il "ponte" logico che dice al browser esattamente in quale casella/sezione della griglia posizionare questo blocco HTML. */
+    grid-area: Header; /* RICHIESTO! */
+    background-color: darkorchid; 
+    color: white; 
+    padding: 20px;
+    text-align: center;
+}
+
+.Sidebar { 
+    /* Associa l'elemento all'area "Sidebar" della griglia */
+    grid-area: Sidebar; /* RICHIESTO! */
+    background-color: peachpuff; 
+    padding: 20px;
+    text-align: center;
+}
+
+.Main { 
+    /* Associa l'elemento all'area "Main" della griglia (che si estende su più colonne centrali) */
+    grid-area: Main; /* RICHIESTO! */
+    background-color: skyblue; 
+    padding: 20px;
+    text-align: center;
+}
+
+.Aside { 
+    /* Associa l'elemento all'area "Aside" della griglia */
+    grid-area: Aside; /* RICHIESTO! */
+    background-color: darksalmon; 
+    padding: 20px;
+    text-align: center;
+}
+
+.Footer { 
+    /* Associa l'elemento all'area "Footer" della griglia posta alla base */
+    grid-area: Footer; /* RICHIESTO! */
+    background-color: darkblue;
+    color: white; 
+    padding: 20px;
+    text-align: center;
+}
+
+/* ==========================================
+ALTRE PROPRIETÀ OPZIONALI:
+========================================== */
+/* 
+- justify-items: 
+Gestisce l'allineamento ORIZZONTALE (asse trasversale) del contenuto 
+all'interno di ciascuna cella della griglia. 
+Valori possibili: stretch (default), start, end, center.
+
+- align-items: 
+Gestisce l'allineamento VERTICALE (asse longitudinale) del contenuto 
+all'interno di ciascuna cella della griglia. 
+Valori possibili: stretch (default), start, end, center.
+*/

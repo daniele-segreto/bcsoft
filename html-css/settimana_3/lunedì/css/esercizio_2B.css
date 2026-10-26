@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: chartreuse;
+}
+
+.container {
+    display: flex; /* RICHIESTO! */
+    flex-direction: column; /* RICHIESTO! Dispone i blocchi in verticale */
+    min-height: 100vh; /* Copre l'intera altezza della finestra del browser */
+}
+
+.header, .footer {
+    background-color: black;
+    color: whitesmoke;
+    padding: 20px;
+    width: 100%;
+}
+
+.main-container {
+    display: flex; /* RICHIESTO! */
+    flex-direction: row; /* RICHIESTO! */
+    justify-content: space-between; /* RICHIESTO! */
+    align-items: stretch; /* Allinea verticalmente i figli coprendo tutta l'altezza */
+    flex-grow: 1; /* RICHIESTO! Assorbe lo spazio verticale residuo, spingendo il footer sul fondo (se lo tolgo il footer se ne sale) */
+    padding: 10px 0;
+}
+
+.sidebar, .main, .aside {
+    padding: 20px 5px;
+    margin: 0 10px;
+    display: flex; /* RICHIESTO! */
+    align-items: center; /* RICHIESTO! */
+    justify-content: center; /* RICHIESTO! */
+}
+
+.main {
+    /* 
+    flex: 3 è una proprietà shorthand che imposta tre valori in un sol colpo:
+    1. flex-grow: 3 (l'elemento cresce occupando 3 parti proporzionali dello spazio disponibile)
+    2. flex-shrink: 1 (l'elemento può ridursi se lo spazio nel contenitore diminuisce)
+    3. flex-basis: 0% (la dimensione iniziale di partenza viene azzerata per ripartire lo spazio in modo puramente proporzionale)
+    Risultato: Il blocco centrale riceve il triplo dello spazio rispetto alle colonne laterali.
+    */
+    flex: 3; /* Occupa 3 parti su 5 dello spazio disponibile (main) */
+    background-color: cornflowerblue;
+}
+
+.sidebar, .aside {
+    /* 
+    flex: 1 imposta la proporzione complementare:
+    - flex-grow: 1 (ciascun elemento cresce occupando 1 parte dello spazio disponibile)
+    - flex-shrink: 1 (può ridursi)
+    - flex-basis: 0% (dimensione iniziale azzerata)
+    Insieme a flex: 3 del main, lo spazio totale viene suddiviso in 5 parti uguali: 
+    3 parti per il .main, 1 parte per la .sidebar e 1 parte per l'.aside.
+    */
+    flex: 1; /* Occupa 2 parti su 5 dello spazio disponibile (1 sidebar + 1 aside) */
+    background-color: chocolate;
+}
+
+/* ==========================================
+ALTRE PROPRIETÀ FLEXBOX:
+========================================== */
+/* 
+- order: 
+Permette di modificare l'ordine visivo di visualizzazione degli elementi 
+all'interno del contenitore flessibile, indipendentemente dalla loro posizione nel codice HTML.
+Valore predefinito: 0 (accetta numeri interi, anche negativi).
+
+- flex-shrink: 
+Determina la capacità di un elemento flessibile di ridursi (restringersi) 
+quando lo spazio all'interno del contenitore non è sufficiente.
+Valore predefinito: 1 (0 impedisce all'elemento di rimpicciolirsi).
+
+- flex-basis: 
+Definisce la dimensione iniziale (lunghezza o altezza base) di un elemento flessibile 
+prima che lo spazio residuo venga distribuito in base a flex-grow e flex-shrink.
+Valori possibili: auto, lunghezze in px, %, ecc.
+*/
