@@ -74,6 +74,7 @@ MEDIA QUERIES - APPLICAZIONE DEI REQUISITI
         margin: 0 auto;
     }
     
+    /* Divide lo spazio disponibile in 3 colonne di uguale larghezza (~33.3% ciascuna) tramite unità frazionali (fr). */
     .content-container {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -110,7 +111,7 @@ MEDIA QUERIES - APPLICAZIONE DEI REQUISITI
 @media not screen {
     body {
         font-size: 110%;
-        /* background-color: rgb(20, 220, 33) !important; */
+        background-color: rgb(20, 220, 33) !important;
         /* de-commentare al momento (conflitto con "print") */
     }
 }

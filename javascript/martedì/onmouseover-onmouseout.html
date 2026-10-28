@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventi MouseOver e MouseOut</title>
+    <style>
+        /* Stile di base per il quadrato interattivo */
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: red; /* Colore iniziale del riquadro */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center;">Sposta il cursore del mouse sul quadrato</h1>
+
+    <!-- Contenitore con attributi di evento per il passaggio del mouse -->
+    <div id="box" onmouseover="changeColor()" onmouseout="resetColor()"></div>
+
+    <!-- Sezione JavaScript posizionata in fondo al body per garantire il corretto caricamento del DOM -->
+    <script>
+        /* Funzione eseguita quando il cursore entra nell'area dell'elemento (onmouseover) */
+        function changeColor() {
+            var box = document.getElementById('box');
+            box.style.backgroundColor = 'violet'; // Cambia il colore in violetto
+        }
+
+        /* Funzione eseguita quando il cursore esce dall'area dell'elemento (onmouseout) */
+        function resetColor() {
+            var box = document.getElementById('box');
+            box.style.backgroundColor = 'red'; // Ripristina il colore originale viola
+        }
+    </script>
+
+</body>
+</html>

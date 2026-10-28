@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript interno all'Head</title>
+    <style>
+        /* Stile di base per il box nero che cambierà colore al click */
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: black;
+            margin-top: 20px;
+        }
+    </style>
+
+    <!-- Inclusione del codice JavaScript all'interno dell'head tramite il tag script -->
+    <script>
+        /* Funzione per modificare il colore di sfondo del contenitore al verificarsi dell'evento click */
+        function changeColor() {
+            /* Seleziona l'elemento HTML attraverso il suo identificativo univoco (id) */
+            var contenitore = document.getElementById('box');
+            
+            /* Modifica dinamicamente la proprietà CSS 'backgroundColor' impostandola su 'hotpink' */
+            contenitore.style.backgroundColor = 'hotpink';
+        }
+    </script>
+</head>
+<body>
+
+    <h1 style="text-align: center;">JavaScript interno all'Head</h1>
+
+    <!-- Elemento div interattivo: sfrutta l'attributo onclick per richiamare la funzione JavaScript -->
+    <div id="box" class="box" onclick="changeColor()"></div>
+
+</body>
+</html>

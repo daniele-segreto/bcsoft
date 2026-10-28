@@ -7,21 +7,21 @@
 export const promoItems = [
     {
         id: 1,
-        image: "/img/promo_section/c1.png", // Percorso dell'immagine promozionale
+        image: "/img/promo_section/c1.png",
         title: "FINO AL 40% DI SCONTO",
         subtitle: "I PROSSIMI 12 NUMERI DEI TUOI FUMETTI DC PREFERITI",
         link: "/promo/1"
     },
     {
         id: 2,
-        image: "/img/promo_section/c2.png", // Percorso dell'immagine promozionale
+        image: "/img/promo_section/c2.png",
         title: "FINO AL 40% DI SCONTO",
         subtitle: "I PROSSIMI 12 NUMERI DEI TUOI FUMETTI DC PREFERITI",
         link: "/promo/2"
     },
     {
         id: 3,
-        image: "/img/promo_section/c3.png", // Percorso dell'immagine promozionale
+        image: "/img/promo_section/c3.png",
         title: "FINO AL 40% DI SCONTO",
         subtitle: "I PROSSIMI 12 NUMERI DEI TUOI FUMETTI DC PREFERITI",
         link: "/promo/3"

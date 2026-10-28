@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript esterno</title>
+    <style>
+        p {
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <p id="cambia">Clicca sul testo per cambiare il colore del testo stesso</p>
+
+    <!-- Inclusione del file JavaScript esterno tramite il tag script con attributo src -->
+    <!-- Nota: l'inclusione in fondo al body garantisce che l'elemento #cambia sia già presente nel DOM -->
+    <script>
+        // Seleziona l'elemento del testo
+        var cambia = document.getElementById('cambia');
+
+        // Aggiungi un event per il clic sull'elemento del testo
+        cambia.addEventListener('click', function() {
+            
+            // Cambia il colore del testo da rosso a blu
+            cambia.style.color = 'blue';
+
+        });
+    </script>
+
+</body>
+</html>

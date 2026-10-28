@@ -60,14 +60,32 @@
     background-color: chocolate;
 }
 
+.sidebar {
+    order: 2; /* RICHIESTO! */ /* Si sposta dopo il main */
+}
+.main {
+    order: 1; /* RICHIESTO! */ /* Viene visualizzato per primo nella riga */
+}
+
+/* ==========================================
+MEDIA QUERY PER DISPOSITIVI MOBILI
+========================================== */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column; /* Trasforma le colonne affiancate in blocchi in pila verticale */
+    }
+    
+    .sidebar, .main, .aside {
+        width: 100%; /* Ciascun blocco occupa l'intera larghezza disponibile */
+        margin: 5px 0; /* Ricalibra i margini per la visualizzazione verticale */
+    }
+}
+
+
 /* ==========================================
 ALTRE PROPRIETÀ FLEXBOX:
 ========================================== */
 /* 
-- order: 
-Permette di modificare l'ordine visivo di visualizzazione degli elementi 
-all'interno del contenitore flessibile, indipendentemente dalla loro posizione nel codice HTML.
-Valore predefinito: 0 (accetta numeri interi, anche negativi).
 
 - flex-shrink: 
 Determina la capacità di un elemento flessibile di ridursi (restringersi) 

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rappresentazioni numeriche</title>
+</head>
+<body>
+
+    <!-- Link di riferimento esterno per la verifica visiva delle conversioni numeriche -->
+    Strumento utile: <a href="https://www.rapidtables.org/it/convert/number/decimal-to-octal.html">Convertitore di numeri</a>
+
+    <script>
+        // ==========================================
+        // 1. DICHIARAZIONE DELLA VARIABILE NUMERICA
+        // ==========================================
+        // Dichiariamo una costante numerica intera in base decimale (il valore 55)
+        const numero = 55;
+
+        // ==========================================
+        // 2. VERIFICA DEL TIPO DI DATO (TYPEOF)
+        // ==========================================
+        // L'operatore 'typeof' analizza la variabile e restituisce la stringa descrittiva del tipo.
+        // In JavaScript sia i numeri interi che decimali appartengono all'unico tipo primitivo 'number'.
+        console.log("Tipologia di dati:", typeof(numero));
+
+        // ==========================================
+        // 3. RAPPRESENTAZIONE DECIMALE TRADIZIONALE
+        // ==========================================
+        // Visualizziamo il valore numerico nel suo formato decimale nativo (base 10)
+        console.log("R. decimale:", numero);
+
+        // ==========================================
+        // 4. CONVERSIONI DI BASE CON .toString(radix)
+        // ==========================================
+        // Il metodo .toString() accetta come argomento la 'base' numerica (radix) desiderata 
+        // e restituisce la stringa convertita corrispondente:
+        
+        // Conversione in base 8 (Ottale)
+        console.log("R. ottale:", numero.toString(8));
+
+        // Conversione in base 16 (Esadecimale)
+        console.log("R. esadecimale:", numero.toString(16));
+
+        // Conversione in base 2 (Binaria)
+        console.log("R. binaria:", numero.toString(2));
+
+        // ==========================================
+        // 5. GESTIONE DEI VALORI NUMERICI SPECIALI
+        // ==========================================
+        // JavaScript gestisce nativamente situazioni limite e calcoli non definiti:
+
+        // Divisione di un numero positivo per zero -> Restituisce l'infinito positivo
+        console.log("1 diviso 0 è uguale a:", 1 / 0);
+
+        // Divisione di un numero negativo per zero -> Restituisce l'infinito negativo
+        console.log("-1 diviso 0 è uguale a:", -1 / 0);
+
+        // Operazione matematica indeterminata (0 diviso 0) -> Restituisce NaN (Not a Number)
+        console.log("0 diviso 0 è uguale a:", 0 / 0);
+    </script>
+
+</body>
+</html>
