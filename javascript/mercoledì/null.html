@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dato null</title>
+    <style>
+        /* Regole di stile globale per allineare al centro e impostare il grassetto */
+        body {
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Dati di tipo NULL</h1>
+    <br>
+    <p>Utilizzo il metodo document.getElementById()<br>per cercare un elemento che non esiste nel documento.</p>
+
+    <script>
+        // ==========================================
+        // UTILIZZO PRATICO DEL TIPO NULL
+        // ==========================================
+        // Cerchiamo nel DOM un elemento tramite un identificativo inesistente.
+        // Poiché l'elemento non viene trovato, il metodo restituisce esplicitamente 'null'.
+        var element = document.getElementById('elemento-che-non-esiste');
+        
+        // Stampiamo il risultato all'interno della console degli sviluppatori del browser
+        console.log(element); // Output atteso: null
+    </script>
+
+</body>
+</html>

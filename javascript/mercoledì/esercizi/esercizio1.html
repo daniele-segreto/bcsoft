@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio Introduttivo su JavaScript</title>
+    <!-- Collegamento al file CSS esterno -->
+    <link rel="stylesheet" href="css/esercizio1.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Elemento HTML che subirà variazioni di stile tramite JS -->
+        <h1 id="titolo">Benvenuto in JavaScript</h1>
+        
+        <!-- Elementi destinati a ricevere i dati dinamici dal DOM -->
+        <p id="messaggio"></p>
+        <p id="apri-messaggio">Clica per aggiungere qualcosa</p>
+        <a href="#" id="pulsante-toogle">Apri / Chiudi</a>
+        <p id="elemento-toogle">Arrivo e vado via!</p>
+
+        <hr>
+        <button onclick="coloraSfondo()">Colora lo sfondo!</button>
+    </div>
+
+    <!-- SweetAlert2 JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Collegamento al file JavaScript esterno (struttura richiesta) -->
+    <script src="js/esercizio1.js"></script>
+</body>
+</html>

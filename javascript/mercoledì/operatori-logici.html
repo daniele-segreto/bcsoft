@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operatori logici</title>
+    <style>
+        /* Regole di stile per centrare il contenuto e formattare il testo dei risultati */
+        body {
+            text-align: center;
+            font-weight: bold;
+        }
+        p {
+            font-size: 25px;
+            color: blue;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Operatori logici</h1>
+    
+    <!-- Paragrafo destinato ad accogliere l'output dinamico delle valutazioni booleane -->
+    <p id="output"></p>
+
+    <script>
+        // ==========================================
+        // 1. DICHIARAZIONE DELLE VARIABILI NUMERICHE
+        // ==========================================
+        let x = 20;
+        let y = 10;
+
+        // ==========================================
+        // 2. APPLICAZIONE DEGLI OPERATORI LOGICI
+        // ==========================================
+        
+        // Operatore AND (&&): restituisce true solo se entrambe le condizioni sono verificate
+        let andResult = (x > 10) && (y < 20); // true (20 > 10 è true E 10 < 20 è true)
+
+        // Operatore OR (||): restituisce true se almeno una delle condizioni è verificata
+        let orResult = (x < 10) || (y > 20); // false (entrambe le condizioni sono false)
+
+        // Operatore NOT (!): inverte lo stato booleano dell'espressione risultante
+        let notResult = !(x == y); // true (x == y è false, negato diventa true)
+
+        // ==========================================
+        // 3. AGGIORNAMENTO DINAMICO DEL DOM (innerHTML e +=)
+        // ==========================================
+        document.getElementById("output").innerHTML = "(x > 10) and (y < 20): " + andResult + "<br>";
+        document.getElementById("output").innerHTML += "(x < 10) or (y > 20): " + orResult + "<br>";
+        document.getElementById("output").innerHTML += "not (x == y): " + notResult + "<br>";
+    </script>
+
+</body>
+</html>

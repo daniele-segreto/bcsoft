@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operatore di incremento</title>
+    <style>
+        /* Regole di stile per l'intestazione e il paragrafo di output */
+        body {
+            font-family: sans-serif;
+        }
+        p {
+            font-size: 30px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Operatori numerici: incremento</h1>
+    
+    <!-- Paragrafo destinato a ricevere l'output dinamico -->
+    <p id="output"></p>
+    
+    <script>
+        // ==========================================
+        // 1. OPERATORE DI PRE-INCREMENTO (++)
+        // ==========================================
+        let number = 22;
+        
+        // L'operatore ++ anteposto alla variabile incrementa immediatamente il valore di 1 (da 22 a 23)
+        let increment = ++number;
+        
+        /* 
+        Nota didattica presente nel codice:
+        Se si volesse incrementare la variabile di un valore superiore all'unità (ad esempio di 5), 
+        si utilizzerebbe l'operatore di assegnazione additiva:
+        
+        let number = 22;
+        number += 5;
+        */
+        
+        // ==========================================
+        // 2. AGGIORNAMENTO DINAMICO DEL DOM
+        // ==========================================
+        // L'operatore '+=' accoda il testo all'interno dell'elemento con ID 'output'
+        document.getElementById("output").innerHTML += "L'incremento del numero inserito è: " + increment;
+    </script>
+    
+</body>
+</html>

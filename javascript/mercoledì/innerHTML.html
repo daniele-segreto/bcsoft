@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso di Var</title>
+    <style>
+        /* Regole di stile per centrare il contenuto e formattare il risultato */
+        body {
+            text-align: center;
+            font-family: sans-serif;
+        }
+        .risultato {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Var</h1>
+    
+    <!-- Paragrafo destinato ad accogliere il contenuto dinamico generato dallo script -->
+    <p id="paragrafo"></p>
+
+    <script>
+        // ==========================================
+        // 1. DICHIARAZIONE DELLE VARIABILI CON 'VAR'
+        // ==========================================
+        
+        // Memorizziamo il messaggio testuale introduttivo
+        var message = "JavaScript è in grado di eseguire somme algebriche. Non ci credi?";
+
+        // Dichiariamo i due operandi numerici
+        var number1 = 50;
+        var number2 = 35;
+
+        // Eseguiamo l'operazione algebrica di somma salvando il valore in una variabile
+        var sum = number1 + number2;
+
+        // ==========================================
+        // 2. MANIPOLAZIONE DINAMICA DEL DOM (innerHTML)
+        // ==========================================
+        // Selezioniamo il paragrafo tramite il suo ID e modifichiamo la proprietà innerHTML.
+        // Questa proprietà consente di inserire nel documento non solo testo, ma anche tag HTML attivi 
+        // come i ritorni a capo (<br>) e gli elementi di stile (<span class='risultato'>).
+        document.getElementById("paragrafo").innerHTML = message + "<br><br>La somma dei numeri " + number1 + " e " + number2 + " è uguale a <span class='risultato'>" + sum + "</span>.";
+    </script>
+
+</body>
+</html>

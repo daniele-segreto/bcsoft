@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Var, let e const</title>
+</head>
+<body>
+
+    <!-- Intestazione stilizzata della pagina -->
+    <h1 style="color: blue;">Var, let, e const: che differenza c'è?</h1>
+    
+    <!-- Paragrafo destinato a ricevere l'output dinamico generato dallo script -->
+    <p id="output"></p>
+
+    <script>
+        // ==========================================
+        // 1. DICHIARAZIONE INIZIALE DELLE VARIABILI
+        // ==========================================
+        var messageVar = "5";
+        let messageLet = "7";
+        const messageConst = "X";
+
+        // Ridichiarazione con var (permessa)
+        var messageVar = "Prova";
+
+        // ==========================================
+        // 2. STAMPA DEL PRIMO BLOCCO DI OUTPUT
+        // ==========================================
+        document.getElementById("output").innerHTML = `
+            Variabile con var: ${messageVar}<br>
+            Variabile con let: ${messageLet}<br>
+            Costante con const: ${messageConst}
+        `;
+
+        // ==========================================
+        // 3. MODIFICA / RIASSEGNAZIONE DEI VALORI
+        // ==========================================
+        messageVar = "10";
+        messageLet = "14";
+        
+        // ATTENZIONE: Tentare di modificare una costante genererebbe un errore critico bloccante
+        // messageConst = "Y"; 
+
+        // ==========================================
+        // 4. AGGIUNTA DEL SECONDO BLOCCO (+=)
+        // ==========================================
+        // L'operatore '+=' permette di accodare nuovo codice HTML al contenuto già presente in innerHTML
+        document.getElementById("output").innerHTML += `
+            <br><br>
+            Il nuovo valore di var è: ${messageVar}<br>
+            Il nuovo valore di let è: ${messageLet}<br>
+            Const <u>non può</u> essere modificata
+        `;
+    </script>
+
+</body>
+</html>

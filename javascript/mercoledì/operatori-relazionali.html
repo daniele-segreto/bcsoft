@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operatori relazionali</title>
+    <style>
+        /* Regole CSS per dimensionare, colorare e spaziare il testo del paragrafo */
+        p {
+            font-size: 25px;
+            color: blue;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Operatori relazionali</h1>
+    
+    <!-- Paragrafo destinato ad accogliere i risultati dinamici dei confronti -->
+    <p id="output"></p>
+
+    <script>
+        // ==========================================
+        // 1. DICHIARAZIONE DELLE VARIABILI DI CONFRONTO
+        // ==========================================
+        let x = 50;
+        let y = 12;
+
+        // ==========================================
+        // 2. APPLICAZIONE DEGLI OPERATORI RELAZIONALI
+        // ==========================================
+        let minore = x < y;                     // Restituisce false (50 non è minore di 12)
+        let maggiore = x > y;                   // Restituisce true (50 è maggiore di 12)
+        let uguale = x == y;                    // Restituisce false (50 non è uguale a 12)
+        let diverso = x != y;                   // Restituisce true (50 è diverso da 12)
+        
+        // Operatori di uguaglianza/diversità stretta (verificano valore E tipo di dato)
+        let strettamenteUguale = x === '50';    // Restituisce false (numero 50 vs stringa '50')
+        let strettamenteDiverso = x !== '50';   // Restituisce true (tipo differente: number vs string)
+
+        // ==========================================
+        // 3. AGGIORNAMENTO DINAMICO DEL DOM (+=)
+        // ==========================================
+        document.getElementById("output").innerHTML = "x < y: " + minore + "<br>";
+        document.getElementById("output").innerHTML += "x > y: " + maggiore + "<br>";
+        document.getElementById("output").innerHTML += "x == y: " + uguale + "<br>";
+        document.getElementById("output").innerHTML += "x != y: " + diverso + "<br>";
+        document.getElementById("output").innerHTML += "x === '50': " + strettamenteUguale + "<br>";
+        document.getElementById("output").innerHTML += "x !== '50': " + strettamenteDiverso + "<br>";
+    </script>
+
+</body>
+</html>

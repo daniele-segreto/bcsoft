@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipolazione DOM e Eventi con Ciclo For</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background: green;
+            margin: 20px auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Interazione con i Box</h1>
+    
+    <!-- Tre elementi div dotati della classe box -->
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <script>
+        // Selezioniamo tutti gli elementi della pagina che possiedono la classe "box"
+        let box = document.querySelectorAll(".box");
+
+        // Cicliamo attraverso tutti gli elementi trovati utilizzando la proprietà length
+        for (let i = 0; i < box.length; i++) {
+            // Associamo un ascoltatore di eventi per il click a ciascun singolo box (i)
+            box[i].addEventListener("click", function () {
+                box[i].style.width = "200px";
+                box[i].style.height = "200px";
+            });
+        }
+    </script>
+
+</body>
+</html>

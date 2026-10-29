@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controllo giorno con Date</title>
+    <style>
+        /* Regole CSS per la centratura e l'aspetto grafico della pagina */
+        body {
+            background-color: yellow;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: blue;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: blue;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Controllo giorno</h1>
+        <p>Clicca il bottone per eseguire lo switch</p>
+        
+        <!-- Pulsante che scatena la funzione al click -->
+        <button onclick="controllaGiorno()">Esegui</button>
+        
+        <!-- Contenitore dell'output dinamico -->
+        <div id="output"></div>
+    </div>
+
+    <script>
+        // ==========================================
+        // FUNZIONE DI RILEVAMENTO DATA E SWITCH
+        // ==========================================
+        function controllaGiorno() {
+            // Istanziamo un oggetto Date per ottenere la data e l'ora correnti del sistema
+            const oggi = new Date();
+            
+            // Il metodo getDay() restituisce un numero compreso tra 0 e 6 (0 = domenica, 1 = lunedì, ecc.)
+            const giorno = oggi.getDay();
+            let risultato = "";
+
+            // Struttura switch per valutare il codice numerico del giorno corrente
+            switch (giorno) {
+                case 0:
+                    risultato = "domenica";
+                    break;
+                case 1:
+                    risultato = "lunedì";
+                    break;
+                case 2:
+                    risultato = "martedì";
+                    break;
+                case 3:
+                    risultato = "mercoledì";
+                    break;
+                case 4:
+                    risultato = "giovedì";
+                    break;
+                case 5:
+                    risultato = "venerdì";
+                    break;
+                case 6:
+                    risultato = "sabato";
+                    break;
+                default:
+                    risultato = "Giorno non valido";
+            }
+
+            // Iniezione del risultato all'interno dell'elemento con ID 'output'
+            document.getElementById("output").innerHTML = "Oggi è: " + risultato;
+        }
+    </script>
+
+</body>
+</html>

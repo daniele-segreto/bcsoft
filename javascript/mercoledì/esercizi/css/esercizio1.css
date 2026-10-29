@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 50px;
+    text-align: center;
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+h1 {
+    color: #333;
+}
+
+#apri-messaggio {
+    background-color: yellow;
+}
+#apri-messaggio:hover {
+    background-color: yellowgreen;
+    cursor: pointer;
+}
+
+#elemento-toogle {
+    display: none;
+    background-color: aqua;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operatori matematici</title>
+    <style>
+        /* Regole CSS per centrare gli elementi, definire il grassetto e stilizzare il testo */
+        body {
+            text-align: center;
+            font-weight: bold;
+        }
+        span {
+            color: red; /* Rende rossi i valori numerici dei risultati */
+        }
+        p {
+            font-size: 20px; /* Imposta la dimensione del paragrafo dei risultati */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Operatori matematici</h1>
+    <br>
+    
+    <!-- Paragrafo destinato a raccogliere i risultati dinamici -->
+    <p id="risultato"></p>
+
+    <script>
+        // ==========================================
+        // 1. DICHIARAZIONE DEGLI OPERANDI NUMERICI
+        // ==========================================
+        let number1 = 25;
+        let number2 = 5;
+
+        // ==========================================
+        // 2. ESECUZIONE DELLE OPERAZIONI ARITMETICHE
+        // ==========================================
+        let addition = number1 + number2;         // Addizione (25 + 5 = 30)
+        let subtraction = number1 - number2;      // Sottrazione (25 - 5 = 20)
+        let multiplication = number1 * number2;   // Moltiplicazione (25 * 5 = 125)
+        let division = number1 / number2;         // Divisione (25 / 5 = 5)
+
+        // ==========================================
+        // 3. AGGIUNTA DINAMICA AL DOM (+= E INNERHTML)
+        // ==========================================
+        // Utilizziamo l'operatore '+=' per accodare riga per riga i risultati all'interno dello span rosso
+        document.getElementById("risultato").innerHTML += "Addizione: <span>" + addition + "</span><br>";
+        document.getElementById("risultato").innerHTML += "Sottrazione: <span>" + subtraction + "</span><br>";
+        document.getElementById("risultato").innerHTML += "Moltiplicazione: <span>" + multiplication + "</span><br>";
+        document.getElementById("risultato").innerHTML += "Divisione: <span>" + division + "</span><br>";
+    </script>
+
+</body>
+</html>

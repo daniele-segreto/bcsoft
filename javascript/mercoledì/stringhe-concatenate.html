@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stringhe concatenate</title>
+    <style>
+        /* Regole CSS per definire la dimensione, il colore e l'interlinea del testo */
+        p {
+            font-size: 25px;
+            color: blue;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Stringhe concatenate</h1>
+    
+    <!-- Paragrafo destinato ad accogliere la stringa concatenata generata dinamicamente -->
+    <p id="output"></p>
+
+    <script>
+        // ==========================================
+        // 1. DICHIARAZIONE DELLE VARIABILI TESTUALI
+        // ==========================================
+        let nome = "Fabio";
+        let cognome = "Amato";
+
+        // ==========================================
+        // 2. CONCATENAZIONE DELLE STRINGHE (+)
+        // ==========================================
+        // L'operatore '+' viene utilizzato per unire stringhe fisse, tag HTML (<br>), 
+        // spazi vuoti (" ") e il contenuto delle variabili testuali.
+        let risultato = "Il tuo nome e cognome è: <br> " + nome + " " + cognome;
+
+        // ==========================================
+        // 3. INIEZIONE DEL RISULTATO NEL DOM
+        // ==========================================
+        // Assegniamo la stringa complessa alla proprietà innerHTML dell'elemento con ID 'output'
+        document.getElementById("output").innerHTML = risultato;
+    </script>
+
+</body>
+</html>

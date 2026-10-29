@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controllo giorno con switch</title>
+    <style>
+        /* Regole di stile generali e layout della pagina */
+        body {
+            background-color: yellow;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: blue;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: blue;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Controllo giorno</h1>
+        <p>Clicca il bottone per eseguire lo switch</p>
+        
+        <!-- Bottone che intercetta l'evento click per avviare la funzione JavaScript -->
+        <button onclick="controllaGiorno()">Esegui</button>
+        
+        <!-- Contenitore destinato a ricevere l'output dinamico -->
+        <div id="output"></div>
+    </div>
+
+    <script>
+        // ==========================================
+        // FUNZIONE DI CONTROLLO TRAMITE SWITCH
+        // ==========================================
+        function controllaGiorno() {
+            const giorno = "sabato";
+            let risultato = "";
+
+            // L'istruzione switch valuta l'espressione e confronta il valore con i vari case
+            switch (giorno) {
+                case "lunedì":
+                    risultato = "Inizio settimana lavorativa. Forza!";
+                    break;
+                case "venerdì":
+                    risultato = "Ultimo sforzo, il weekend è vicino!";
+                    break;
+                case "sabato":
+                case "domenica":
+                    risultato = "Buon weekend di riposo!";
+                    break;
+                default:
+                    risultato = "Giorno infrasettimanale ordinario.";
+            }
+
+            // Iniezione del risultato nel DOM all'interno del div 'output'
+            document.getElementById("output").innerHTML = risultato;
+        }
+    </script>
+
+</body>
+</html>

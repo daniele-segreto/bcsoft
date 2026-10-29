@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If, Else if, Else</title>
+    <style>
+        /* Regole CSS per definire la formattazione e lo stile del paragrafo di output */
+        body {
+            text-align: center;
+            font-weight: bold;
+        }
+        p {
+            font-size: 25px;
+            color: blue;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>If, Else if, Else</h1>
+    
+    <!-- Paragrafo destinato ad accogliere l'output dinamico della valutazione della temperatura -->
+    <p id="output"></p>
+
+    <script>
+        // ==========================================
+        // 1. DICHIARAZIONE DELLA VARIABILE DI TEST
+        // ==========================================
+        let temperatura = 16;
+
+        // ==========================================
+        // 2. STRUTTURA CONDIZIONALE MULTIPLA
+        // ==========================================
+        
+        // Primo controllo (IF): verifica se la temperatura è inferiore a 0 gradi
+        if (temperatura < 0) {
+            document.getElementById("output").innerHTML = "Fa molto freddo brrrrr <br>Andiamo a trovare i nostri amici Polaretti!";
+        } 
+        // Secondo controllo (ELSE IF): verifica se la temperatura è compresa tra 0 e 15 gradi inclusi
+        else if (temperatura >= 0 && temperatura < 15) {
+            document.getElementById("output").innerHTML = "Fa fresco. Non ci possiamo lamentare.";
+        } 
+        // Blocco di fallback definitivo (ELSE): eseguito se nessuna delle condizioni precedenti risulta vera
+        else {
+            document.getElementById("output").innerHTML = "Antò, fa caldo!";
+        }
+    </script>
+
+</body>
+</html>

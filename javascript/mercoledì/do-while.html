@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do While</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-weight: bold;
+        }
+        p {
+            font-size: 25px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Do While</h1>
+    
+    <!-- Paragrafo destinato ad accogliere l'output generato dal ciclo do...while -->
+    <p id="output"></p>
+    
+    <script>
+        // ==========================================
+        // 1. DICHIARAZIONE E INIZIALIZZAZIONE
+        // ==========================================
+        let output = "";
+        let i = 1;
+        
+        // ==========================================
+        // 2. CONFRONTO CON IL WHILE TRADIZIONALE (COMMENTATO)
+        // ==========================================
+        /* 
+        Se avessimo usato un ciclo while con una condizione iniziale non verificata 
+        (ad esempio i > 3), il codice interno non sarebbe stato eseguito neanche una volta:
+        while (i > 3) {
+        output += "Numero: " + i + "<br>";
+        i++;
+        }
+        */
+        
+        // ==========================================
+        // 3. APPLICAZIONE DEL CICLO DO...WHILE
+        // ==========================================
+        /* 
+        Il blocco 'do' viene eseguito incondizionatamente almeno una volta.
+        La condizione viene valutata soltanto alla fine di ogni iterazione.
+        */
+        do {
+            output += "Numero: " + i + "<br>";
+            i++;
+        } while (i <= 3);
+        
+        // ==========================================
+        // 4. AGGIORNAMENTO DINAMICO DEL DOM
+        // ==========================================
+        document.getElementById("output").innerHTML = output;
+    </script>
+    
+</body>
+</html>

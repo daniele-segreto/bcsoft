@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dati di tipo UNDEFINED</title>
+    <style>
+        /* Regole di stile globale per allineare al centro e impostare il grassetto */
+        body {
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Dati di tipo UNDEFINED</h1>
+    <br>
+    <p>
+        La variabile X è stata dichiarata utilizzando la parola chiave var ma non è stata assegnata a nessun valore. <br><br>
+        Quando si tenta di accedere al valore di x, viene restituito undefined perché non è stato assegnato alcun valore.
+    </p>
+
+    <script>
+        // ==========================================
+        // 1. VARIABILE NON INIZIALIZZATA (UNDEFINED)
+        // ==========================================
+        // Dichiariamo la variabile 'x' senza assegnarle alcun valore iniziale.
+        var x; // non ha alcun valore
+        
+        // Stampando la variabile in console, il sistema rileva l'assenza di un valore assegnato e restituisce 'undefined'
+        console.log("Il valore di X è: " + x);
+
+        // ==========================================
+        // 2. VARIABILE INIZIALIZZATA CORRETTAMENTE
+        // ==========================================
+        // Dichiariamo una seconda variabile 'y' assegnandole esplicitamente il valore numerico 1.
+        var y = 1; // ha valore 1
+        
+        // Stampando in console, viene mostrato correttamente il valore memorizzato.
+        console.log("Il valore di Y è: " + y);
+    </script>
+
+</body>
+</html>

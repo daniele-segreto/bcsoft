@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operatore di negazione</title>
+    <style>
+        /* Regole CSS per definire la dimensione e il colore del testo nel paragrafo */
+        p {
+            font-size: 30px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Operatori numerici: negazione</h1>
+    
+    <!-- Paragrafo destinato ad accogliere l'output dinamico generato dallo script -->
+    <p id="output"></p>
+
+    <script>
+        // ==========================================
+        // 1. DICHIARAZIONE DELLA VARIABILE NUMERICA
+        // ==========================================
+        let number = 22;
+
+        // ==========================================
+        // 2. APPLICAZIONE DELL'OPERATORE DI NEGAZIONE
+        // ==========================================
+        // L'operatore unario '-' inverte il segno del valore numerico associato
+        let negation = -number;
+
+        // ==========================================
+        // 3. AGGIORNAMENTO DINAMICO DEL DOM
+        // ==========================================
+        // Inseriamo il testo combinato con il risultato della negazione all'interno dell'elemento paragrafo
+        document.getElementById("output").innerHTML = "La negazione del numero inserito è " + negation;
+    </script>
+
+</body>
+</html>

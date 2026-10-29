@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dati booleani</title>
+    <style>
+        /* Regola CSS per colorare in blu il testo dinamico dello span */
+        span {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Dati booleani</h1>
+    <br>
+    <p>L'opera "I Promessi Sposi" è stata scritta da Dante?<br><br>
+       <!-- Elemento span destinato ad accogliere la risposta dinamica -->
+       <span id="risposta"></span>
+    </p>
+
+    <script>
+        // ==========================================
+        // 1. DICHIARAZIONE DELLA VARIABILE BOOLEANA
+        // ==========================================
+        // La variabile 'opera' memorizza il valore logico booleano 'false'[cite: 19, 20]
+        var opera = false;
+
+        // ==========================================
+        // 2. STRUTTURA CONDIZIONALE (IF / ELSE)
+        // ==========================================
+        // Verifica lo stato della variabile booleana per determinare quale ramo eseguire
+        if (opera) {
+            // Eseguito se la condizione è true
+            document.getElementById('risposta').textContent = 'Sì, è stata scritta da Dante in un universo parallelo 👽';
+        } else {
+            // Eseguito se la condizione è false (ramo attivo in questo esempio)[cite: 19, 20]
+            document.getElementById('risposta').textContent = 'No, è stata scritta da Alessandro Manzoni 📖';
+        }
+    </script>
+
+</body>
+</html>
