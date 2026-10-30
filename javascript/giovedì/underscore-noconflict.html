@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Underscore.js e Lodash insieme</title>
+    
+    <!-- Inclusione di Underscore.js -->
+    <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>
+    <!-- Inclusione di Lodash (caricata per ultima, sovrascriverebbe il simbolo _) -->
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+</head>
+<body>
+
+    <h1>Utilizzo simultaneo di Underscore.js e Lodash</h1>
+
+    <div>
+        <p>
+            <strong>Array originale:</strong>
+            <span id="array-originale"></span>
+        </p>
+        <ul>
+            <li>Underscore.js (primi 3 elementi): <span id="risultato-underscore"></span></li>
+            <li>Lodash (somma di tutti gli elementi): <span id="risultato-lodash"></span></li>
+        </ul>
+    </div>
+
+    <script>
+        // ==========================================
+        // GESTIONE DEI CONFLITTI TRA LIBRERIE
+        // ==========================================
+        
+        // 1. Lodash è stata caricata per ultima e possiede temporaneamente window._
+        // Con _.noConflict() ripristiniamo window._ e salviamo Lodash in una variabile dedicata.
+        const lodash = _.noConflict();
+
+        // 2. Ora window._ è tornato a essere Underscore.js. 
+        // Usiamo noConflict() anche qui per liberare il simbolo globale '_' e salvarlo in 'underscore'.
+        const underscore = _.noConflict();
+
+        // Array di dati su cui effettuare le elaborazioni
+        const numeri = [1, 2, 3, 4, 5, 6];
+
+        // Utilizzo di Underscore.js per estrarre i primi tre elementi tramite il metodo .first()
+        const primiTreUnderscore = underscore.first(numeri, 3);
+
+        // Utilizzo di Lodash per calcolare la somma di tutti gli elementi tramite il metodo .sum()
+        const sommaLodash = lodash.sum(numeri);
+
+        // Inserimento dei risultati dinamici all'interno del DOM
+        document.getElementById("array-originale").textContent = numeri.join(", ");
+        document.getElementById("risultato-underscore").textContent = primiTreUnderscore.join(", ");
+        
+        // Parte finale integrata per la stampa del risultato di Lodash
+        document.getElementById("risultato-lodash").textContent = sommaLodash;
+    </script>
+
+</body>
+</html>

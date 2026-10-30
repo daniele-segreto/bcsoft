@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso della Libreria Underscore.js</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+            text-align: center; /* Allinea tutti gli elementi al centro come nello screen */
+        }
+        h1 {
+            color: #111;
+        }
+        #output2 {
+            font-size: 18px;
+            color: blue;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        #output {
+            font-size: 18px;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Uso della Libreria Underscore.js</h1>
+    
+    <!-- Contenitori per l'output dinamico -->
+    <div id="output2"></div>
+    <div id="output"></div>
+
+    <!-- Inclusione della libreria Underscore.js tramite CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.6/underscore-min.js"></script>
+    <script>
+        // Array di numeri di esempio
+        var numbers = [10, 30, 40, 5, 1000];
+
+        // Utilizzo della funzione _.min della libreria per trovare il valore minimo
+        var minNumbers = _.min(numbers);
+
+        // Creazione di una copia dell'array originale tramite .slice()
+        var numbersOriginale = numbers.slice();
+
+        // Inserimento del risultato minimo nel div di output principale
+        document.getElementById("output").innerHTML = "Il numero minimo è:<br>" + minNumbers;
+
+        // Inserimento dell'elenco dei numeri originali nel secondo div di output
+        document.getElementById("output2").innerHTML = "I numeri tra cui ricercare il minimo sono: <br>" + numbersOriginale;
+    </script>
+
+</body>
+</html>

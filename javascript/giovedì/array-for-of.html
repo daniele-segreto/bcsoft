@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array e ciclo for of</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            font-weight: bold;
+            color: #111;
+        }
+        p {
+            font-size: 22px;
+            color: blue;
+            margin-top: 70px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Array e ciclo for of</h1>
+    
+    <!-- Paragrafo destinato ad accogliere l'elenco formattato degli autori -->
+    <p id="output"></p>
+    
+    <script>
+        // ==========================================
+        // 1. DICHIARAZIONE DELL'ARRAY
+        // ==========================================
+        var autori = ['Umberto Eco', 'Eugenio Montale', 'Giuseppe Ungaretti'];
+        var output = '';
+        
+        // ==========================================
+        // 2. UTILIZZO DEL CICLO FOR...OF
+        // ==========================================
+        /* 
+        Il ciclo for...of permette di scorrere direttamente i valori di un array 
+        senza dover gestire manualmente gli indici numerici o la proprietà length.
+        Utilizziamo una variabile temporanea al singolare ('autore') distinta 
+        dal nome dell'array ('autori') per preservare la chiarezza del codice.
+        */
+        for (var autore of autori) {
+            output += autore + '<br>';
+        }
+        
+        // ==========================================
+        // 3. AGGIORNAMENTO DINAMICO DEL DOM
+        // ==========================================
+        document.getElementById('output').innerHTML = output;
+    </script>
+    
+</body>
+</html>

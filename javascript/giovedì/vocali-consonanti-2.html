@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclo for in array</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            font-weight: bold;
+            color: #111;
+        }
+        p {
+            font-size: 20px;
+            margin-top: 15px;
+        }
+        /* Stili personalizzati per i diversi tipi di output */
+        #outputcopia {
+            font-weight: bold;
+            color: red;
+        }
+        #output2 {
+            color: green;
+        }
+        #output {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Ciclo for in array</h1>
+    
+    <!-- Paragrafi destinati ad accogliere l'anteprima dell'array e i risultati formattati -->
+    <p id="outputcopia"></p>
+    <p id="output2"></p>
+    <p id="output"></p>
+    
+    <script>
+        // ==========================================
+        // 1. DICHIARAZIONE DELL'ARRAY E DELLE VARIABILI
+        // ==========================================
+        var letters = ['A', 'b', 'c', 'd', 'Z'];
+        var output = "";
+        var output2 = "";
+        
+        // Copia di sicurezza dell'array tramite il metodo .slice()
+        var lettersOriginale = letters.slice();
+        
+        // ==========================================
+        // 2. PRIMO CICLO FOR: IDENTIFICAZIONE DELLE VOCALI
+        // ==========================================
+        /* 
+        Il primo ciclo scorre l'array per verificare la presenza di vocali 
+        (sia minuscole che maiuscole grazie alla conversione con toLowerCase).
+        */
+        for (var i = 0; i < letters.length; i++) {
+            var letter = letters[i].toLowerCase(); // Converto la lettera in minuscolo per facilitare il confronto
+            
+            if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u') {
+                output2 += letters[i] + " è una vocale.<br>";
+            }
+        }
+        
+        // ==========================================
+        // 3. SECONDO CICLO FOR: IDENTIFICAZIONE DELLE CONSONANTI
+        // ==========================================
+        /* 
+        Il secondo ciclo scorre nuovamente l'array isolando tutte le lettere 
+        che non corrispondono ad alcuna vocale.
+        */
+        for (var i = 0; i < letters.length; i++) {
+            var letter = letters[i].toLowerCase(); // Converto la lettera in minuscolo per facilitare il confronto
+            
+            if (letter !== 'a' && letter !== 'e' && letter !== 'i' && letter !== 'o' && letter !== 'u') {
+                output += letters[i] + " è una consonante.<br>";
+            }
+        }
+        
+        // ==========================================
+        // 4. AGGIORNAMENTO DINAMICO DEL DOM
+        // ==========================================
+        document.getElementById("outputcopia").innerHTML = "Tra queste lettere: <br>" + lettersOriginale.join(",");
+        document.getElementById("output2").innerHTML = output2;
+        document.getElementById("output").innerHTML = output;
+    </script>
+    
+</body>
+</html>

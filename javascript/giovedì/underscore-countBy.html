@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libreria Underscore.js - parte2</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+            text-align: center;
+            font-weight: bold;
+        }
+        h1 {
+            color: #111;
+        }
+        #output2 {
+            font-size: 18px;
+            color: blue;
+            margin-bottom: 20px;
+        }
+        #output {
+            font-size: 25px;
+            color: red;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Uso della Libreria Underscore.js - parte2</h1>
+    
+    <!-- Contenitori per l'output dinamico -->
+    <div id="output2"></div>
+    <div id="output"></div>
+    
+    <!-- Inclusione della libreria Underscore.js tramite CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.6/underscore-umd-min.js"></script>
+    <script>
+        // Array di numeri da analizzare
+        var numbers = [1, 2, 3];
+        
+        // Copia dell'array originale tramite .slice()
+        var numbersOriginale = numbers.slice();
+        
+        // Utilizzo di _.countBy per raggruppare e contare in base alla condizione
+        var result = _.countBy(numbers, function(num) {
+            /* 
+            Operatore ternario: 
+            Se il resto della divisione per 2 è uguale a zero, il numero è pari, 
+            altrimenti (:) il numero è dispari.
+            */
+            return num % 2 === 0 ? 'numeri pari' : 'numeri dispari';
+        });
+        
+        // Link alla documentazione di riferimento: https://underscorejs.org/#countBy
+        
+        // Inserimento dei numeri analizzati nel secondo div
+        document.getElementById("output2").innerHTML = "I numeri analizzati sono:<br>" + numbersOriginale;
+        
+        // Formattazione del testo per il conteggio dei risultati
+        var outputText = "Il conteggio dei numeri pari e dispari è il seguente:<br><br>";
+        outputText += "Numeri pari: " + result['numeri pari'] + "<br><br>";
+        outputText += "Numeri dispari: " + result['numeri dispari'];
+        
+        // Inserimento del testo finale nel div di output principale
+        document.getElementById("output").innerHTML = outputText;
+    </script>
+    
+</body>
+</html>

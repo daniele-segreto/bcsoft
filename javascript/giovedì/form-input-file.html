@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carica un'immagine</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            background-color: #5b9291;
+        }
+        .card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 400px;
+        }
+        h2 {
+            color: #111;
+            margin-top: 0;
+        }
+        input[type="file"] {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .successo {
+            color: green;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .errore {
+            color: red;
+            font-weight: bold;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Carica un'immagine</h2>
+        
+        <!-- Input di tipo file per il caricamento -->
+        <input type="file" id="fileInput"><br>
+        <span id="messaggio"></span>
+    </div>
+
+    <script>
+        // Selezione degli elementi dal DOM
+        const fileInput = document.getElementById("fileInput");
+        const messaggio = document.getElementById("messaggio");
+
+        // Definizione dell'array con le estensioni consentite
+        const estensioniConsentite = ["jpg", "jpeg", "png"];
+
+        // Ascoltatore dell'evento 'change' quando l'utente seleziona un file
+        fileInput.addEventListener("change", function() {
+            
+            // Verifica se è stato effettivamente selezionato un file
+            if (fileInput.files.length === 0) return;
+
+            const fileSelezionato = fileInput.files[0];
+            const nomeFile = fileSelezionato.name;
+
+            // ==========================================
+            // TECNICA DA IMPARARE: SPLIT, POP E LOWERCASE
+            // ==========================================
+            // 1. .split(".") divide il nome in array usando il punto come separatore.
+            // 2. .pop() estrae e restituisce l'ultimo elemento (l'estensione).
+            // 3. .toLowerCase() normalizza il testo in minuscolo.
+            const estensione = nomeFile.split(".").pop().toLowerCase();
+
+            // ==========================================
+            // CONTROLLO DI VALIDITÀ DELL'ESTENSIONE
+            // ==========================================
+            if (estensioniConsentite.includes(estensione)) {
+                
+                // Ramo di successo: il file rispetta i formati consentiti
+                messaggio.textContent = `File valido caricato: ${nomeFile}`;
+                messaggio.className = "successo";
+
+            } else {
+                
+                // Ramo di errore: estensione non autorizzata
+                messaggio.textContent = "Errore: Estensione non consentita! Carica solo file JPG, JPEG o PNG.";
+                messaggio.className = "errore";
+                
+                // PARTE DA IMPARARE: Reset dell'input
+                // Pulisce il campo file per cancellare la selezione non valida
+                fileInput.value = "";
+            }
+        });
+    </script>
+
+</body>
+</html>

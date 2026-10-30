@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifica di un elemento in un Array</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            font-weight: bold;
+            color: #111;
+        }
+        p {
+            font-size: 22px;
+            margin-top: 20px;
+        }
+        #output {
+            color: blue;
+        }
+        #output2 {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Modifica di un elemento in un Array</h1>
+    
+    <!-- Paragrafi destinati ad accogliere l'output separato per array originale e modificato -->
+    <p id="output"></p>
+    <p id="output2"></p>
+    
+    <script>
+        // ==========================================
+        // 1. DICHIARAZIONE DELL'ARRAY INIZIALE
+        // ==========================================
+        var array = ["Ariete ♈", "Toro ♉", "Gemelli ♊", "Cancro ♋"];
+        
+        // ==========================================
+        // 2. DUPLICAZIONE TRAMITE .slice()
+        // ==========================================
+        /* 
+        Poiché in JavaScript gli array sono oggetti passati per riferimento,
+        assegnare direttamente 'var arrayOriginale = array' creerebbe solo un alias.
+        Il metodo .slice() senza argomenti restituisce una copia superficiale indipendente dell'array.
+        */
+        var arrayOriginale = array.slice();
+        
+        // ==========================================
+        // 3. MODIFICA PUNTUALE DI UN ELEMENTO
+        // ==========================================
+        /* 
+        Modifichiamo il secondo elemento dell'array (indice 1), 
+        sostituendo "Toro ♉" con "Pesci ♓".
+        */
+        array[1] = "Pesci ♓";
+        
+        // ==========================================
+        // 4. AGGIORNAMENTO DINAMICO DEL DOM E FORMATTAZIONE
+        // ==========================================
+        /* 
+        Il metodo .join(", ") unisce tutti gli elementi del vettore in un'unica stringa,
+        separandoli tramite una virgola e uno spazio.
+        */
+        document.getElementById("output").innerHTML = "Array originale: <br><br>" + arrayOriginale.join("- ");
+        
+        document.getElementById("output2").innerHTML = "Array modificato: <br><br>" + array.join("- ");
+    </script>
+    
+</body>
+</html>

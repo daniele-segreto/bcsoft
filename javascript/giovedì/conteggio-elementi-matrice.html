@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array multidimensionale - Dimensioni</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            font-weight: bold;
+            color: #111;
+        }
+        p {
+            font-size: 25px;
+            color: blue;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Array multidimensionale</h1>
+    
+    <!-- Paragrafi destinati ad accogliere i vari livelli di output -->
+    <p id="output"></p>
+    <p id="outputRighe"></p>
+    <p id="outputTotale"></p>
+    
+    <script>
+        // ==========================================
+        // 1. DEFINIZIONE DELLA MATRICE BIDIMENSIONALE
+        // ==========================================
+        function creaMatrix() {
+            return [
+            [1, 2, 3, 4],   // Riga 0
+            [5, 6, 7, 8],   // Riga 1
+            [9, 10, 11, 12] // Riga 2
+            ];
+        }
+        
+        // ==========================================
+        // 2. INVOCAZIONE E CALCOLO DELLE DIMENSIONI
+        // ==========================================
+        var matrix = creaMatrix();
+        
+        // Conteggio delle righe principali (lunghezza dell'array esterno)
+        var righe = matrix.length;
+        
+        // Metodo moderno per appiattire la matrice e calcolare il totale complessivo degli elementi (12)
+        var totale = matrix.flat().length;
+        
+        // ==========================================
+        // 3. ALTERNATIVA DIDATTICA: CONTEGGIO TRAMITE CICLO FOR
+        // ==========================================
+        /* 
+        È possibile calcolare il totale degli elementi anche iterando riga per riga:
+        var totaleCiclo = 0;
+        for (var i = 0; i < matrix.length; i++) {
+        totaleCiclo += matrix[i].length;
+        }
+        */
+        
+        // ==========================================
+        // 4. AGGIORNAMENTO DINAMICO DEL DOM
+        // ==========================================
+        document.getElementById("output").innerHTML = "Array multidimensionale: <br><br>" + JSON.stringify(matrix);
+        document.getElementById("outputRighe").innerHTML = "Righe: " + righe;
+        document.getElementById("outputTotale").innerHTML = "Totale elementi: " + totale;
+    </script>
+    
+</body>
+</html>

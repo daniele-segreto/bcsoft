@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array vuoto da riempire</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+        h1 {
+            color: #111;
+        }
+        #output {
+            font-size: 20px;
+            color: blue;
+            font-weight: bold;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Array vuoto da riempire</h1>
+    
+    <!-- Paragrafo di destinazione per l'output dinamico -->
+    <p id="output"></p>
+
+    <script>
+        // ==========================================
+        // CREAZIONE E POPOLAMENTO DI UN ARRAY
+        // ==========================================
+        
+        // 1. Dichiariamo un array vuoto
+        var arrayVuoto = [];
+
+        // 2. Aggiungiamo elementi in sequenza utilizzando il metodo .push()
+        arrayVuoto.push("A");
+        arrayVuoto.push("B");
+        arrayVuoto.push("C");
+
+        // 3. Stampiamo a schermo il risultato formattato unendo gli elementi con .join()
+        document.getElementById("output").innerHTML = "Array riempito:<br><br>" + arrayVuoto.join(", ");
+    </script>
+
+</body>
+</html>

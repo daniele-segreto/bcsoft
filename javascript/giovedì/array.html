@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            font-weight: bold;
+            color: #111;
+        }
+        p {
+            font-size: 25px;
+            color: blue;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Array</h1>
+    
+    <!-- Paragrafo destinato ad accogliere l'output testuale degli array -->
+    <p id="output"></p>
+
+    <script>
+        // ==========================================
+        // 1. FUNZIONE PER LA CREAZIONE DI UN ARRAY VUOTO
+        // ==========================================
+        function creaArrayVuoto() {
+            // Restituisce una struttura di array vuota racchiusa tra parentesi quadre
+            return [];
+        }
+
+        // ==========================================
+        // 2. FUNZIONE PER LA CREAZIONE DI UN ARRAY PIENO
+        // ==========================================
+        function creaArray() {
+            // Restituisce un array contenente dati misti (numeri e stringhe di caratteri)
+            return [1, 2, 'F', 4, 'A'];
+        }
+
+        // ==========================================
+        // 3. INVOCAZIONE DELLE FUNZIONI E ASSEGNAZIONE
+        // ==========================================
+        var arrayVuoto = creaArrayVuoto();
+        var array = creaArray();
+
+        // ==========================================
+        // 4. AGGIORNAMENTO DINAMICO DEL DOM
+        // ==========================================
+        // Stampa dell'array vuoto (risulterà visivamente vuoto o pari a stringa vuota)
+        document.getElementById("output").innerHTML = "Array vuoto: " + arrayVuoto + "<br><br>";
+        
+        // Accumulo e stampa dell'array pieno sfruttando l'operatore +=
+        document.getElementById("output").innerHTML += "Array pieno: " + array;
+    </script>
+
+</body>
+</html>

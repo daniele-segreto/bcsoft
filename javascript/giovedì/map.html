@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array e metodo Map</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            font-weight: bold;
+            color: #111;
+        }
+        p {
+            font-size: 22px;
+            margin-top: 20px;
+        }
+        #output {
+            color: blue;
+        }
+        #output2 {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Array e metodo Map</h1>
+    
+    <!-- Paragrafi destinati ad accogliere l'output dei numeri iniziali e dei quadrati calcolati -->
+    <p id="output"></p>
+    <p id="output2"></p>
+    
+    <script>
+        // ==========================================
+        // 1. DICHIARAZIONE DELL'ARRAY DI PARTENZA
+        // ==========================================
+        let numeri = [1, 2, 5, 10];
+        
+        // ==========================================
+        // 2. UTILIZZO DEL METODO .map()
+        // ==========================================
+        /* 
+        Il metodo .map() crea un nuovo array popolato con i risultati della chiamata 
+        di una funzione su ogni elemento dell'array di partenza, senza alterare quest'ultimo.
+        */
+        let quadrati = numeri.map(function (numero) {
+            return numero * numero;
+        });
+        
+        // ==========================================
+        // 3. ALTERNATIVA DIDATTICA: SINTASSI LAMBDA (ARROW FUNCTION)
+        // ==========================================
+        /* 
+        Versione alternativa e più concisa che sfrutta l'operatore freccia (=>):
+        let quadrati = numeri.map(numero => numero * numero);
+        */
+        
+        // ==========================================
+        // 4. AGGIORNAMENTO DINAMICO DEL DOM
+        // ==========================================
+        document.getElementById("output").innerHTML = "Numeri di partenza: <br> " + numeri.join(", ") + "<br>";
+        
+        document.getElementById("output2").innerHTML = "Quadrati dei numeri di partenza: <br> " + quadrati.join(", ");
+    </script>
+    
+</body>
+</html>

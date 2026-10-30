@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validazione Password</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            color: #111;
+        }
+        .errore {
+            color: red;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .ok {
+            color: green;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Registrazione</h2>
+    
+    <!-- Form di registrazione con i relativi elementi di controllo -->
+    <form id="formRegistrazione">
+        <label for="password">Password:</label><br><br>
+        <input type="password" id="password"><br><br>
+        
+        <!-- Elemento span destinato a ricevere il messaggio di feedback -->
+        <span id="messaggio"></span><br><br>
+        
+        <button type="submit">Invia</button>
+    </form>
+
+    <script>
+        // Selezione degli elementi dal DOM
+        const form = document.getElementById("formRegistrazione");
+        const password = document.getElementById("password");
+        const messaggio = document.getElementById("messaggio");
+
+        // Definizione del pattern tramite espressione regolare (Regex)
+        const pattern = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{8,}$/;
+
+        // Ascoltatore dell'evento di invio sul modulo
+        form.addEventListener("submit", function(event){
+
+            // Verifica se la password inserita NON rispetta i criteri stabiliti
+            if(!pattern.test(password.value)){
+                
+                // Blocca l'invio del form
+                event.preventDefault(); // blocca invio form
+                
+                // Assegna il messaggio di errore e applica la classe CSS dedicata
+                messaggio.textContent = "Password non valida. Deve contenere almeno 8 caratteri, una maiuscola, un numero e un simbolo.";
+                messaggio.className = "errore";
+                
+            } else {
+                
+                // Gestione del ramo in cui la password risulta conforme
+                messaggio.textContent = "Password valida ✓";
+                messaggio.className = "ok";
+                
+            }
+
+        });
+    </script>
+
+</body>
+</html>

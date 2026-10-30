@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesso agli elementi della matrice</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            font-weight: bold;
+            color: #111;
+        }
+        p {
+            font-size: 22px;
+            color: blue;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Accesso agli elementi della matrice</h1>
+    
+    <!-- Paragrafo destinato ad accogliere l'output strutturato della matrice e degli elementi estratti -->
+    <p id="output"></p>
+    
+    <script>
+        // ==========================================
+        // 1. DEFINIZIONE DELLA MATRICE BIDIMENSIONALE
+        // ==========================================
+        function creaMatrix() {
+            return [
+            [10, 20, 30, 40],   // Riga 0 (Indici colonna: 0, 1, 2, 3)
+            [50, 60, 70, 80],   // Riga 1 (Indici colonna: 0, 1, 2, 3)
+            [90, 100, 110, 120] // Riga 2 (Indici colonna: 0, 1, 2, 3)
+            ];
+        }
+        
+        // ==========================================
+        // 2. INVOCAZIONE E ACCESSO PUNTUALE
+        // ==========================================
+        var matrix = creaMatrix();
+        
+        // Estrazione del primo elemento: Riga 0, Colonna 0 -> 10
+        var primoElemento = matrix[0][0]; 
+        
+        // Estrazione di un elemento centrale: Riga 1, Colonna 2 -> 70
+        var elementoCentrale = matrix[1][2]; 
+        
+        // Estrazione dell'ultimo elemento: Riga 2, Colonna 3 -> 120
+        var ultimoElemento = matrix[2][3]; 
+        
+        // ==========================================
+        // 3. AGGIORNAMENTO DINAMICO DEL DOM
+        // ==========================================
+        /* 
+        Utilizziamo JSON.stringify(matrix) per visualizzare l'intera struttura nidificata,
+        seguita dai valori puntuali isolati tramite la doppia parentesi quadra.
+        */
+        document.getElementById("output").innerHTML = 
+        "Matrice completa: <br><br>" + 
+        JSON.stringify(matrix) + 
+        "<br><br>Primo elemento [0][0]: " + primoElemento + 
+        "<br>Elemento centrale [1][2]: " + elementoCentrale + 
+        "<br>Ultimo elemento [2][3]: " + ultimoElemento;
+    </script>
+    
+</body>
+</html>

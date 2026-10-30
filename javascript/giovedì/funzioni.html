@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilizzo delle Funzioni</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            font-weight: bold;
+            color: #111;
+        }
+        p {
+            font-size: 25px;
+            color: blue;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Funzione</h1>
+    
+    <!-- Paragrafo destinato ad accogliere il risultato calcolato dalla funzione -->
+    <p id="output"></p>
+    
+    <script>
+        // ==========================================
+        // 1. DEFINIZIONE DELLA FUNZIONE DI SOMMA
+        // ==========================================
+        /* 
+        La funzione accetta due argomenti (a e b), calcola la loro somma,
+        e inietta direttamente il risultato formattato all'interno del DOM.
+        */
+        function somma(a, b) {
+            let risultato = a + b;
+            document.getElementById("output").innerHTML = "La somma dei due numeri è: " + risultato;
+        }
+        
+        // ==========================================
+        // 2. INVOCAZIONE (CHIAMATA) DELLA FUNZIONE
+        // ==========================================
+        // Passiamo i valori 15 e 4 come argomenti effettivi
+        somma(15, 4);
+        
+        // ==========================================
+        // 3. VARIANTE DIDATTICA CON IL RETURN (COMMENTATA)
+        // ==========================================
+        /* 
+        Di seguito viene mostrata la modalità avanzata con il return, 
+        ideale per restituire il valore elaborato al codice chiamante:
+        
+        function sommaConReturn(a, b) {
+        return a + b;
+        }
+        
+        let totale = sommaConReturn(10, 5);
+        */
+    </script>
+    
+</body>
+</html>

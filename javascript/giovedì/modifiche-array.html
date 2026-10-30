@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifica di un Array</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            font-weight: bold;
+            color: #111;
+        }
+        p {
+            font-size: 20px;
+            margin-top: 15px;
+        }
+        #output, #output3 {
+            color: blue;
+        }
+        #output2, #output4 {
+            color: red;
+        }
+        hr {
+            margin: 30px 0;
+            border: 0;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Modifica di un Array</h1>
+    
+    <!-- Paragrafi destinati ad accogliere i vari livelli di output -->
+    <p id="output"></p>
+    <p id="output2"></p>
+    <hr />
+    <p id="output3"></p>
+    <p id="output4"></p>
+
+    <script>
+        // ==========================================
+        // 1. PRIMO ESEMPIO: FRUTTA (.pop() e .shift())
+        // ==========================================
+        var array = ["Mela", "Pera", "Banana", "Fragola"];
+
+        // Copia di sicurezza dell'array originale prima di modificarlo
+        var arrayOriginale = array.slice();
+
+        // .pop() rimuove l'ultimo elemento dall'array ("Fragola")
+        array.pop(); 
+
+        // .shift() rimuove il primo elemento dall'array ("Mela")
+        array.shift(); 
+
+        // ==========================================
+        // 2. SECONDO ESEMPIO: ANIMALI (.splice() e .indexOf())
+        // ==========================================
+        var array2 = ["Cane", "Gatto", "Rana", "Coniglio"];
+
+        // Copia di sicurezza dell'array originale prima di modificarlo
+        var arrayOriginale2 = array2.slice();
+
+        // Rimuove due elementi partendo dall'indice 0 ("Cane", "Gatto")
+        array2.splice(0, 2); 
+
+        // Trova la posizione di "Rana" nell'array (restituisce -1 se non esiste)
+        var indiceRana = array2.indexOf("Rana");
+
+        // Procede solo se "Rana" è stata trovata (quindi diverso da -1)
+        // Rimuove 1 elemento a partire dalla posizione trovata (Rana)[cite: 16]
+        if (indiceRana !== -1) {
+            array2.splice(indiceRana, 1);
+        }
+
+        // ==========================================
+        // 3. AGGIORNAMENTO DINAMICO DEL DOM
+        // ==========================================
+        // Output primo blocco (Frutta)
+        document.getElementById("output").innerHTML = "Array originale:<br><br>" + arrayOriginale.join(", ");
+        document.getElementById("output2").innerHTML = "Array modificato con .pop() e .shift():<br><br>" + array.join(", ");
+
+        // Output secondo blocco (Animali)
+        document.getElementById("output3").innerHTML = "Array originale:<br><br>" + arrayOriginale2.join(", ");
+        document.getElementById("output4").innerHTML = "Array modificato con .splice() e .indexof():<br><br>" + array2.join(", ");
+    </script>
+
+</body>
+</html>

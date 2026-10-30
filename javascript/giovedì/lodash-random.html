@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numero random con Lodash</title>
+    
+    <!-- Inclusione della libreria Lodash tramite CDN ufficiale -->
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            background-color: #ffffff;
+            text-align: center;
+            font-weight: bold;
+        }
+        #output {
+            font-size: 25px;
+            color: red;
+            margin-top: 60px;
+        }
+        #output2 {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Contenitori per l'output dinamico -->
+    <p id="output2"></p>
+    <p id="output"></p>
+
+    <script>
+        // Definizione dei valori limite per la generazione casuale
+        var minNumber = 0;
+        var maxNumber = 5;
+
+        // Utilizzo della funzione _.random di Lodash per generare un numero casuale tra min e max
+        var randomNumbers = _.random(minNumber, maxNumber);
+
+        // Link alla documentazione di riferimento: https://lodash.com/docs/4.17.15#random
+
+        // Inserimento del messaggio formattato nel DOM all'interno del paragrafo output
+        document.getElementById("output").innerHTML = 
+            "Il numero casuale generato tra " + minNumber + " e " + maxNumber + " è il numero: " + randomNumbers;
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+body {
+    font-family: 'Courier New', Courier, monospace, 'Fira Code';
+    background-color: #030703;
+    color: #00ff66;
+    margin: 0;
+    padding: 40px 20px;
+    text-align: left;
+}
+
+.container {
+    max-width: 950px;
+    margin: auto;
+}
+
+/* Finestra principale stile terminale */
+.card-terminale {
+    background-color: #08110a;
+    padding: 35px 45px;
+    border-radius: 4px;
+    box-shadow: 0 0 25px rgba(0, 255, 102, 0.15);
+    border: 1px solid #00ff66;
+}
+
+/* 1. Titolo principale centrato */
+h1 {
+    color: #00ff66;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    border-bottom: 1px dashed #00ff66;
+    padding-bottom: 15px;
+    text-shadow: 0 0 10px rgba(0, 255, 102, 0.5);
+}
+
+/* 2. Sottotitoli spostati leggermente a destra tramite margine sinistro */
+h3 {
+    color: #ffffff;
+    background-color: #0f2014;
+    font-size: 1.1rem !important;
+    font-weight: bold;
+    border-left: 5px solid #00ff66;
+    padding: 10px 15px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    margin-left: 20px; /* Spostato a destra rispetto al blocco principale */
+    letter-spacing: 1px;
+}
+
+/* Paragrafi descrittivi allineati ai sottotitoli */
+p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #b0c4de;
+    background-color: #0b1710;
+    padding: 12px 18px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    border-left: 2px solid #00ff66;
+    border-right: 1px solid #13291c;
+}
+
+/* 3. Liste spostate ancora più a destra rispetto ai sottotitoli */
+.lista-terminale {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+    margin-left: 45px; /* Rientro marcato verso destra rispetto ai sottotitoli */
+}
+
+.item-terminale {
+    background-color: #0b1710;
+    color: #00ff66;
+    border: 1px solid #13291c;
+    padding: 10px 15px;
+    margin-bottom: 4px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Valori chiave evidenziati in ciano */
+strong {
+    color: #00ffff;
+    text-shadow: 0 0 6px rgba(0, 255, 255, 0.4);
+}

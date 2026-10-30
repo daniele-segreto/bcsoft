@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controllo Codice Fiscale Live</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            color: #111;
+        }
+        input {
+            padding: 8px;
+            font-size: 16px;
+            width: 300px;
+            text-transform: uppercase;
+        }
+        ul {
+            margin-top: 15px;
+            list-style-type: disc;
+        }
+        /* Stili dinamici per i messaggi di validazione */
+        .correct {
+            color: green;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+        .error {
+            color: red;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Controllo codice fiscale live</h2>
+    
+    <input type="text" id="cf" placeholder="Inserisci codice fiscale">
+    <ul id="risultato"></ul>
+
+    <script>
+        const cfInput = document.getElementById("cf");
+        const risultato = document.getElementById("risultato");
+
+        // Ascoltatore dell'evento in tempo reale sulla digitazione
+        cfInput.addEventListener("input", function() {
+            
+            // Pulisce e formatta il testo inserito (rimuove spazi e converte in maiuscolo)
+            let cf = cfInput.value.trim().toUpperCase();
+
+            // Svuota i messaggi precedenti ad ogni nuova digitazione
+            risultato.innerHTML = "";
+
+            // Funzione di utilità per aggiungere un elemento di feedback alla lista
+            function aggiungiMessaggio(testo, valido) {
+                let li = document.createElement("li");
+                li.textContent = testo;
+                li.className = valido ? "correct" : "error";
+                risultato.appendChild(li);
+            }
+
+            // 1. Controllo della lunghezza complessiva (esatta di 16 caratteri)
+            aggiungiMessaggio(
+                cf.length === 16 ? "✓ Lunghezza corretta" : "✗ Lunghezza non corretta",
+                cf.length === 16
+            );
+
+            // 2. Controllo della porzione relativa a nome e cognome (primi 6 caratteri alfabetici)
+            let nome = cf.substring(0, 6);
+            aggiungiMessaggio(
+                /^[A-Z]{0,6}$/.test(nome) ? "✓ Parte nome/cognome valida" : "✗ Parte nome/cognome non valida",
+                /^[A-Z]{0,6}$/.test(nome)
+            );
+
+            // 3. Controllo dell'anno di nascita (caratteri 6 e 7)
+            let anno = cf.substring(6, 8);
+            aggiungiMessaggio(
+                /^[0-9]{0,2}$/.test(anno) ? "✓ Anno valido" : "✗ Anno non valido",
+                /^[0-9]{0,2}$/.test(anno)
+            );
+
+            // 4. Controllo del mese di nascita (carattere 8) basato sui codici ministeriali
+            let mese = cf.charAt(8) || "";
+            const mesiValidi = "ABCDEHLMPRST";
+            aggiungiMessaggio(
+                mese === "" ? "Mese: incompleto" : (mesiValidi.includes(mese) ? "✓ Mese valido" : "✗ Mese non valido"),
+                mesiValidi.includes(mese)
+            );
+
+            // 5. Controllo del giorno e sesso (caratteri 9 e 10)
+            let giorno = cf.substring(9, 11);
+            aggiungiMessaggio(
+                /^[0-9]{0,2}$/.test(giorno) ? "✓ Giorno valido" : "✗ Giorno non valido",
+                /^[0-9]{0,2}$/.test(giorno)
+            );
+
+            // 6. Controllo del codice catastale del comune (caratteri da 11 a 14)
+            let comune = cf.substring(11, 15);
+            aggiungiMessaggio(
+                /^[A-Z]{0,1}[0-9]{0,3}$/.test(comune) ? "✓ Codice comune valido" : "✗ Codice comune non valido",
+                /^[A-Z]{0,1}[0-9]{0,3}$/.test(comune)
+            );
+
+            // 7. Controllo del carattere finale di controllo (carattere 15)
+            let controllo = cf.charAt(15) || "";
+            aggiungiMessaggio(
+                /^[A-Z]?$/.test(controllo) ? "✓ Carattere di controllo valido" : "✗ Carattere di controllo non valido",
+                /^[A-Z]?$/.test(controllo)
+            );
+        });
+    </script>
+
+</body>
+</html>

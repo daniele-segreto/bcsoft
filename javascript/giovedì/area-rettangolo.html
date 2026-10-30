@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area del rettangolo</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            font-weight: bold;
+            color: #111;
+        }
+        p {
+            font-size: 25px;
+            color: blue;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Area del rettangolo</h1>
+    
+    <!-- Paragrafo destinato ad accogliere il risultato restituito dalla funzione -->
+    <p id="output"></p>
+    
+    <script>
+        // ==========================================
+        // 1. DEFINIZIONE DELLA FUNZIONE CON RETURN
+        // ==========================================
+        /* 
+        La funzione accetta i parametri 'base' e 'altezza', 
+        calcola il prodotto e restituisce direttamente il valore numerico.
+        */
+        function AreaRettangolo(base, altezza) {
+            return base * altezza;
+        }
+        
+        // ==========================================
+        // 2. DICHIARAZIONE DELLE VARIABILI DI INPUT
+        // ==========================================
+        var baseRettangolo = 8;
+        var altezzaRettangolo = 10;
+        
+        // ==========================================
+        // 3. INVOCAZIONE DELLA FUNZIONE E ASSEGNAZIONE
+        // ==========================================
+        /* 
+        La funzione viene chiamata passando le variabili come argomenti.
+        Il valore restituito (80) viene salvato all'interno della variabile areaRettangolo.
+        */
+        var areaRettangolo = AreaRettangolo(baseRettangolo, altezzaRettangolo);
+        
+        // ==========================================
+        // 4. AGGIORNAMENTO DINAMICO DEL DOM
+        // ==========================================
+        document.getElementById("output").innerHTML = "L'area del rettangolo è: " + areaRettangolo;
+    </script>
+    
+</body>
+</html>

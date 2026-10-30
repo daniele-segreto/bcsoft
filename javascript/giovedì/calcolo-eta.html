@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I tuoi anni quest'anno</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            font-weight: bold;
+            color: #111;
+        }
+        p {
+            font-size: 25px;
+            color: blue;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>I tuoi anni quest'anno</h1>
+    
+    <!-- Paragrafo destinato ad accogliere l'output dinamico calcolato dalla funzione -->
+    <p id="output"></p>
+    
+    <script>
+        // ==========================================
+        // 1. DEFINIZIONE DELLA FUNZIONE DI CALCOLO
+        // ==========================================
+        /* 
+        La funzione acquisisce l'anno di nascita come argomento,
+        rileva automaticamente l'anno corrente tramite l'oggetto Date,
+        e restituisce la differenza algebrica tramite l'istruzione return.
+        */
+        function calcolaEta(annoDiNascita) {
+            var annoCorrente = new Date().getFullYear(); // new Date() crea l'oggetto data corrente; getFullYear() estrae l'anno a 4 cifre (es. 2026)
+            return annoCorrente - annoDiNascita;
+        }
+        
+        // ==========================================
+        // 2. DICHIARAZIONE DEI DATI E INVOCAZIONE
+        // ==========================================
+        var annoDiNascita = 1989;
+        
+        // Invocazione della funzione e salvataggio del valore restituito nella variabile 'eta'
+        var eta = calcolaEta(annoDiNascita);
+        
+        // ==========================================
+        // 3. AGGIORNAMENTO DINAMICO DEL DOM
+        // ==========================================
+        // Concatenazione di stringhe, valori numerici, tag HTML (<br>) ed emoji
+        document.getElementById("output").innerHTML = "Quest'anno compirai: " + eta + " anni. <br><br> Ps: Sei un vecchiaccio 👴";
+    </script>
+    
+</body>
+</html>

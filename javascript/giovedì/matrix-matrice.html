@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array multidimensionale</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            font-weight: bold;
+            color: #111;
+        }
+        p {
+            font-size: 25px;
+            color: blue;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Array multidimensionale</h1>
+    
+    <!-- Paragrafo destinato ad accogliere la rappresentazione testuale della matrice -->
+    <p id="output"></p>
+    
+    <script>
+        // ==========================================
+        // 1. DEFINIZIONE DELLA MATRICE (ARRAY DI ARRAY)
+        // ==========================================
+        /* 
+        La funzione restituisce un array multidimensionale composto da 3 righe 
+        e 4 colonne, dove ciascun elemento dell'array principale è a sua volta un array.
+        */
+        function creaMatrix() {
+            return [
+            [1, 2, 3, 4],   // Prima riga (indice 0)
+            [5, 6, 7, 8],   // Seconda riga (indice 1)
+            [9, 10, 11, 12] // Terza riga (indice 2)
+            ];
+        }
+        
+        // ==========================================
+        // 2. INVOCAZIONE E ASSEGNAZIONE
+        // ==========================================
+        var matrix = creaMatrix();
+        
+        // ==========================================
+        // 3. VISUALIZZAZIONE TRAMITE JSON.stringify()
+        // ==========================================
+        /* 
+        Poiché la concatenazione standard convertirebbe l'array in una stringa piatta,
+        utilizziamo JSON.stringify(matrix) per serializzare e mostrare chiaramente 
+        la struttura nidificata delle parentesi quadre all'interno del DOM. (*)
+        */
+        document.getElementById("output").innerHTML = "Array multidimensionale: <br><br>" + JSON.stringify(matrix);
+    </script>
+
+    <!--
+        (*)
+        - solo con 'matrix' avrei visto tutto così: 1,2,3,4,5,6,7,8,9,10,11,12
+        - con 'JSON.stringify(matrix)' invece vedremo: [[1,2,3,4],[5,6,7,8],[9,10,11,12]] 
+    -->
+    
+</body>
+</html>

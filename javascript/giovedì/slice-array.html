@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodo .slice() in JavaScript</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            font-weight: bold;
+            color: #111;
+        }
+        p {
+            font-size: 20px;
+            color: blue;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Metodo .slice() in JavaScript</h1>
+    
+    <!-- Paragrafo destinato ad accogliere i risultati dell'estrazione -->
+    <p id="output"></p>
+    
+    <script>
+        // ==========================================
+        // 1. DICHIARAZIONE DELL'ARRAY TRAMITE FUNZIONE
+        // ==========================================
+        function creaArray() {
+            return ['mela', 'banana', 'ciliegia', 'pera', 'melone', 'kiwi'];
+        }
+        
+        var originalArray = creaArray();
+        
+        // ==========================================
+        // 2. UTILIZZO DI .slice() SU UN ARRAY
+        // ==========================================
+        /* 
+        Il metodo .slice(1, 4) estrae gli elementi dall'indice 1 (incluso) 
+        fino all'indice 4 (escluso), restituendo un nuovo array senza alterare l'originale.
+        */
+        var arrayTagliato = originalArray.slice(1, 4); // banana, ciliegia, pera
+        
+        // ==========================================
+        // 3. UTILIZZO DI .slice() SULLE STRINGHE
+        // ==========================================
+        /* 
+        Il metodo .slice() opera allo stesso modo anche sulle stringhe di testo,
+        ritagliando i caratteri in base agli indici numerici specificati.
+        */
+        var stringaOriginale = "JavaScript"; // Dobbiamo estrarre le prime 4 lettere J a v a
+        var stringaTagliata = stringaOriginale.slice(0, 4); // Estrae i caratteri da 0 a 3 ("Java") - esclude il 4°
+        
+        // ==========================================
+        // 4. AGGIORNAMENTO DINAMICO DEL DOM
+        // ==========================================
+        document.getElementById("output").innerHTML = 
+        "Array originale: <br>[\"" + originalArray.join("\",\"") + "\"]" + 
+        "<br><br>Array con .slice(1, 4): <br>[\"" + arrayTagliato.join("\",\"") + "\"]" + 
+        "<br><br>Stringa originale: " + stringaOriginale + 
+        "<br>Stringa con .slice(0, 4): " + stringaTagliata;
+    </script>
+    
+</body>
+</html>

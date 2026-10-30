@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selezione Multipla con Limite</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            background-color: #eef2f5;
+        }
+        .form-group {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 400px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            color: #111;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        #infoLimite {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #0066cc;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-group">
+        <label for="mioSelect">Scegli le tue preferenze (Max 2):</label>
+        
+        <!-- Menu di selezione multipla con visualizzazione di 5 righe -->
+        <select id="mioSelect" name="preferenze" multiple size="5">
+            <option value="1">Opzione 1</option>
+            <option value="2">Opzione 2</option>
+            <option value="3">Opzione 3</option>
+            <option value="4">Opzione 4</option>
+            <option value="5">Opzione 5</option>
+        </select>
+
+        <!-- Elemento testuale per il conteggio in tempo reale delle selezioni -->
+        <div id="infoLimite">Selezionate: 0 / 2</div>
+    </div>
+
+    <script>
+        // Selezione degli elementi principali dal DOM
+        const select = document.getElementById('mioSelect');
+        const infoLimite = document.getElementById('infoLimite');
+        const limiteMax = 2; // Definizione del limite massimo consentito
+
+        // Ascoltatore dell'evento 'change' sul menu a selezione multipla
+        select.addEventListener('change', function() {
+            
+            // CONCETTO DA IMPARARE: querySelectorAll('option:checked')
+            // Conta quante opzioni sono attualmente selezionate dall'utente.
+            const selezionati = select.querySelectorAll('option:checked');
+
+            // Aggiornamento dinamico del testo informativo a schermo tramite template literal
+            infoLimite.textContent = `Selezionate: ${selezionati.length} / ${limiteMax}`;
+
+            // Controllo del limite massimo
+            if (selezionati.length >= limiteMax) {
+                
+                // TECNICA DA IMPARARE: Array.from() e .forEach()
+                // Converte le opzioni in un array per disabilitare quelle non ancora selezionate.
+                Array.from(select.options).forEach(option => {
+                    if (!option.selected) {
+                        option.disabled = true; // Disabilita l'opzione
+                    }
+                });
+
+            } else {
+                
+                // Sotto il limite: riabilita tutte le opzioni per permettere nuove scelte
+                Array.from(select.options).forEach(option => {
+                    option.disabled = false; // Riabilita l'opzione
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolo prezzi con IVA (22%)</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            font-weight: bold;
+            color: #111;
+        }
+        #originali {
+            font-size: 20px;
+            color: blue;
+            font-weight: bold;
+        }
+        #risultato {
+            font-size: 20px;
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Calcolo prezzi con IVA (22%)</h1>
+    
+    <br />
+    <p id="originali"></p>
+    <br />
+    <p id="risultato"></p>
+    
+    <script>
+        // ==========================================
+        // 1. DICHIARAZIONE DELL'ARRAY DEI PREZZI NETTI
+        // ==========================================
+        var prezziNetto = [10, 25, 50, 100];
+        var testoFinale = "";
+        
+        // ==========================================
+        // 2. UTILIZZO DEL METODO .forEach()
+        // ==========================================
+        /* 
+        Il metodo .forEach() prende un prezzo alla volta dall'array 
+        ed esegue la funzione di callback per ciascun elemento.
+        */
+        prezziNetto.forEach(function (prezzo) {
+            
+            // Calcola il prezzo ivato applicando la maggiorazione del 22% (* 1.22)
+            var prezzoIvato = prezzo * 1.22;
+            
+            // Concatena il risultato formattato, utilizzando .toFixed(2) per arrotondare a 2 cifre decimali
+            testoFinale += "Prezzo netto: " + prezzo + "€ → Ivato: " + prezzoIvato.toFixed(2) + "€<br>";
+        });
+        
+        // ==========================================
+        // 3. AGGIORNAMENTO DEL DOM E UTILIZZO DI .join()
+        // ==========================================
+        /* 
+        Spiegazione del metodo .join("€, "):
+        - Converte l'array numerico [10, 25, 50, 100] in una stringa continua.
+        - Inserisce "€, " come separatore tra un valore e l'altro.
+        - Poiché il separatore si trova internamente tra gli elementi, 
+        l'aggiunta finale di + "€" è necessaria per applicare il simbolo 
+        monetario anche all'ultimo numero dell'elenco.
+        */
+        document.getElementById("originali").innerHTML = "Prezzi base: " + prezziNetto.join("€, ") + "€";
+        document.getElementById("risultato").innerHTML = testoFinale;
+    </script>
+    
+</body>
+</html>

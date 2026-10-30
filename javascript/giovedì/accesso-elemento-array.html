@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesso agli elementi di un array</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            font-weight: bold;
+            color: #111;
+        }
+        p {
+            font-size: 25px;
+            color: blue;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Accesso agli elementi di un array</h1>
+    
+    <!-- Paragrafo destinato ad accogliere l'output testuale formattato -->
+    <p id="output"></p>
+    
+    <script>
+        // ==========================================
+        // 1. DICHIARAZIONE DELL'ARRAY
+        // ==========================================
+        /* 
+        Viene definito un array contenente una sequenza di stringhe descrittive di colori.
+        La numerazione degli indici parte tradizionalmente da zero:
+        indice 0 -> "rosso"
+        indice 1 -> "giallo"
+        indice 2 -> "verde"
+        indice 3 -> "viola"
+        */
+        var array = ["rosso", "giallo", "verde", "viola"];
+        
+        // ==========================================
+        // 2. SELEZIONE DELL'INDICE DESIDERATO
+        // ==========================================
+        var indice = 1;
+        
+        // ==========================================
+        // 3. ESTRAZIONE PUNTUALE DELL'ELEMENTO
+        // ==========================================
+        /* 
+        Utilizzando la notazione a parentesi quadre 'array[indice]', 
+        il sistema estrae il valore esatto corrispondente alla posizione indicata (in questo caso "verde").
+        */
+        var elemento = array[indice];
+        
+        // ==========================================
+        // 4. AGGIORNAMENTO DINAMICO DEL DOM
+        // ==========================================
+        document.getElementById("output").innerHTML = "L'elemento con indice " + indice + " dell'array è: " + elemento;
+    </script>
+    
+</body>
+</html>

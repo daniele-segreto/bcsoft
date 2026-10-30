@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numero di elementi presenti in un array</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            font-weight: bold;
+            color: #111;
+        }
+        p {
+            font-size: 25px;
+            color: blue;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Numero di elementi presenti in un array</h1>
+    
+    <!-- Paragrafo destinato ad accogliere il risultato numerico del conteggio -->
+    <p id="output"></p>
+    
+    <script>
+        // ==========================================
+        // 1. DICHIARAZIONE DELL'ARRAY
+        // ==========================================
+        /* 
+        Viene definito un array contenente una sequenza di stringhe testuali (marchi automobilistici).
+        */
+        var array = ["Ferrari", "Lamborghini", "Skoda", "Opel", "Maserati"];
+        
+        // ==========================================
+        // 2. UTILIZZO DELLA PROPRIETÀ .length
+        // ==========================================
+        /* 
+        La proprietà .length restituisce il numero totale di elementi contenuti all'interno del vettore.
+        A differenza degli indici (che partono da 0), la lunghezza restituisce il conteggio effettivo (in questo caso 5).
+        */
+        var lunghezzaArray = array.length;
+        
+        // ==========================================
+        // 3. AGGIORNAMENTO DINAMICO DEL DOM
+        // ==========================================
+        document.getElementById("output").innerHTML = "Il numero di elementi presenti nell'array è: " + lunghezzaArray;
+    </script>
+    
+</body>
+</html>

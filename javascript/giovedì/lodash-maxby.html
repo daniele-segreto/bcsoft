@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilizzo di _.maxBy con Lodash</title>
+    
+    <!-- Inclusione della libreria Lodash tramite CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            background-color: #ffffff;
+            text-align: center;
+            font-weight: bold;
+        }
+        #output2 {
+            font-size: 18px;
+            color: blue;
+            margin-bottom: 20px;
+        }
+        #output {
+            font-size: 22px;
+            color: red;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Contenitori per l'output dinamico -->
+    <p id="output2"></p>
+    <p id="output"></p>
+
+    <script>
+        // Array di oggetti contenente i dati degli alunni (nome ed età)
+        var alunni = [
+            { name: 'Fabio', age: 35 }, 
+            { name: 'Marco', age: 15 }, 
+            { name: 'Luca', age: 60 }
+        ];
+
+        // Utilizzo di _.maxBy per trovare l'alunno con l'età maggiore in base alla proprietà 'age'
+        var maxAgeAlunni = _.maxBy(alunni, 'age');
+
+        // Link alla documentazione di riferimento: https://lodash.com/docs/4.17.15#maxBy
+
+        // Trasformazione dell'array di oggetti in un array di stringhe formattate tramite .map()
+        var alunniInfo = alunni.map(function(alunno) {
+            return alunno.name + " (anni: " + alunno.age + ")";
+        });
+
+        // Inserimento della lista formattata nel primo paragrafo unendo gli elementi con .join()
+        document.getElementById("output2").innerHTML = "Gli alunni del corso sono: " + alunniInfo.join(", ");
+
+        // Selezione del secondo paragrafo e impostazione del testo dinamico sul più anziano
+        var result = document.getElementById("output");
+        result.textContent = "Il più anziano degli alunni è: " + maxAgeAlunni.name + " (che ha " + maxAgeAlunni.age + " anni)";
+    </script>
+
+</body>
+</html>

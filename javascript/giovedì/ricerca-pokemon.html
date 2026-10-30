@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricerca Pokémon nel Pokédex</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            color: #111;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input {
+            padding: 8px;
+            font-size: 16px;
+            width: 220px;
+        }
+        button {
+            padding: 8px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Ricerca Pokémon nel Pokédex</h2>
+    
+    <!-- Form di ricerca con input di tipo search e pulsante di invio -->
+    <form id="pokemonForm">
+        <label for="pokemon">Nome Pokémon:</label>
+        <input type="search" id="pokemon" placeholder="Inserisci qui il nome">
+        <button type="submit">Cerca</button>
+    </form>
+
+    <script>
+        // ==========================================
+        // GESTIONE DELL'EVENTO DI INVIO DEL FORM
+        // ==========================================
+        document.getElementById("pokemonForm").addEventListener("submit", function(e) {
+            
+            // PARTE DA IMPARARE: preventDefault()
+            // Blocca il comportamento nativo del form (che ricaricherebbe la pagina)
+            // consentendo di eseguire la logica personalizzata via JavaScript.
+            e.preventDefault();
+
+            // ==========================================
+            // PARTE DA IMPARARE: METHOD CHAINING (Concatenazione)
+            // ==========================================
+            // Acquisite le informazioni dal campo input, applichiamo una pulizia 
+            // multilivello in un'unica riga di codice fluida:
+            let nome = document.getElementById("pokemon")
+                .value         // 1. Estrae il valore testuale digitato dall'utente
+                .trim()        // 2. .trim() rimuove eventuali spazi vuoti all'inizio e alla fine
+                .toLowerCase() // 3. .toLowerCase() converte tutto il testo in minuscolo
+                .replace(" ", "-"); // 4. .replace() sostituisce gli spazi interni con un trattino
+
+            // Commento esplicativo sui metodi di manipolazione:
+            // - .trim() previene errori dovuti a spazi accidentali.
+            // - .toLowerCase() garantisce uniformità nei confronti con i database.
+            // - .replace(" ", "-") formatta correttamente i nomi composti per i link URL.
+
+            // ==========================================
+            // COSTRUZIONE DINAMICA DELL'URL
+            // ==========================================
+            let url = "https://www.pokemon.com/it/pokedex/" + nome;
+
+            // ==========================================
+            // PARTE DA IMPARARE: window.open()
+            // ==========================================
+            // Apre l'URL appena costruito in una nuova scheda del browser ("_blank").
+            window.open(url, "_blank");
+        });
+    </script>
+
+</body>
+</html>

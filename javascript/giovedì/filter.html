@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array con uso di Filter</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            font-weight: bold;
+            color: #111;
+        }
+        p {
+            font-size: 20px;
+            margin-top: 15px;
+        }
+        #output0 {
+            color: blue;
+        }
+        #output {
+            color: red;
+        }
+        #output2 {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Array con uso di Filter</h1>
+    
+    <!-- Paragrafi destinati ad accogliere l'output formattato -->
+    <p id="output0"></p>
+    <p id="output"></p>
+    <p id="output2"></p>
+    
+    <script>
+        // ==========================================
+        // 1. DICHIARAZIONE DELL'ARRAY E COPIA
+        // ==========================================
+        let numbers = [2, 5, 10, 65, 92];
+        let numbersoriginali = numbers.slice();
+        
+        // ==========================================
+        // 2. UTILIZZO DEL METODO .filter() PER I PARI
+        // ==========================================
+        /* 
+        Il metodo .filter() crea un nuovo array contenente tutti gli elementi 
+        che superano il test implementato dalla funzione di callback (restituiscono true).
+        */
+        let numeripari = numbers.filter(function(number) {
+            return number % 2 == 0;
+        });
+        
+        // ==========================================
+        // 3. UTILIZZO DEL METODO .filter() PER I DISPARI
+        // ==========================================
+        let numeridispari = numbers.filter(function(number) {
+            return number % 2 != 0;
+        });
+        
+        // L'operatore modulo (%) calcola il resto della divisione tra due numeri
+        
+        // ==========================================
+        // 4. AGGIORNAMENTO DINAMICO DEL DOM
+        // ==========================================
+        document.getElementById("output0").innerHTML = "Numeri a disposizione:<br> " + numbersoriginali.join(", ");
+        document.getElementById("output").innerHTML = "Numeri pari:<br> " + numeripari.join(", ");
+        document.getElementById("output2").innerHTML = "Numeri dispari:<br> " + numeridispari.join(", ");
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validazione Password in Tempo Reale</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            color: #111;
+        }
+        input {
+            padding: 8px;
+            font-size: 16px;
+            width: 250px;
+        }
+        ul {
+            margin-top: 15px;
+            list-style-type: disc;
+        }
+        /* Stato predefinito dei requisiti: colore rosso */
+        li {
+            color: red;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+        /* Classe dinamica applicata quando il requisito è soddisfatto */
+        .valido {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Registrazione</h2>
+    
+    <label for="password">Password:</label><br><br>
+    <input type="password" id="password" placeholder="Inserisci password">
+    
+    <!-- Elenco dei requisiti visivi di sicurezza -->
+    <ul>
+        <li id="lunghezza">Almeno 8 caratteri</li>
+        <li id="maiuscola">Una lettera maiuscola</li>
+        <li id="numero">Un numero</li>
+        <li id="speciale">Un carattere speciale</li>
+    </ul>
+    
+    <script>
+        // Selezione degli elementi dal DOM
+        const password = document.getElementById("password");
+        const lunghezza = document.getElementById("lunghezza");
+        const maiuscola = document.getElementById("maiuscola");
+        const numero = document.getElementById("numero");
+        const speciale = document.getElementById("speciale");
+        
+        // Ascoltatore dell'evento in tempo reale durante la digitazione
+        password.addEventListener("input", function() {
+            let valore = password.value;
+            
+            // 1. Controllo della lunghezza (almeno 8 caratteri)
+            if (valore.length >= 8) {
+                lunghezza.classList.add("valido");
+            } else {
+                lunghezza.classList.remove("valido");
+            }
+            
+            // 2. Controllo della lettera maiuscola tramite Regex
+            if (/[A-Z]/.test(valore)) {
+                maiuscola.classList.add("valido");
+            } else {
+                maiuscola.classList.remove("valido");
+            }
+            
+            // 3. Controllo della presenza di un numero tramite Regex
+            if (/[0-9]/.test(valore)) {
+                numero.classList.add("valido");
+            } else {
+                numero.classList.remove("valido");
+            }
+            
+            // 4. Controllo del carattere speciale generale (inclusi simboli e trattino basso)
+            if (/[\W_]/.test(valore)) {
+                speciale.classList.add("valido");
+            } else {
+                speciale.classList.remove("valido");
+            }
+            
+            /* 
+            NOTA DIDATTICA: Esempio alternativo per controlli su caratteri speciali specifici
+            Se si desidera limitare l'accettazione solo a simboli circoscritti (es. !, @, ?):
+            
+            if(/[!\@?]/.test(valore)){
+            speciale.classList.add("valido");
+            }else{
+            speciale.classList.remove("valido");
+            }
+            */
+        });
+    </script>
+    
+</body>
+</html>
