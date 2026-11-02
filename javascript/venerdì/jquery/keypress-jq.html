@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Eventi da tastiera (keypress)</title>
+    
+    <!-- Inclusione della libreria jQuery tramite CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+        /* Stile del box di output */
+        #output {
+            width: 350px;
+            padding: 30px;
+            border: 4px solid red;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            background-color: #fff;
+        }
+        u {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Contenitore target -->
+    <div id="output">
+        Clicca<br>
+        <u>un</u> tasto sulla tua tastiera
+    </div>
+
+    <!-- Script jQuery -->
+    <script>
+        $(document).ready(function () {
+            
+            // Ascolto dell'evento keypress sul documento
+            $(document).keypress(function (event) {
+                // Aggiorna il contenuto del div interpretando i tag HTML (es. <br>)
+                $("#output").html(
+                    "Hai cliccato il tasto: <br />" + String.fromCharCode(event.which)
+                );
+                
+                // Nota didattica: se avessimo usato .text() al posto di .html(), 
+                // il tag <br /> sarebbe stato stampato come testo letterale anziché andare a capo.
+            });
+
+        });
+    </script>
+
+</body>
+</html>

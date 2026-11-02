@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery - Toggle Class</title>
+    
+    <!-- Inclusione della libreria jQuery tramite CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+        /* Stile applicato dinamicamente tramite toggleClass */
+        .toggle {
+            background-color: yellow;
+            color: red;
+            font-weight: bold;
+            font-size: 22px;
+            padding: 8px;
+        }
+        p {
+            font-size: 18px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JQuery - Toggle Class</h1>
+    <br />
+
+    <!-- Pulsante di attivazione -->
+    <button style="font-size: 20px; font-weight: bold; color: white; border: 5px dashed black; background-color: red; padding: 10px; cursor: pointer;">
+        Clicca qui per aggiungere e togliere la classe
+    </button>
+
+    <br /><br />
+
+    <!-- Paragrafi target -->
+    <p>Primo paragrafo da stilizzare col bottone.</p>
+    <p>Secondo paragrafo da stilizzare col bottone.</p>
+
+    <!-- Script jQuery -->
+    <script>
+        $(document).ready(function () {
+            // Ascolto del click sul pulsante
+            $("button").click(function () {
+                // Il metodo toggleClass aggiunge la classe se non è presente, o la rimuove se è già presente
+                $("p").toggleClass("toggle");
+            });
+        });
+    </script>
+
+</body>
+</html>

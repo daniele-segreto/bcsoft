@@ -1,0 +1,80 @@
+/* Stili Generali e Reset Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #2c3e50;
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #7f8c8d;
+    font-size: 1rem;
+}
+
+/* Griglia 2x2 (2 colonne per riga) */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Crea esattamente 2 colonne uguali */
+    gap: 20px;
+}
+
+.polygon-card {
+    background: #ffffff;
+    border-top: 5px solid #3498db;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.polygon-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.polygon-card h3 {
+    color: #2980b9;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+    border-bottom: 1px solid #ecf0f1;
+    padding-bottom: 6px;
+}
+
+.polygon-card p {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.polygon-card strong {
+    color: #34495e;
+}
+
+/* Media query per dispositivi mobili: passa a colonna singola sui display stretti */
+@media (max-width: 600px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}

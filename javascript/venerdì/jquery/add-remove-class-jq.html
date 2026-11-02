@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Selettore universale</title>
+    
+    <!-- Inclusione della libreria jQuery tramite CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: sans-serif;
+            margin: 40px;
+        }
+        h1 {
+            font-size: 35px;
+        }
+        p {
+            font-size: 20px;
+        }
+        /* Classe CSS applicata tramite selettore universale */
+        .rosso {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <!-- Esempio di nota con style inline -->
+        <!-- e se mettsi style="color: black !important" ad h1? -->
+        <h1>jQuery - Selettore universale</h1>
+        <p>Questo è un esempio di selezione universale</p>
+        <p>Questo è un altro paragrafo</p>
+        <p>Questo è un altro paragrafo ancora</p>
+    </div>
+
+    <!-- Pulsante di attivazione -->
+    <button id="colora">Colora di Rosso</button>
+
+    <!-- Script jQuery completato e corretto -->
+    <script>
+        $(document).ready(function () {
+            $("#colora").click(function () {
+                if ($("*").hasClass("rosso")) {
+                    $("*").removeClass("rosso");
+                } else {
+                    $("*").addClass("rosso");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

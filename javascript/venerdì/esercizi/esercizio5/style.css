@@ -1,0 +1,457 @@
+/* ==========================================================================
+DESIGN SYSTEM & VARIABILI CSS (DARK / LIGHT MODE)
+========================================================================== */
+:root {
+    --primary: #FFE600;       /* Yellow Voltage */
+    --accent-fire: #FF2A2A;   /* Catch Red */
+    --accent-water: #00E5FF;  /* Electric Blue */
+    
+    /* Dark Theme Default */
+    --bg-main: #121212;
+    --bg-card: #1E1E1E;
+    --text-main: #FAFAFA;
+    --text-muted: #A0A0A0;
+    --border-color: #333333;
+    --header-bg: rgba(18, 18, 18, 0.9);
+}
+
+[data-theme="light"] {
+    --bg-main: #F4F4F9;
+    --bg-card: #FFFFFF;
+    --text-main: #121212;
+    --text-muted: #666666;
+    --border-color: #E0E0E0;
+    --header-bg: rgba(244, 244, 249, 0.9);
+}
+
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Chakra Petch', sans-serif;
+    text-transform: uppercase;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================================================
+HEADER & NAVIGAZIONE
+========================================================================== */
+/* ==========================================================================
+   HEADER & LOGO IMMAGINE
+   ========================================================================== */
+.site-header {
+    position: sticky;
+    top: 0;
+    background: var(--header-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--primary);
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.brand-logo {
+    height: 48px;       /* Regola l'altezza del logo nella navbar */
+    width: auto;        /* Mantiene le proporzioni originali */
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.main-nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.main-nav a.active, .main-nav a:hover {
+    color: var(--primary);
+}
+
+.main-nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary);
+}
+
+.btn-theme {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--text-main);
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-theme:hover {
+    background-color: var(--primary);
+    color: #121212;
+}
+
+/* ==========================================================================
+HERO SECTION & COMPONENTI HOME
+========================================================================== */
+.hero {
+    padding: 80px 0;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.badge {
+    background-color: var(--accent-fire);
+    color: #fff;
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin: 15px 0;
+}
+
+.hero-content p {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-img {
+    width: 100%;
+    border-radius: 12px;
+    border: 3px solid var(--primary);
+    box-shadow: 0 10px 30px rgba(255, 230, 0, 0.15);
+}
+
+/* Pulsanti */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    font-family: 'Chakra Petch', sans-serif;
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #121212;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+.btn-outline {
+    border: 2px solid var(--text-main);
+    color: var(--text-main);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background-color: var(--text-main);
+    color: var(--bg-main);
+}
+
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    background-color: var(--primary);
+    color: #121212;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* Features */
+.features {
+    padding: 60px 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.feature-card {
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+}
+
+/* ==========================================================================
+CATALOGO PRODOTTI (GRID RESPONSIVE)
+========================================================================== */
+.page-main {
+    padding: 50px 20px;
+}
+
+.catalog-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: var(--bg-card);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.product-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--primary);
+    color: #121212;
+    padding: 4px 10px;
+    font-weight: 700;
+    font-size: 0.75rem;
+    border-radius: 4px;
+}
+
+.product-badge.fire { background-color: var(--accent-fire); color: #fff; }
+.product-badge.water { background-color: var(--accent-water); color: #121212; }
+
+.product-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 10px 0;
+}
+
+.product-specs {
+    list-style: square inside;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+}
+
+.product-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* ==========================================================================
+CONTATTI & ACCORDION FAQ
+========================================================================== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    font-family: inherit;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: 2px solid var(--primary);
+}
+
+.error-message {
+    color: var(--accent-fire);
+    font-size: 0.8rem;
+    display: none;
+    margin-top: 5px;
+}
+
+.form-group.invalid input, .form-group.invalid textarea {
+    border-color: var(--accent-fire);
+}
+
+.form-group.invalid .error-message {
+    display: block;
+}
+
+.form-feedback {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    display: none;
+    text-align: center;
+    font-weight: 600;
+}
+
+.form-feedback.success {
+    background-color: rgba(0, 229, 255, 0.2);
+    color: var(--accent-water);
+    display: block;
+}
+
+/* Accordion Component */
+.accordion {
+    margin-top: 20px;
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 15px 0;
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 150px;
+    padding-bottom: 15px;
+}
+
+/* ==========================================================================
+FOOTER
+========================================================================== */
+.site-footer {
+    border-top: 1px solid var(--border-color);
+    padding: 30px 0;
+    margin-top: 60px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .hero-grid, .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .main-nav ul {
+        gap: 15px;
+    }
+}

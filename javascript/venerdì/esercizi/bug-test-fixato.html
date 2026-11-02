@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scova gli errori</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .hidden { display: none; }
+        #message { color: green; font-size: 20px; }
+        .show { display: block; }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Scova gli errori</h1>
+    <button class="button">Clicca qui</button>
+    <p id="message" class="hidden">Questo è un messaggio nascosto</p>
+    <img src="https://via.placeholder.com/150" id="img" class="hidden" alt="Placeholder Image">
+    <button class="hide">Nascondi il messaggio</button>
+    
+    <script>
+        $(document).ready(function() {
+            $(".button").click(function() {
+                $("#message").removeClass("hidden");
+                
+                // CORRETTO: Sostituita la classe inesistente ".visible" con la classe esistente ".show"
+                $("#img").addClass("show");
+            });
+            
+            $(".hide").click(function() {
+                $("#message").addClass("hidden");
+                $("#img").removeClass("show");
+            });
+            
+            // CORRETTO: Aggiunti gli apici mancanti al selettore ID e commentato l'elemento inesistente nel DOM
+            // $("#newElement").append("<p>Nuovo elemento aggiunto!</p>");
+        });
+    </script>
+</body>
+</html>

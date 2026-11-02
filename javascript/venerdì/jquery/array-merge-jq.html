@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge di Array con jQuery</title>
+    
+    <!-- Inclusione della libreria jQuery tramite CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 50px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+        p {
+            font-size: 20px;
+            font-weight: bold;
+            color: blue;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Merge di Array</h1>
+    <br />
+
+    <!-- Paragrafi di output -->
+    <p id="output1"></p>
+    <p id="output2"></p>
+    <p id="output3"></p>
+
+    <!-- Script jQuery -->
+    <script>
+        $(document).ready(function () {
+            
+            // Definizione dei due array di partenza
+            var array1 = ["a", "b", "c"];
+            var array2 = ["d", "e", "f"];
+            
+            // Unione dei due array tramite l'utility $.merge di jQuery
+            var merge = $.merge($.merge([], array1), array2);
+
+            // Stampa a schermo dei singoli array e del risultato unito
+            $("#output1").text("Array 1: " + array1.join(", "));
+            $("#output2").text("Array 2: " + array2.join(", "));
+            
+            // .join(", ") trasforma l'array risultante in una stringa leggibile formattata con le virgole
+            $("#output3").text("Array risultante dal merge: " + merge.join(", "));
+
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pichu Streetwear | Catalogo Prodotti</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Header e Navigazione -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="./img/pichu_logo.jpg" alt="Pichu Streetwear Logo" class="brand-logo">
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="catalogo.html" class="active">Catalogo</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="btn-theme" aria-label="Cambia Tema">
+                <span class="theme-icon">⚡</span> Tema
+            </button>
+        </div>
+    </header>
+    
+    <main class="container page-main">
+        <section class="catalog-header">
+            <h1>COLLEZIONE ARENA & BADGES</h1>
+            <p>Seleziona il tuo equipaggiamento. Ogni capo è numerato e corredato da un badge unico da collezione.</p>
+        </section>
+        
+        <!-- Griglia Prodotti Responsive -->
+        <section class="products-grid">
+            
+            <!-- Prodotto 1 -->
+            <article class="product-card">
+                <div class="product-badge">Tipo Elettro</div>
+                <img src="./img/volt_shok.jpg" alt="T-Shirt Volt Shock">
+                <div class="product-info">
+                    <h3>T-Shirt "Volt Shock #025"</h3>
+                    <p class="product-desc">Taglio boxy fit, colore giallo fulmine con grafica retrotessuta sulla schiena.</p>
+                    <ul class="product-specs">
+                        <li>100% Cotone Pettinato</li>
+                        <li>Sfera d'Argento olografica sul bordo</li>
+                    </ul>
+                    <div class="product-footer">
+                        <span class="price">€45,00</span>
+                        <button class="btn btn-sm">Acquista</button>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Prodotto 2 -->
+            <article class="product-card">
+                <div class="product-badge fire">Tipo Fuoco</div>
+                <img src="./img/flame_badge.jpg" alt="T-Shirt Flame Badge">
+                <div class="product-info">
+                    <h3>T-Shirt "Flame Badge #006"</h3>
+                    <p class="product-desc">Rosso fiammante ad alta densità con logo ricamato a rilievo sul petto.</p>
+                    <ul class="product-specs">
+                        <li>Heavyweight 260 GSM</li>
+                        <li>Spilla Gym Badge inclusa</li>
+                    </ul>
+                    <div class="product-footer">
+                        <span class="price">€49,00</span>
+                        <button class="btn btn-sm">Acquista</button>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Prodotto 3 -->
+            <article class="product-card">
+                <div class="product-badge water">Tipo Acqua</div>
+                <img src="./img/hydro_sphere.jpg" alt="T-Shirt Hydro Sphere">
+                <div class="product-info">
+                    <h3>T-Shirt "Hydro Sphere #009"</h3>
+                    <p class="product-desc">Blu profondo con finitura washed e dettagli riflettenti visibili al buio.</p>
+                    <ul class="product-specs">
+                        <li>Effetto Vintage Washed</li>
+                        <li>Stampa reattiva alle luci UV</li>
+                    </ul>
+                    <div class="product-footer">
+                        <span class="price">€45,00</span>
+                        <button class="btn btn-sm">Acquista</button>
+                    </div>
+                </div>
+            </article>
+            
+        </section>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 PICHU Streetwear Brand. Ideato e progettato da Daniele Segreto.</p>
+        </div>
+    </footer>
+    
+    <script src="main.js"></script>
+</body>
+</html>

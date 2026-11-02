@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Selettore di tipo e ID</title>
+    
+    <!-- Inclusione della libreria jQuery tramite CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            text-align: center;
+            font-size: 20px;
+            font-family: sans-serif;
+            margin: 40px;
+        }
+        .sottolinea {
+            background-color: hotpink;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>jQuery - Selettore di tipo e ID</h1>
+    <br />
+    <p>Paragrafo di testo</p>
+    <br />
+
+    <!-- Pulsante di attivazione -->
+    <button id="clicca">Clicca qui per evidenziare</button>
+
+    <!-- Script jQuery -->
+    <script>
+        $(document).ready(function () {
+            // Selettore di ID per il pulsante
+            $("#clicca").click(function () {
+                // Selettore di tipo per applicare la classe al paragrafo
+                $("p").addClass("sottolinea");
+            });
+        });
+    </script>
+
+</body>
+</html>

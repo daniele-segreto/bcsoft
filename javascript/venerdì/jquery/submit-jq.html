@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Gestione Submit del Form</title>
+    
+    <!-- Inclusione della libreria jQuery tramite CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 50px;
+            text-align: center;
+        }
+        form {
+            margin-bottom: 25px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 280px;
+            border: 2px solid #333;
+            margin-right: 10px;
+        }
+        button[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3f51b5;
+            color: white;
+            border: 2px solid #000;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        #output {
+            margin-top: 30px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Modulo HTML -->
+    <form id="nome">
+        <input type="text" name="name" placeholder="Inserisci il tuo nome">
+        <button type="submit">Invia</button>
+    </form>
+
+    <!-- Contenitore per il riscontro visivo -->
+    <div id="output"></div>
+
+    <!-- Script jQuery -->
+    <script>
+        $(document).ready(function () {
+            
+            // Ascolto dell'evento submit sul form con id #nome
+            $("#nome").submit(function (event) {
+                
+                // Impedisce il comportamento di default del modulo (ricaricamento pagina / invio al server)
+                event.preventDefault();
+                
+                // Preleva il valore inserito nel campo input tramite attributo name
+                var nomeUtente = $("input[name='name']").val();
+                
+                // Mostra il messaggio personalizzato all'interno del div #output
+                $("#output").html(
+                    "Grazie, " + nomeUtente + "! <br><br>Il tuo modulo è stato inviato con successo!"
+                );
+                
+            });
+
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio Selezione Nome con jQuery</title>
+    <style>
+        body { font-size: 25px; font-family: sans-serif; margin: 40px; }
+        #nome-estratto { color: blue; font-weight: bold; margin-top: 20px; }
+        ul li { cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <ul id="lista-nomi">
+        <li>Luca</li>
+        <li>Matteo</li>
+        <li>Ines</li>
+        <li>Chiara</li>
+    </ul>
+
+    <div id="nome-estratto">Clicca su uno dei nomi in lista per selezionarlo!</div>
+
+    <!-- INCLUSIONE DELLA LIBRERIA: Caricamento di jQuery tramite CDN per abilitare l'uso dei suoi selettori e metodi -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- SEZIONE SCRIPT JAVASCRIPT / JQUERY -->
+    <script>
+        $(document).ready(function() {
+            $('#lista-nomi li').on("click", function() {
+
+                // ESTRAZIONE DEL TESTO: 
+                // $(this) fa riferimento allo specifico elemento 'li' su cui l'utente ha appena fatto clic.
+                var nome = $(this).text(); // Il metodo .text() ne preleva il contenuto testuale (es. "Luca") e lo memorizza nella variabile.
+
+                // MANIPOLAZIONE DEL DOM (OUTPUT DINAMICO):
+                // Seleziona il div '#nome-estratto' e ne modifica il testo inserendo il nome catturato in precedenza.
+                $('#nome-estratto').text('Il nome selezionato è: ' + nome);
+            });
+        });
+    </script>
+</body>
+</html>

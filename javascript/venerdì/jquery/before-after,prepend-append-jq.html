@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Before, After, Prepend, Append</title>
+    
+    <!-- Inclusione della libreria jQuery tramite CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 50px;
+            text-align: center;
+        }
+        h2 {
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+        #paragrafo {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 30px 0;
+        }
+        /* Stile applicato alle parti aggiunte dinamicamente */
+        .aggiunta {
+            color: red;
+            font-weight: bold;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JQuery - After, Before, Append, Prepend</h2>
+    <br />
+
+    <!-- Paragrafo target -->
+    <p id="paragrafo">Paragrafo creato in HTML.</p>
+
+    <!-- Script jQuery -->
+    <script>
+        $(document).ready(function () {
+            
+            // 1. before(): Inserisce il markup all'esterno, immediatamente PRIMA del tag selezionato
+            $("#paragrafo").before(
+                '<span class="aggiunta">(prima del tag p)</span>'
+            );
+
+            // 2. after(): Inserisce il markup all'esterno, immediatamente DOPO il tag selezionato
+            $("#paragrafo").after(
+                '<span class="aggiunta">(dopo il tag p)</span>'
+            );
+
+            // 3. prepend(): Inserisce il markup all'INTERNO, all'INIZIO del contenuto del tag selezionato
+            $("#paragrafo").prepend(
+                '<span class="aggiunta">(all\'inizio del tag p)</span> '
+            );
+
+            // 4. append(): Inserisce il markup all'INTERNO, alla FINE del contenuto del tag selezionato
+            $("#paragrafo").append(
+                ' <span class="aggiunta">(in coda al tag p)</span>'
+            );
+
+        });
+    </script>
+
+</body>
+</html>

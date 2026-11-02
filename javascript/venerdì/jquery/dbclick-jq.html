@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery - Click e Double Click</title>
+    
+    <!-- Inclusione della libreria jQuery tramite CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+        /* Stile del box interattivo */
+        .box {
+            width: 250px;
+            height: 250px;
+            background-color: yellow;
+            border: 2px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Box target per gli eventi del mouse -->
+    <div id="box" class="box">
+        Clicca una sola volta o <br /> fai un doppio click qui!
+    </div>
+
+    <!-- Script jQuery -->
+    <script>
+        $(document).ready(function () {
+            
+            // Gestione dell'evento click singolo
+            $("#box").click(function () {
+                $(this).text("Hai cliccato!");
+            });
+
+            // Gestione dell'evento doppio click (dblclick)
+            $("#box").dblclick(function () {
+                $(this).text("Hai fatto doppio clic!");
+            });
+
+        });
+    </script>
+
+</body>
+</html>

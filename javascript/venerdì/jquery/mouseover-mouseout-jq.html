@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Eventi Mouseover e Mouseout</title>
+    
+    <!-- Inclusione della libreria jQuery tramite CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+        /* Stile del box interattivo */
+        .box {
+            width: 280px;
+            height: 280px;
+            background-color: blue;
+            color: white;
+            border: 4px solid deeppink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Box target -->
+    <div id="box" class="box">
+        Passa il mouse sopra questo quadrato giallo!
+    </div>
+
+    <!-- Script jQuery -->
+    <script>
+        $(document).ready(function () {
+            
+            // Evento attivato quando il puntatore entra nel box
+            $("#box").mouseover(function () {
+                $(this).text("Bravo! Però ora spostalo 😌");
+            });
+
+            // Evento attivato quando il puntatore esce dal box
+            $("#box").mouseout(function () {
+                $(this).text("Passa il mouse sopra questo quadrato giallo!");
+            });
+
+        });
+    </script>
+
+</body>
+</html>

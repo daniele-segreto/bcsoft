@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add e Remove class in JQuery</title>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body { font-family: sans-serif; margin: 40px; text-align: center; }
+        .button { padding: 12px 25px; font-size: 16px; cursor: pointer; background-color: #f0f0f0; border: 2px solid #333; }
+        .button.cliccato { background-color: purple; color: white; }
+    </style>
+</head>
+<body>
+
+    <h1>Add e Remove class in JQuery</h1>
+    
+    <button id="bottone" class="button">Clicca qui</button>
+
+    <script>
+        $(document).ready(function () {
+            
+            // 1. EVENT BINDING: Si mette in ascolto del click sul pulsante identificato dall'ID #bottone
+            $("#bottone").click(function () {
+                
+                // 2. VERIFICA DELLO STATO TRAMITE .hasClass()
+                // Il metodo .hasClass("cliccato") interroga l'elemento corrente ($(this)) 
+                // per controllare se possiede attualmente la classe CSS specificata.
+                // - Se la classe è presente, restituisce TRUE.
+                // - Se la classe è assente, restituisce FALSE.
+                if ($(this).hasClass("cliccato")) {
+                    
+                    // 3. RAMO IF (VERO): Se l'elemento è già contrassegnato come 'cliccato',
+                    // il metodo .removeClass() rimuove la classe, resettando lo stile del pulsante.
+                    $(this).removeClass("cliccato");
+                    
+                } else {
+                    
+                    // 4. RAMO ELSE (FALSO): Se l'elemento NON possiede la classe,
+                    // il metodo .addClass() la inserisce, applicando lo stile viola (toggle effect).
+                    $(this).addClass("cliccato");
+                    
+                }
+                
+            });
+
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery con metodo per il contenuto HTML</title>
+    
+    <!-- Inclusione della libreria jQuery tramite CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+        input {
+            padding: 8px;
+            font-size: 16px;
+            width: 250px;
+        }
+        button {
+            padding: 8px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        #content {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: yellow;
+            font-size: 22px;
+            font-weight: bold;
+            border: 2px solid #000;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JQuery con metodo per il contenuto HTML</h1>
+    <br />
+
+    <!-- Campo di input e pulsante -->
+    <input type="text" id="nuovo" placeholder="Digita il nuovo testo...">
+    <button id="aggiungi">Invia</button>
+
+    <!-- Contenitore target -->
+    <div id="content">Testo segnaposto iniziale</div>
+
+    <!-- Script jQuery -->
+    <script>
+        $(document).ready(function () {
+            
+            $("#aggiungi").click(function () {
+                // Preleva il valore inserito nel campo di input tramite .val()
+                var nuovotesto = $("#nuovo").val();
+                
+                // Aggiorna il contenuto HTML del div #content con il testo digitato
+                $("#content").html(nuovotesto);
+                
+                // Pulisce il campo di input svuotandone il valore
+                $("#nuovo").val("");
+            });
+
+        });
+    </script>
+
+</body>
+</html>

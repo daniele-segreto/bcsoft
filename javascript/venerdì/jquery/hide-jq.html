@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Selettore elemento corrente</title>
+    
+    <!-- Inclusione della libreria jQuery tramite CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 35px;
+            margin-bottom: 30px;
+        }
+        div {
+            border: 2px solid #4CAF50;
+            background-color: #d4edda;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 8px;
+        }
+        p {
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .nascosto {
+            color: #155724;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>jQuery - Selettore<br>elemento corrente</h1>
+
+    <div>
+        <!-- Paragrafo interattivo con classe -->
+        <p class="nascosto">Nascondi <u>il primo</u> paragrafo</p>
+        <p class="nascosto">Nascondi <u>il secondo</u> paragrafo</p>
+        <!-- Secondo paragrafo di controllo -->
+        <p>Questo paragrafo verrà nascosto invece?</p>
+    </div>
+
+    <!-- Script jQuery -->
+    <script>
+        $(document).ready(function () {
+            // Ascolto del click sull'elemento con classe .nascosto
+            $('.nascosto').click(function () {
+                // $(this) seleziona e nasconde unicamente l'elemento corrente su cui si è cliccato
+                $(this).hide();
+            });
+        });
+    </script>
+
+</body>
+</html>

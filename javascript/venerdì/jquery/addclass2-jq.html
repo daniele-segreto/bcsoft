@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Selettore di classe o di elemento con specifica classe</title>
+    
+    <!-- Inclusione della libreria jQuery tramite CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            text-align: center;
+            font-size: 25px;
+            font-family: sans-serif;
+            margin: 40px;
+        }
+        /* Classe CSS dinamica per evidenziare l'elemento */
+        .sottolineato {
+            background-color: yellow;
+            font-size: 60px;
+        }
+        div {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="font-size: 30px; margin-bottom: 60px;">
+        jQuery - Selettore<br>di classe o di elemento con specifica classe
+    </h1>
+
+    <!-- Tre blocchi div con classi differenti -->
+    <div class="box1">Box 1</div>
+    <div class="box2">Box 2</div>
+    <div class="box3">Box 3</div>
+
+    <!-- Pulsante di attivazione -->
+    <button id="evidenzia">Evidenzia il box con la classe .box3</button>
+
+    <!-- Script jQuery -->
+    <script>
+        $(document).ready(function () {
+            // Ascolto del click sul pulsante identificato dall'ID #evidenzia
+            $("#evidenzia").click(function () {
+                // Selettore combinato: seleziona l'elemento div con la specifica classe .box3 e aggiunge la classe .sottolineato
+                $("div.box3").addClass("sottolineato");
+            });
+        });
+    </script>
+
+</body>
+</html>

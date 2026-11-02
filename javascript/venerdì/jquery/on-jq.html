@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Metodi On e Off</title>
+    
+    <!-- Inclusione della libreria jQuery tramite CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            text-align: center;
+        }
+        /* Stile del box target, nascosto inizialmente */
+        #div {
+            width: 300px;
+            height: 200px;
+            background-color: salmon;
+            border: 4px dashed black;
+            margin: 40px auto;
+            display: none;
+        }
+        button {
+            padding: 15px 25px;
+            background-color: springgreen;
+            color: black;
+            font-size: 18px;
+            border: 2px dashed black;
+            cursor: pointer;
+            margin: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Pulsanti di controllo -->
+    <button id="show">Mostra div</button>
+    <button id="hide">Nascondi div</button>
+    <button id="reset">Resetta impostazioni</button>
+    
+    <!-- Contenitore target -->
+    <div id="div"></div>
+    
+    <!-- Script jQuery -->
+    <script>
+        $(document).ready(function () {
+            
+            // Associa l'evento click al pulsante "Mostra div" usando .on()
+            $("#show").on("click", function () {
+                $("#div").show();
+            });
+            
+            // Associa l'evento click al pulsante "Nascondi div" usando .on()
+            $("#hide").on("click", function () {
+                $("#div").hide();
+            });
+            
+            // Associa l'evento click al pulsante "Resetta impostazioni"
+            $("#reset").on("click", function () {
+                $("#div").hide();
+                
+                /* 
+                Il metodo .off() rimuove i listener di eventi precedentemente associati.
+                De-commentando la riga sottostante, il pulsante reset perderà la sua funzione:
+                */
+                $("#reset").off(); 
+                // decommentata ;)
+            });
+            
+        });
+    </script>
+    
+</body>
+</html>
