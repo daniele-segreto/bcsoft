@@ -73,6 +73,8 @@ document.addEventListener("DOMContentLoaded", function () {
             <ul>
                 ${personeUniche.map(p => `<li><strong>${p.nome}</strong> ha ${p.eta} anni</li>`).join('')}
             </ul>
+            <hr>
+            <h6>Superiori ai 30 anni, in ordine alfabetico e senza duplicati.</h6>
         </article>
     
         <article class="result-card">
@@ -82,6 +84,8 @@ document.addEventListener("DOMContentLoaded", function () {
             <ul>
                 ${personeUnderUniche.map(p => `<li><strong>${p.nome}</strong> ha ${p.eta} anni</li>`).join('')}
             </ul>
+            <hr>
+            <h6>Inferiori ai 30 anni, in ordine alfabetico e senza duplicati.</h6>
         </article>
     `;
     

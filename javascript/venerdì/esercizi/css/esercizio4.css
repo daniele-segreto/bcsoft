@@ -11,6 +11,7 @@ body {
     color: #333;
     line-height: 1.6;
     padding: 40px 20px;
+    background-color: #daf3e0;
 }
 
 .container {
@@ -37,7 +38,7 @@ header p {
 /* Card principale */
 .card {
     background: #ffffff;
-    border-top: 5px solid #8e44ad;
+    border-top: 5px solid #067021;
     border-radius: 8px;
     padding: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -61,13 +62,13 @@ header p {
 }
 
 .input-group input:focus {
-    border-color: #8e44ad;
+    border-color: #067021;
 }
 
 .input-group button {
     padding: 10px 20px;
     font-size: 1rem;
-    background-color: #8e44ad;
+    background-color: #067021;
     color: white;
     border: none;
     border-radius: 4px;

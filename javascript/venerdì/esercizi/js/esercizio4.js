@@ -2,7 +2,7 @@
  * Attesa del caricamento completo del DOM tramite jQuery.
  * Garantisce che tutti gli elementi della pagina siano pronti prima dell'interazione.
  */
-$(document).ready(function () {
+$(document).ready(function() {
     
     // Faccio il mio getElementById, ma con jQuery
     const $campoInput = $('#campo-input');

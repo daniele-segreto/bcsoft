@@ -7,10 +7,28 @@
       "id": "mQEnwze8EmA"
     },
     {
-      "name": "dsadas",
-      "email": "sd@ss",
-      "password": "ds",
-      "id": "IEgUsVjqt94"
+      "name": "Marco67",
+      "email": "marco@marco.it",
+      "password": "123456",
+      "id": "A9Uk2Lxb24s"
+    },
+    {
+      "name": "Paolo",
+      "email": "paolo@damiani.it",
+      "password": "123456",
+      "id": "779TtzBpULc"
+    },
+    {
+      "name": "Carlo",
+      "email": "carlo@carlo.it",
+      "password": "123456",
+      "id": "3qy4aLESKrM"
+    },
+    {
+      "name": "Miriana",
+      "email": "miriana@miriana.com",
+      "password": "123456",
+      "id": "XC877kVovwY"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

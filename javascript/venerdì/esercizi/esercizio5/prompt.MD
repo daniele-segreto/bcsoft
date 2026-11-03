@@ -2,7 +2,7 @@
 ============>     PROMPT 1     <============
 ********************************************
 
-Agisci come un Senior Front-End Developer, UI/UX Designer e Brand Strategist. Voglio che tu realizzi l'intero progetto per un sito web a tre pagine dedicato a un brand inventato di t-shirt e merchandising streetwear. Il brand si chiama "Pichu" ed è esplicitamente ispirato all'universo dei Pokémon (stile anni '90/'00, arene di lotta, creature elettriche e carine, sfere di cattura, medaglie e badge di palestra), ma con un'identità autonoma e originale, sicura dal punto di vista del copyright (senza violare marchi registrati o utilizzare loghi e personaggi protetti).
+Agisci come un Senior Front-End Developer, UI/UX Designer e Brand Strategist. Voglio che tu realizzi l'intero progetto per un sito web a tre pagine dedicato a un brand inventato di t-shirt e merchandising streetwear. Il brand si chiama "Pichu" ed è esplicitamente ispirato all'universo dei Pokémon (stile anni '90/2000, arene di lotta, creature elettriche e carine, sfere di cattura, medaglie e badge di palestra), ma con un'identità autonoma e originale, sicura dal punto di vista del copyright (senza violare marchi registrati o utilizzare loghi e personaggi protetti).
 
 Il progetto deve rispettare rigorosamente i seguenti requisiti:
 

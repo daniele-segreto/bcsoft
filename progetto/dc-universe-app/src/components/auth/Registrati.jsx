@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Registrati() {
     /* Stato locale per memorizzare i dati inseriti nei campi del form (nome, email, password) */
@@ -11,6 +11,22 @@ function Registrati() {
     /* Stati dedicati alla gestione dei messaggi di feedback per l'utente e degli errori */
     const [statusMessage, setStatusMessage] = useState(null);
     const [isError, setIsError] = useState(false);
+
+    /* Listener per pulire completamente lo stato quando la modale viene chiusa */
+    useEffect(() => {
+        const modalElement = document.getElementById("registerModal");
+        if (modalElement) {
+            const handleHidden = () => {
+                setStatusMessage(null);
+                setIsError(false);
+                setFormData({ name: "", email: "", password: "" });
+            };
+            modalElement.addEventListener("hidden.bs.modal", handleHidden);
+            return () => {
+                modalElement.removeEventListener("hidden.bs.modal", handleHidden);
+            };
+        }
+    }, []);
 
     /* Funzione di gestione per aggiornare dinamicamente lo stato del form al variare dell'input */
     const handleChange = (e) => {
@@ -43,9 +59,18 @@ function Registrati() {
 
             /* Gestione in caso di esito positivo dell'operazione */
             setStatusMessage(
-                "Registrazione completata con successo! Benvenuto nel portale DC.",
+                "Registrazione completata con successo! Effettua il login.",
             );
             setFormData({ name: "", email: "", password: "" }); // Reset dei campi del form
+
+            /* Dopo un breve intervallo, attiva il pulsante nativo nascosto per passare al Login */
+            setTimeout(() => {
+                setStatusMessage(null);
+                const triggerBtn = document.getElementById("triggerLoginModalBtn");
+                if (triggerBtn) {
+                    triggerBtn.click();
+                }
+            }, 1000);
         } catch (error) {
             /* Gestione degli errori di rete o mancata risposta del server locale */
             setIsError(true);
@@ -155,6 +180,16 @@ function Registrati() {
                                 Crea Account
                             </button>
                         </form>
+
+                        {/* Pulsante nativo nascosto per attivare la modale di Login via Bootstrap */}
+                        <button
+                            id="triggerLoginModalBtn"
+                            type="button"
+                            className="d-none"
+                            data-bs-dismiss="modal"
+                            data-bs-toggle="modal"
+                            data-bs-target="#loginModal"
+                        ></button>
                     </div>
                 </div>
             </div>

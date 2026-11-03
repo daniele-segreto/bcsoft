@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcolo del Fattoriale</title>
+</head>
+<body>
+    
+    <h1>FATTORIALE</h1>
+    <p id="output3"></p>
+    
+    <script>
+        // =====================================================================
+        // METODO PRINCIPALE: Approccio Decrecante (dall'alto verso il basso)
+        // =====================================================================
+        
+        // 1. Fissiamo il numero di cui vogliamo calcolare il fattoriale (es. 5)
+        var numero = 5;
+        
+        // 2. Inizializziamo l'accumulatore "fattoriale" con lo stesso valore del numero.
+        // In questo modo partiamo già moltiplicando a partire da 5.
+        var fattoriale = numero;
+        
+        /* 
+        SPIEGAZIONE DEL CICLO FOR (Metodo Decrecante):
+        - i = numero - 1 : L'indice 'i' parte da 4 (poiché il 5 è già dentro la variabile fattoriale).
+        - i > 0          : Il ciclo continua a girare finché 'i' è maggiore di zero.
+        - i--            : Ad ogni giro completato, il valore di 'i' diminuisce di 1 (4, 3, 2, 1).
+        
+        Passaggi della moltiplicazione:
+        - Partenza: fattoriale = 5
+        - 1° giro (i = 4): fattoriale = 5 * 4 = 20
+        - 2° giro (i = 3): fattoriale = 20 * 3 = 60
+        - 3° giro (i = 2): fattoriale = 60 * 2 = 120
+        - 4° giro (i = 1): fattoriale = 120 * 1 = 120
+        */
+        for (var i = numero - 1; i > 0; i--) {
+            fattoriale = fattoriale * i;
+        }
+        
+        
+        
+        /* =====================================================================
+        * METODO ALTERNATIVO: Approccio Crescente (dal basso verso l'alto)
+        * =====================================================================
+        * 
+        * var numero = 5;
+        * 
+        * // 1. Inizializziamo fattoriale a 1 (l'elemento neutro della moltiplicazione).
+        * var fattoriale = 1;
+        * 
+        * /* 
+        *   SPIEGAZIONE DEL CICLO FOR (Metodo Crescente):
+        *   - i = 1         : Si parte da 1.
+        *   - i <= numero   : Il ciclo continua finché 'i' è minore o uguale a 5.
+        *   - i++           : Ad ogni giro 'i' aumenta di 1 (1, 2, 3, 4, 5).
+        *   
+        *   Moltiplicazione progressiva: 
+        *   Si parte da 1 e si moltiplica per 1, 2, 3, 4 e 5 ottenendo sempre 120.
+        * /
+        * for (var i = 1; i <= numero; i++) {
+        *     fattoriale = fattoriale * i;
+        * }
+        */
+        
+        
+        
+        // 3. Visualizzazione dinamica del risultato all'interno della pagina HTML
+        document.getElementById("output3").innerHTML = 
+        "Il fattoriale di " + numero + " è: " + fattoriale;
+    </script>
+    
+</body>
+</html>

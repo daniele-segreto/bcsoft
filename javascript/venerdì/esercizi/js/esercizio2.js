@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // ==========================================
     // PUNTO 1: Valutazione Livello Studente
     // ==========================================
-    const punteggioStudente = 100; // Valore da testare
+    const punteggioStudente = 50; // Valore da testare
     let livello = "";
     
     if (punteggioStudente >= 90) {

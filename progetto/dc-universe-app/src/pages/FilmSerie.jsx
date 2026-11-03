@@ -1,5 +1,9 @@
 import React from "react";
 import HeroCarousel from "../components/HeroCarousel";
+import ComicSection from "./../components/ComicSection";
+import { cinema } from "../data/comicsData";
+import { tvSeries  } from "../data/comicsData";
+import { animatedSeries } from "../data/comicsData";
 
 function FilmSerie() {
     return (
@@ -8,11 +12,14 @@ function FilmSerie() {
             {/* Componente carosello condiviso posizionato sotto la navbar fissa */}
             <HeroCarousel />
 
-            {/* Blocco dei contenuti specifici della pagina dedicata al cinema e alle serie TV DC */}
-            <div className="container py-5">
-                <h2 className="mb-4">Film e Serie TV</h2>
-                <p>Sezione dedicata al cinema e alle serie tv dell'universo DC.</p>
-            </div>
+            {/* Sezione Cinema */}
+            <ComicSection title="CINEMA" comics={cinema} />
+
+            {/* Sezione Serie TV */}
+            <ComicSection title="SERIE TV" comics={tvSeries} />
+
+            {/* Sezione Serie Animate */}
+            <ComicSection title="SERIE ANIMATE" comics={animatedSeries} />
         </main>
     );
 }

@@ -1,5 +1,9 @@
 import React from "react";
 import HeroCarousel from "../components/HeroCarousel";
+import ComicSection from "./../components/ComicSection";
+import { justiceLeague } from "../data/comicsData";
+import { supermanFamily } from "../data/comicsData";
+import { gothamFamily } from "../data/comicsData";
 
 function Fumetti() {
     return (
@@ -8,11 +12,14 @@ function Fumetti() {
             {/* Componente carosello condiviso posizionato sotto la navbar fissa */}
             <HeroCarousel />
 
-            {/* Blocco dei contenuti specifici della pagina dedicata ai fumetti */}
-            <div className="container py-5">
-                <h2 className="mb-4">Eroi e Leggende</h2>
-                <p>Sezione dedicata ai fumetti dell'universo DC.</p>
-            </div>
+            {/* Sezione Superman Family */}
+            <ComicSection title="SUPERMAN FAMILY" comics={supermanFamily} />
+
+            {/* Sezione Justice League */}
+            <ComicSection title="JUSTICE LEAGUE" comics={justiceLeague} />
+
+            {/* Sezione Gotham Family */}
+            <ComicSection title="GOTHAM FAMILY" comics={gothamFamily} />
         </main>
     );
 }

@@ -4,7 +4,9 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Fumetti from "./pages/Fumetti";
 import FilmSerie from "./pages/FilmSerie";
-import Registrati from "./pages/Registrati";
+import UserDashboard from "./pages/UserDashboard";
+import Registrati from "./components/auth/Registrati";
+import Login from "./components/auth/Login";
 import Footer from "./components/Footer";
 
 function App() {
@@ -23,6 +25,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/fumetti" element={<Fumetti />} />
           <Route path="/film-serie" element={<FilmSerie />} />
+          <Route path="/dashboard" element={<UserDashboard />} />
         </Routes>
 
         {/* Piè di pagina istituzionale del portale */}
@@ -30,8 +33,9 @@ function App() {
           <Footer />
         </div>
 
-        {/* Modale di registrazione globale richiamabile da qualsiasi sezione */}
+        {/* Modali globali di autenticazione (Registrazione e Login) */}
         <Registrati />
+        <Login />
       </div>
     </Router>
   );
