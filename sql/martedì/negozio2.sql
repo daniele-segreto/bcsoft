@@ -23,14 +23,16 @@ RENAME TABLE fornitori TO Fornitori_italiani;
 ---------- ESERCIZIO 4 ----------
 
 -- Nel database Negozio, già contenente le tabelle Categorie, Prodotti e Fornitori_italiani, creare sulla tabella Fornitori_italiani:
-    -- * un indice semplice (chiamato idx_nome_fornitore) sulla colonnanome_fornitore;
+    -- * un indice semplice (chiamato idx_nome_fornitore) sulla colonna nome_fornitore;
     -- * un indice (chiamato idx_partitaiva_desc) con lunghezza e ordine specificato sulla colonna partita_iva, definendo una lunghezza di otto caratteri e un ordinamento DESC.
 -- [tramite query SQL]
 
 -- 1. Creazione dell'indice semplice sulla colonna nome_fornitore
+-- "idx_nome_fornitore" ottimizza e velocizza le ricerche e i filtraggi basati sul nome del fornitore -->
 CREATE INDEX idx_nome_fornitore ON Fornitori_italiani (nome_fornitore);
 
--- 2. Creazione dell'indice con lunghezza di 8 caratteri e ordinamento DESC sulla colonna partita_iva
+-- 2. Creazione dell'indice con lunghezza di 8 caratteri e ordinamento DESC sulla colonna partita_iva -->
+-- "idx_partitaiva_desc" consente al database di ritrovare rapidamente le partite IVA (utilizzando i primi 8 caratteri) e di averle già predisposte in un ordine discendente (DESC), evitando calcoli o riordinamenti successivi da parte del sistema
 CREATE INDEX idx_partitaiva_desc ON Fornitori_italiani (partita_iva(8) DESC);
 
 -- Successivamente, eseguire un’interrogazione SQL per visualizzare tutti i database presenti nel sistema e un’altra per visualizzare tutte le colonne della tabellaFornitori_italiani. [tramite query SQL]
