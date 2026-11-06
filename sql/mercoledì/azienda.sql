@@ -90,17 +90,13 @@ GROUP BY reparto;
 
 -- # PUNTO 9: Confrontare i risultati ottenuti, spiegando in quali casi i valori restituiti sono unici (una sola riga) e in quali casi derivano da raggruppamenti di dati
 
--- =========================================================
---  SCHEMA DI CONFRONTO E DIFFERENZA SULLE QUERY
--- =========================================================
-
--- 📌 CASO A: SENZA GROUP BY (Punti 3, 4, 5, 6, 7)
+-- CASO A: SENZA GROUP BY (Punti 3, 4, 5, 6, 7)
 -- ---------------------------------------------------------
 -- • OUTPUT         : 1 sola riga
 -- • COME OPERA     : Analizza l'INTERA tabella in blocco unico
 -- • ESEMPIO        : Totale dipendenti, somma, media o max/min aziendale
 
--- 📌 CASO B: CON GROUP BY (Punto 8)
+-- CASO B: CON GROUP BY (Punto 8)
 -- ---------------------------------------------------------
 -- • OUTPUT         : Più righe
 -- • COME OPERA     : Suddivide i dati per categoria (es. i reparti)
