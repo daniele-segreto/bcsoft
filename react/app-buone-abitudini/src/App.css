@@ -1,0 +1,143 @@
+/* Layout Globale e Resettaggio - Arancione Caldo e Accogliente */
+body {
+  margin: 0;
+  background-color: #F97316; /* Arancione deciso e vivace */
+  color: #1E293B;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenitore Scheda Principale (Form / Card Bianca) */
+.main-container {
+  width: 90%;
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 36px 30px;
+  background-color: #FFFFFF; /* Scheda bianca pura per contrasto netto */
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(124, 45, 18, 0.25), 0 6px 16px rgba(0, 0, 0, 0.08); /* Ombra definita */
+  border: 2px solid #EA580C; /* Bordo arancione */
+}
+
+/* Intestazione e Titoli */
+.header-box {
+  text-align: center;
+  padding-bottom: 28px;
+  border-bottom: 2px dashed #FED7AA;
+}
+
+.header-box h2 {
+  margin: 0 0 10px 0;
+  color: #7C2D12; /* Ruggine scuro ad alto contrasto */
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.header-box p {
+  color: #475569;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  margin: 0 0 24px 0;
+  font-weight: 500;
+}
+
+/* Pulsante Verde Menta (Tinta Unita brillante) */
+.btn-estrai {
+  background-color: #059669; /* Verde smeraldo pieno ad alto contrasto */
+  color: #FFFFFF;
+  border: none;
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(5, 150, 105, 0.35);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-estrai:hover {
+  background-color: #047857;
+  box-shadow: 0 8px 20px rgba(5, 150, 105, 0.45);
+  transform: translateY(-2px);
+}
+
+.btn-estrai:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 10px rgba(5, 150, 105, 0.25);
+}
+
+/* Sezione Elenco Consigli */
+.card-consigli {
+  margin-top: 28px;
+}
+
+.card-consigli h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.placeholder-testo {
+  color: #64748B;
+  font-style: italic;
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 24px 0;
+  background-color: #FFF7ED;
+  border-radius: 16px;
+  border: 2px dashed #FED7AA;
+  font-weight: 500;
+}
+
+.elenco-consigli {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Card del singolo consiglio estratto */
+.item-consiglio {
+  display: flex;
+  align-items: center;
+  background-color: #ECFDF5; 
+  border: 1px solid #10B981;
+  padding: 14px 18px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.item-consiglio:hover {
+  transform: translateX(4px);
+}
+
+.badge-numero {
+  background-color: #10B981;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-right: 14px;
+}
+
+.testo-consiglio {
+  color: #1E293B;
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icona-emoji {
+  font-size: 1.1rem;
+}
