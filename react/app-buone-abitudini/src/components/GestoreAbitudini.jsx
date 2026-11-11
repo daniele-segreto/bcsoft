@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ListaConsigli from "./ListaConsigli";
+import "./GestoreAbitudini.css";
 
 // RICHIESTO: Lista predefinita di buone abitudini tra cui scegliere casualmente (strutturata ad array di oggetti)
 const LISTA_ABITUDINI = [
@@ -26,7 +27,7 @@ export default function GestoreAbitudini() {
         // RICHIESTO: Controllo se il consiglio è già stato visualizzato in precedenza (verifica tramite id univoco)
         
         // .some() è un metodo degli array che restituisce 'true' se ALMENO UN elemento soddisfa la condizione fornita.
-        // In questo caso, scorre 'consigliEstratti' e confronta l'id di ciascun item già presente con l'id di 'consiglioSelezionato'.
+        // In questo caso, scorre 'consigliEstratti' e confronta l'id di ciascun item già presente con l'id di 'consiglioSelezionato'. <---
         const giaPresente = consigliEstratti.some(
             (item) => item.id === consiglioSelezionato.id,
         );

@@ -1,0 +1,59 @@
+/* Contenitore Scheda Principale (Form / Card Bianca) */
+.main-container {
+    width: 90%;
+    max-width: 520px;
+    margin: 40px auto;
+    padding: 36px 30px;
+    background-color: #FFFFFF;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(124, 45, 18, 0.25), 0 6px 16px rgba(0, 0, 0, 0.08);
+    border: 2px solid #EA580C;
+}
+
+/* Intestazione e Titoli */
+.header-box {
+    text-align: center;
+    padding-bottom: 28px;
+    border-bottom: 2px dashed #FED7AA;
+}
+
+.header-box h2 {
+    margin: 0 0 10px 0;
+    color: #7C2D12;
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.header-box p {
+    color: #475569;
+    font-size: 0.98rem;
+    line-height: 1.5;
+    margin: 0 0 24px 0;
+    font-weight: 500;
+}
+
+/* Pulsante Verde Menta (Tinta Unita brillante) */
+.btn-estrai {
+    background-color: #059669;
+    color: #FFFFFF;
+    border: none;
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(5, 150, 105, 0.35);
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-estrai:hover {
+    background-color: #047857;
+    box-shadow: 0 8px 20px rgba(5, 150, 105, 0.45);
+    transform: translateY(-2px);
+}
+
+.btn-estrai:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 10px rgba(5, 150, 105, 0.25);
+}

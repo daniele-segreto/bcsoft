@@ -1,4 +1,5 @@
 import React from "react";
+import "./ListaConsigli.css";
 
 // RICHIESTO: Secondo componente della struttura che visualizza i consigli ricevuti
 export default function ListaConsigli({ consigli }) {
