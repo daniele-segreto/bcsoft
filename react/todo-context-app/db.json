@@ -1,0 +1,17 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Configurare Context API",
+      "description": "Impostare il TaskContext con tutte le funzioni CRUD e gestione dello stato fittizio.",
+      "completed": true
+    },
+    {
+      "id": "2",
+      "title": "Integrare JSON Server",
+      "description": "Effettuare le chiamate HTTP (GET, POST, PUT/PATCH, DELETE) dal Context.",
+      "completed": false
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "email": "dani@dani.it",
+      "password": "123456",
+      "id": "1FZic3pKgMI"
+    },
+    {
+      "email": "marco@marco.it",
+      "password": "123456",
+      "id": "WwakHPPZky4"
+    },
+    {
+      "email": "nino@nino.it",
+      "password": "123456",
+      "id": "zIrgRs2jlQ4"
+    },
+    {
+      "email": "paolo@paolo.it",
+      "password": "123456",
+      "id": "fb7TXDxcCJo"
+    },
+    {
+      "email": "miriana@miriana.it",
+      "password": "123456",
+      "id": "P-DjA41y0BY"
+    },
+    {
+      "email": "jerry@jerry.it",
+      "password": "123456",
+      "id": "jnFJNAzwp_U"
+    },
+    {
+      "email": "alex@alex.it",
+      "password": "123456",
+      "id": "9N3LxUJ4l6M"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
