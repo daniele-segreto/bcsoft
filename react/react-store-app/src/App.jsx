@@ -22,8 +22,8 @@ export default function App() {
     // (che memorizza l'oggetto JSON dell'utente precedentemente autenticato)
     const savedUser = localStorage.getItem("user");
 
-    // Se la chiave esiste ed è valida (restituisce un valore diverso da null/undefined), significa che la sessione era attiva.
-    // Di conseguenza, aggiorna lo stato globale dell'app impostando isLogged a true, consentendo all'utente di rimanere loggato anche dopo aver aggiornato la pagina (refresh).
+    // "Se la chiave esiste ed è valida..."" (restituisce un valore diverso da null/undefined), significa che la sessione era attiva.
+    // Di conseguenza, "...aggiorna lo stato globale dell'app impostando isLogged a true", consentendo all'utente di rimanere loggato anche dopo aver aggiornato la pagina (refresh).
     if (savedUser) {
       setIsLogged(true);
     }
@@ -36,16 +36,16 @@ export default function App() {
     setIsLogged(status);
   };
 
-  // Funzione di gestione della disconnessione (handler del logout).
+  // Funzione di gestione della "disconnessione" (handler del logout).
   // Si occupa di azzerare lo stato di autenticazione globale (impostando isLogged a false),
-  // di rimuovere la chiave "user" dal localStorage per invalidare definitivamente la sessione attiva
+  // di "rimuovere la chiave user" dal localStorage per invalidare definitivamente la sessione attiva <--------
   // e di ripristinare le condizioni iniziali dell'applicazione.
   const handleLogout = () => {
     setIsLogged(false);
     localStorage.removeItem("user");
 
     Swal.fire({
-      title: "Disconnessione effettuata",
+      title: "Disconnessione effettuata", // <---------
       text: "Ha effettuato il logout con successo.",
       icon: "info",
       confirmButtonText: "OK",
