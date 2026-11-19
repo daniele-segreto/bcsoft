@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+/* --- COMPONENTE PIÈ DI PAGINA (FOOTER) --- */
+/* Gestisce la visualizzazione del footer del portale, includendo il logo ufficiale, i collegamenti legali, i disclaimer e il copyright */
 function Footer() {
     return (
-        /* Sezione principale del footer con classi Bootstrap e personalizzate */
+        /* Sezione principale del footer con classi Bootstrap e stili personalizzati per il posizionamento e l'aspetto visivo */
         <footer className="footer-dc text-center text-white py-5">
             <div className="container d-flex flex-column align-items-center">
-                {/* Logo DC circolare */}
+                {/* Logo DC ufficiale posizionato in alto al centro */}
                 <div className="mb-4">
                     <img
                         src="https://upload.wikimedia.org/wikipedia/commons/3/3d/DC_Comics_logo.svg"
@@ -30,7 +32,7 @@ function Footer() {
                     </Link>
                 </div>
 
-                {/* Disclaimer ufficiale e note di licenza */}
+                {/* Disclaimer ufficiale e note di licenza relative alle pubblicazioni e agli acquisti */}
                 <p className="footer-disclaimer mb-4">
                     Gli abbonamenti a DC e MAD sono gestiti su licenza di DC Publications,
                     Inc. e DC Comics da Midtown Comics, che è l'unica responsabile del
@@ -38,7 +40,7 @@ function Footer() {
                     & © DC.
                 </p>
 
-                {/* Nota di copyright e attribuzione della docenza/sviluppo */}
+                {/* Nota di copyright e attribuzione della docenza e dello sviluppo del portale */}
                 <p className="footer-copyright mb-0">
                     DANIELE SEGRETO, CORSO VIBE CODING CON REACT DEVELOPER (DC SOFT) ©
                     2026 DC. TUTTI I DIRITTI RISERVATI.

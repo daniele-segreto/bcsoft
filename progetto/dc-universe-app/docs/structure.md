@@ -1,25 +1,29 @@
-dc-universe-app/
-├── db/
-│   └── db.json                 # Database locale per json-server (collezione users)
-├── public/
-├── src/
-│   ├── assets/
-│   │   └── img/
-│   │       └── carousel/       # Immagini del carosello (batman.jpg, superman.jpg, harley.jpg)
-│   ├── components/
-│   │   ├── Footer.jsx          # Piè di pagina del portale
-│   │   ├── HeroCarousel.jsx    # Componente carosello principale (statico e riutilizzabile)
-│   │   ├── Navbar.jsx          # Barra di navigazione fissa in alto (fixed-top) con link alle pagine e modale
-│   │   └── Registrati.jsx      # Componente modale (popup) di registrazione utente con chiamata POST a json-server
-│   ├── pages/
-│   │   ├── FilmSerie.jsx       # Pagina Film e Serie TV (con HeroCarousel integrato)
-│   │   ├── Fumetti.jsx         # Pagina Fumetti (con HeroCarousel integrato)
-│   │   └── Home.jsx            # Pagina Home principale (con HeroCarousel integrato)
-│   ├── App.jsx                 # Layout principale, configurazione React Router e modale globale
-│   ├── index.css               # Stili globali e personalizzazioni CSS
-│   └── main.jsx                # Punto d'ingresso React e importazione bundle Bootstrap JS
-├── package.json                # Script di avvio (Vite + json-server su porta 5000)
-└── structure.md                # Documentazione dell'architettura del progetto
+# Struttura del Progetto DC Universe App
+
+src/
+├── components/
+│   ├── auth/
+│   │   ├── Login.jsx
+│   │   └── Registrati.jsx
+│   ├── ComicSection.jsx
+│   ├── Footer.jsx
+│   ├── HeroCarousel.jsx
+│   ├── Navbar.jsx
+│   └── PromoSection.jsx
+├── context/
+│   └── AuthContext.jsx   <-- Nuovo contesto globale per autenticazione e modali
+├── data/
+│   └── comicsData.js
+├── pages/
+│   ├── Contatti.jsx
+│   ├── FilmSerie.jsx
+│   ├── Fumetti.jsx
+│   ├── Home.jsx
+│   └── UserDashboard.jsx
+├── App.jsx
+├── index.css
+├── main.jsx
+└── style.css
 
 ---
 

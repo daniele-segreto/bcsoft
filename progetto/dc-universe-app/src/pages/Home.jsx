@@ -1,27 +1,28 @@
 import React from "react";
-import HeroCarousel from "../components/HeroCarousel";
+import Hero from "../components/Hero";
 import PromoSection from "./../components/PromoSection";
 import ComicSection from "./../components/ComicSection";
-import { popularComics } from "../data/comicsData";
-import { featuredComics } from "../data/comicsData";
+import { popularComics, featuredComics } from "../data/comicsData";
 
+/* --- COMPONENTE HOME PAGE --- */
+/* Rappresenta la pagina principale del portale, organizzata in blocchi tematici fluidi */
 function Home() {
-    return (
-        /* Sezione principale della Home con layout fluido e padding azzerato */
-        <main className="container-fluid p-0">
-            {/* Componente carosello principale posizionato sotto la navbar fissa */}
-            <HeroCarousel />
+  return (
+    /* Sezione principale della Home con layout fluido e padding azzerato per un corretto allineamento */
+    <main className="container-fluid p-0">
+      {/* Componente carosello dinamico della Hero posizionato in cima alla pagina */}
+      <Hero />
 
-            {/* Sezione promozionale */}
-            <PromoSection />
+      {/* Sezione promozionale con offerte e sconti attivi */}
+      <PromoSection />
 
-            {/* Sezione In Evidenza (vengono passati 3 elementi tramite props) */}
-            <ComicSection title="IN EVIDENZA" comics={featuredComics} />
+      {/* Sezione In Evidenza (vengono passati i 3 elementi principali tramite la prop 'comics') */}
+      <ComicSection title="IN EVIDENZA" comics={featuredComics} />
 
-            {/* Sezione Più Popolari (vengono passati 4 elementi tramite props) */}
-            <ComicSection title="PIÙ POPOLARI" comics={popularComics} />
-        </main>
-    );
+      {/* Sezione Più Popolari (vengono passati i 4 elementi di punta tramite la prop 'comics') */}
+      <ComicSection title="PIÙ POPOLARI" comics={popularComics} />
+    </main>
+  );
 }
 
 export default Home;

@@ -1,7 +1,7 @@
 /**
- * Foglio di stile globale del portale DC Universe.
- * Definisce la tipografia, i layout responsive, le transizioni e i componenti grafici.
- */
+- Foglio di stile globale del portale DC Universe.
+- Definisce la tipografia, i layout responsive, le transizioni e i componenti grafici.
+*/
 
 /* --- 2. NAVBAR E NAV-LINKS --- */
 /* Stili per la transizione fluida dei link di navigazione */
@@ -299,4 +299,10 @@
     font-size: 0.85rem;
     color: #ffffff;
     letter-spacing: 0.8px;
+}
+
+/* Effetto interattivo al passaggio del mouse per i collegamenti generici in evidenza */
+.hover-link:hover {
+    color: var(--bs-primary) !important;
+    text-decoration: underline !important;
 }

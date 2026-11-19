@@ -29,6 +29,12 @@
       "email": "miriana@miriana.com",
       "password": "123456",
       "id": "XC877kVovwY"
+    },
+    {
+      "name": "Gigi",
+      "email": "gigi@gigi.it",
+      "password": "123456",
+      "id": "I0ARVUN4Yhc"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

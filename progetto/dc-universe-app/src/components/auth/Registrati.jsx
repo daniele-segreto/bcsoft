@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
+/* --- COMPONENTE MODALE DI REGISTRAZIONE (REGISTRATI) --- */
+/* Gestisce l'interfaccia e la logica per la creazione di nuovi account utente tramite chiamate POST al json-server locale */
 function Registrati() {
     /* Stato locale per memorizzare i dati inseriti nei campi del form (nome, email, password) */
     const [formData, setFormData] = useState({

@@ -1,7 +1,32 @@
 /**
  * Archivio dei dati statici e simulati per il portale DC Universe.
- * Contiene le informazioni relative alle promozioni e ai cataloghi dei fumetti.
+ * Contiene le informazioni relative alle promozioni, ai cataloghi e alla hero.
  */
+
+// Dati di configurazione per il carosello della Hero in base alla rotta o sezione
+export const heroContentData = {
+    "/fumetti": {
+        title: "HARLEY QUINN",
+        subtitle: "La regina indiscussa del brivido",
+        imageKey: "harley",
+        btnText: "La tua Dashboard",
+        btnLink: "/dashboard",
+    },
+    "/film-serie": {
+        title: "SUPERMAN",
+        subtitle: "Un simbolo di speranza e giustizia",
+        imageKey: "superman",
+        btnText: "In Evidenza",
+        btnLink: "/",
+    },
+    "default": {
+        title: "DC SUBSCRIPTIONS",
+        subtitle: "L'oscurità non è un rifugio, è un'arma nelle mani della giustizia",
+        imageKey: "batman",
+        btnText: "Acquista Ora!",
+        btnLink: "/fumetti",
+    }
+};
 
 // Array di dati simulati per le 3 card promozionali visualizzate nella sezione Home
 export const promoItems = [
@@ -10,21 +35,21 @@ export const promoItems = [
         image: "/img/promo_section/c1.png",
         title: "FINO AL 40% DI SCONTO",
         subtitle: "I PROSSIMI 12 NUMERI DEI TUOI FUMETTI DC PREFERITI",
-        link: "/promo/1"
+        link: "/fumetti"
     },
     {
         id: 2,
         image: "/img/promo_section/c2.png",
         title: "FINO AL 40% DI SCONTO",
         subtitle: "I PROSSIMI 12 NUMERI DEI TUOI FUMETTI DC PREFERITI",
-        link: "/promo/2"
+        link: "/fumetti"
     },
     {
         id: 3,
         image: "/img/promo_section/c3.png",
         title: "FINO AL 40% DI SCONTO",
         subtitle: "I PROSSIMI 12 NUMERI DEI TUOI FUMETTI DC PREFERITI",
-        link: "/promo/3"
+        link: "/fumetti"
     }
 ];
 
@@ -96,32 +121,32 @@ export const popularComics = [
 export const supermanFamily = [
     {
         id: 11,
-        title: "SUPERMAN",
-        image: "/img/popular/superman.jpg",
+        title: "SUPERMAN: ACTION COMICS",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI4K6AOKEYJUS8Vlr_QtDJHeDu8qv_lk3_SSWJTR97Pg&s=10",
         ourPrice: "€ 28,96",
         coverPrice: "€ 47,88",
         discount: "SCONTO DEL 40%"
     },
     {
         id: 12,
-        title: "SUPERMAN",
-        image: "/img/popular/superman.jpg",
+        title: "SUPERGIRL: LA DONNA DI DOMANI",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWx4AtphEgdXtkArKt3OkM59Gzdcdd-Ao7lL1Zcrph8lubXEuH7mX64xDH&s=10",
         ourPrice: "€ 28,96",
         coverPrice: "€ 47,88",
         discount: "SCONTO DEL 40%"
     },
     {
         id: 13,
-        title: "SUPERMAN",
-        image: "/img/popular/superman.jpg",
+        title: "SUPERMAN: SON OF KAL-EL",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMBmZvc8NRwwgYMmmdqs-IDMbfaUVFRTRVkQI9WEWLb-mcVBAjDaeVn0Qq&s=10",
         ourPrice: "€ 28,96",
         coverPrice: "€ 47,88",
         discount: "SCONTO DEL 40%"
     },
     {
         id: 14,
-        title: "SUPERMAN",
-        image: "/img/popular/superman.jpg",
+        title: "SUPERMAN: HOUSE OF EL",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1HepWe7rA2Bkb5BkwOk-8ofU_i-dJ5glMpoY0Nt4IZg&s=10",
         ourPrice: "€ 28,96",
         coverPrice: "€ 47,88",
         discount: "SCONTO DEL 40%"
@@ -132,32 +157,32 @@ export const supermanFamily = [
 export const justiceLeague = [
     {
         id: 15,
-        title: "WONDER WOMAN",
-        image: "/img/popular/wonderwoman.jpg",
+        title: "JUSTICE LEAGUE: ORIGIN",
+        image: "https://m.media-amazon.com/images/I/91w7mWVgZ5L._AC_UF1000,1000_QL80_.jpg",
         ourPrice: "€ 28,96",
         coverPrice: "€ 47,88",
         discount: "SCONTO DEL 40%"
     },
     {
         id: 16,
-        title: "WONDER WOMAN",
-        image: "/img/popular/wonderwoman.jpg",
+        title: "THE FLASH: RINASCITA",
+        image: "https://www.ibs.it/images/9788828730514_0_0_536_0_75.jpg",
         ourPrice: "€ 28,96",
         coverPrice: "€ 47,88",
         discount: "SCONTO DEL 40%"
     },
     {
         id: 17,
-        title: "WONDER WOMAN",
-        image: "/img/popular/wonderwoman.jpg",
+        title: "GREEN LANTERN: SINESTRO CORPS",
+        image: "https://m.media-amazon.com/images/I/91r-rUaAIdL._AC_UF1000,1000_QL80_.jpg",
         ourPrice: "€ 28,96",
         coverPrice: "€ 47,88",
         discount: "SCONTO DEL 40%"
     },
     {
         id: 18,
-        title: "WONDER WOMAN",
-        image: "/img/popular/wonderwoman.jpg",
+        title: "AQUAMAN: TRENCH",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpq6vtC8F7oWV9X92UV4o0j888Dm0Zl9tWq56hCnGdp6abAWPtP7bRdXhp&s=10",
         ourPrice: "€ 28,96",
         coverPrice: "€ 47,88",
         discount: "SCONTO DEL 40%"
@@ -168,32 +193,32 @@ export const justiceLeague = [
 export const gothamFamily = [
     {
         id: 19,
-        title: "BATMAN",
-        image: "/img/popular/batman.jpg",
+        title: "BATMAN: RIDDLE ME THIS",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTEv5AY5s1Hg2I8WUcS2m8_qJ-gpe1klMB1LjZiZDDajIKukb9oqnK-dC8&s=10",
         ourPrice: "€ 28,96",
         coverPrice: "€ 47,88",
         discount: "SCONTO DEL 40%"
     },
     {
         id: 20,
-        title: "BATMAN",
-        image: "/img/popular/batman.jpg",
+        title: "NIGHTWING: APEX",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBgULNXjune3QcRuJYliZopDvTj8nSUQ5CD70NNOWpHCDAQtqoAM5nlVg&s=10",
         ourPrice: "€ 28,96",
         coverPrice: "€ 47,88",
         discount: "SCONTO DEL 40%"
     },
     {
         id: 21,
-        title: "BATMAN",
-        image: "/img/popular/batman.jpg",
+        title: "ROBIN: SON OF BATMAN",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb2Tz_bFNi1_ql-ltXQUl1FGMQ5tqoF3SfKJKwCt1qzA&s=10",
         ourPrice: "€ 28,96",
         coverPrice: "€ 47,88",
         discount: "SCONTO DEL 40%"
     },
     {
         id: 22,
-        title: "BATMAN",
-        image: "/img/popular/batman.jpg",
+        title: "CATWOMAN: RUST",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEB62vp95SnRaDkTQBMM4-bcxobFm_n3OPtsoCm05Gqy-ybpaQFylkMNp8&s=10",
         ourPrice: "€ 28,96",
         coverPrice: "€ 47,88",
         discount: "SCONTO DEL 40%"
